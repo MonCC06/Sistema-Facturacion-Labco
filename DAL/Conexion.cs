@@ -20,9 +20,9 @@ namespace DAL
         private Conexion()
         {
             //Nombre de la BD
-            this._Base = "";  ///el nombre de la base de datos
+            this._Base = "LABCOP BD";  ///el nombre de la base de datos
             //Nombre Servidor
-            this._Server = "EL LINK DEL DISPOSITIVO DE LA BASE DE DATOS"; //Insertar base de datos//
+            this._Server = "MONSE\\SQLEXPRESSS"; //Insertar base de datos//
             this._Seguridad = true;
 
         }

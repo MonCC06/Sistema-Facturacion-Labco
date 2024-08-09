@@ -22,7 +22,7 @@ namespace BL
         {
 
             DALCliente Datos = new DALCliente();
-            return Datos.GuardarCA(nOpcion, cl);
+            return Datos.GuardarCL(nOpcion, cl);
         }
 
         public static string ActualizarCL(int IDCliente)

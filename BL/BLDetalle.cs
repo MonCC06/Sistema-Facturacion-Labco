@@ -7,34 +7,34 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    internal class BLDetalle
+    public class BLDetalle
     {
         public static DataTable ListadoDE(string cTexto)
         {
 
             DALDetalle Datos = new DALDetalle();
-            return Datos.ListadoCL(cTexto);
+            return Datos.ListadoDE(cTexto);
         }
 
-        public static string GuardarCL(int nOpcion, ETCliente ca)
+        public static string GuardarDE(int nOpcion, ETDetalle de)
         {
 
             DALDetalle Datos = new DALDetalle();
-            return Datos.GuardarCA(nOpcion, ca);
+            return Datos.GuardarDE (nOpcion, de);
         }
 
-        public static string ActualizarCL(int IDCliente)
+        public static string ActualizarCL(int IDDetalle)
         {
 
             DALDetalle Datos = new DALDetalle();
-            return Datos.ActualizarCL(IDCliente);
+            return Datos.ActualizarDE(IDDetalle);
         }
 
-        public static string EliminaCL(int IDCliente)
+        public static string EliminarDE(int IDDetalle)
         {
 
             DALDetalle Datos = new DALDetalle();
-            return Datos.EliminaCL(IDCliente);
+            return Datos.EliminaDE(IDDetalle);
         }
     }
 }
