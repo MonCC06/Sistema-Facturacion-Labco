@@ -9,6 +9,7 @@ namespace ET
     internal class ETTrabajador
     {
         private bool _estado;
+        private int _IdTrabajador;
         private string _nombre;
         private string _apellido;
         private string _cedula;
@@ -44,5 +45,6 @@ namespace ET
             get => _correo;
             set => _correo = value;
         }
+        public int IdTrabajador { get => _IdTrabajador; set => _IdTrabajador = value; }
     }
 }
