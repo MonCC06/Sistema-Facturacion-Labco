@@ -43,7 +43,7 @@ namespace DAL
             }
         }
 
-        public string GuardarTrabajador(int nOpcion, ETCliente cl)
+        public string GuardarTrabajador(int nOpcion, ETTrabajador cl)
         {
 
             string Rpta = "";
@@ -51,12 +51,12 @@ namespace DAL
 
 
             try
-            {
+            
                 SqlCon = Conexion.GetInstancia().CrearConexion();
                 SqlCommand comando = new SqlCommand("USP_Guardar_Trabajador", SqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.Add("@nOpcion", SqlDbType.Int).Value = nOpcion;
-                comando.Parameters.Add("@estado", SqlDbType.Int).Value = cl.estado;
+                comando.Parameters.Add("@estado", SqlDbType.Int).Value = cl.Eestado;
                 comando.Parameters.Add("@cNombre_cl", SqlDbType.VarChar).Value = cl.Nombre;
                 comando.Parameters.Add("@cCedula_cl", SqlDbType.VarChar).Value = cl.Cedula;
                 comando.Parameters.Add("@cCorreo_cl", SqlDbType.VarChar).Value = cl.Correo;
@@ -80,7 +80,7 @@ namespace DAL
             return Rpta;
         }
 
-        public string EliminaCliente(int IdCliente)
+        public string EliminaTrabajador(int IdTrabajador)
         {
 
             string Rpta = "";
