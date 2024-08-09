@@ -4,6 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL;
+using ET;
 
 namespace BL
 {
@@ -20,7 +22,7 @@ namespace BL
         {
 
             DALCliente Datos = new DALCliente();
-            return Datos.GuardarCA(nOpcion, ca);
+            return Datos.GuardarCA(nOpcion, cl);
         }
 
         public static string ActualizarCL(int IDCliente)
@@ -33,7 +35,7 @@ namespace BL
         public static string EliminaCL(int IDCliente)
         {
 
-            DALCliente Datos = new DAL_Cliente();
+            DALCliente Datos = new DALCliente();
             return Datos.EliminaCL(IDCliente);
         }
 
