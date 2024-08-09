@@ -79,7 +79,7 @@ namespace DAL
             return Rpta;
         }
 
-        public string EliminaCliente(int IdCliente)
+        public string EliminaCliente(int IDCliente)
         {
 
             string Rpta = "";
@@ -91,7 +91,7 @@ namespace DAL
                 SqlCon = Conexion.GetInstancia().CrearConexion();
                 SqlCommand comando = new SqlCommand("USP_Eliminar_Cliente", SqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.Add("@IdCliente", SqlDbType.Int).Value = IdCliente;
+                comando.Parameters.Add("@IDCliente", SqlDbType.Int).Value = IDCliente;
 
                 SqlCon.Open();
                 Rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "No se logro eliminar el dato";

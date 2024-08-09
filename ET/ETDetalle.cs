@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ET
 {
-    internal class ETDetalle
+    public class ETDetalle
     {
         private int _IDDetalle;
         private int _IDServicio;
