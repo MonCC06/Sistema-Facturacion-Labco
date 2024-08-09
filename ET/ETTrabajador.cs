@@ -8,16 +8,41 @@ namespace ET
 {
     internal class ETTrabajador
     {
-        private int _IDTrabajador;
-        private string _Nombre;
-        private string _Cedula;
-        private string _Correo;
-        private string _Telefono;
-
-        public int IDTrabajador { get => _IDTrabajador; set => _IDTrabajador = value; }
-        public string Nombre { get => _Nombre; set => _Nombre = value; }
-        public string Cedula { get => _Cedula; set => _Cedula = value; }
-        public string Correo { get => _Correo; set => _Correo = value; }
-        public string Telefono { get => _Telefono; set => _Telefono = value; }
+        private bool _estado;
+        private string _nombre;
+        private string _apellido;
+        private string _cedula;
+        private string _telefono;
+        private string _correo;
+        public bool Estado
+        {
+            get => _estado;
+            set => _estado = value;
+        }
+        public string Nombre
+        {
+            get => _nombre;
+            set => _nombre = value;
+        }
+        public string Apellido
+        {
+            get => _apellido;
+            set => _apellido = value;
+        }
+        public string Cedula
+        {
+            get => _cedula;
+            set => _cedula = value;
+        }
+        public string Telefono
+        {
+            get => _telefono;
+            set => _telefono = value;
+        }
+        public string Correo
+        {
+            get => _correo;
+            set => _correo = value;
+        }
     }
 }

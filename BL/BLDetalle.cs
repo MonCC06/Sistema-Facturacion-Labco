@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    public class BLCliente
+    internal class BLDetalle
     {
-        public static DataTable ListadoCL (string cTexto)
+        public static DataTable ListadoDE(string cTexto)
         {
 
-            DAL_Cliente Datos = new DAL_Cliente();
+            DALDetalle Datos = new DALDetalle();
             return Datos.ListadoCL(cTexto);
         }
 
-        public static string GuardarCL (int nOpcion, ETCliente ca)
+        public static string GuardarCL(int nOpcion, ETCliente ca)
         {
 
             DALCliente Datos = new DALCliente();
@@ -36,7 +36,5 @@ namespace BL
             DALCliente Datos = new DAL_Cliente();
             return Datos.EliminaCL(IDCliente);
         }
-
-
     }
 }
