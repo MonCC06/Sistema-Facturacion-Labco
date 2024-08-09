@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ETTrabajador.cs" />
     <Compile Include="ETDetalle.cs" />
     <Compile Include="ETFactura.cs" />
     <Compile Include="ETCliente.cs" />
