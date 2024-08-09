@@ -4,6 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ET;
+using DAL;
 
 namespace BL
 {
@@ -23,18 +25,18 @@ namespace BL
             return Datos.GuardarFA(nOpcion, fa);
         }
 
-        public static string ActualizarCL(int IDDetalle)
+        public static string ActualizarFA(int IDFactura)
         {
 
             DALFactura Datos = new DALFactura();
-            return Datos.ActualizarDE(IDDetalle);
+            return Datos.ActualizarFA(IDFactura);
         }
 
-        public static string EliminarDE(int IDDetalle)
+        public static string EliminarFA(int IDFactura)
         {
 
             DALFactura Datos = new DALFactura();
-            return Datos.EliminaDE(IDDetalle);
+            return Datos.EliminaRFA(IDFactura);
         }
     }
 }
