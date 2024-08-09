@@ -42,6 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="DALCliente.cs" />
+    <Compile Include="DALDetalle.cs" />
+    <Compile Include="DALFactura.cs" />
+    <Compile Include="DALMarca.cs" />
+    <Compile Include="DALProducto.cs" />
+    <Compile Include="DALServicio.cs" />
+    <Compile Include="DALTrabajador.cs" />
+    <Compile Include="DALVehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
