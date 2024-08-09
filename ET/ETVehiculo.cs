@@ -15,7 +15,7 @@ namespace ET
         private string _Anno;
         private string _VIN;
         private string _Placa;
-        private Boolean _TipodeDistancia;
+        private bool _TipodeDistancia;
         private float _DistaciaRecorrida;
 
         public int IDVehiculo { get => _IDVehiculo; set => _IDVehiculo = value; }
