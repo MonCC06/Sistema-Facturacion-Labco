@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ETCliente.cs" />
+    <Compile Include="ETMarca.cs" />
     <Compile Include="ETVehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
