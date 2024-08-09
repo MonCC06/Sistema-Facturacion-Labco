@@ -19,21 +19,21 @@ namespace BL
         public static string GuardarCL(int nOpcion, ETCliente ca)
         {
 
-            DALCliente Datos = new DALCliente();
+            DALDetalle Datos = new DALDetalle();
             return Datos.GuardarCA(nOpcion, ca);
         }
 
         public static string ActualizarCL(int IDCliente)
         {
 
-            DALCliente Datos = new DAL_Cliente();
+            DALDetalle Datos = new DALDetalle();
             return Datos.ActualizarCL(IDCliente);
         }
 
         public static string EliminaCL(int IDCliente)
         {
 
-            DALCliente Datos = new DAL_Cliente();
+            DALDetalle Datos = new DALDetalle();
             return Datos.EliminaCL(IDCliente);
         }
     }

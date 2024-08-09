@@ -14,11 +14,11 @@ namespace BL
         public static DataTable ListadoCL (string cTexto)
         {
 
-            DAL_Cliente Datos = new DAL_Cliente();
+            DALCliente Datos = new DALCliente();
             return Datos.ListadoCL(cTexto);
         }
 
-        public static string GuardarCL (int nOpcion, ETCliente ca)
+        public static string GuardarCL (int nOpcion, ETCliente cl)
         {
 
             DALCliente Datos = new DALCliente();
@@ -28,7 +28,7 @@ namespace BL
         public static string ActualizarCL(int IDCliente)
         {
 
-            DALCliente Datos = new DAL_Cliente();
+            DALCliente Datos = new DALCliente();
             return Datos.ActualizarCL(IDCliente);
         }
 
