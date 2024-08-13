@@ -64,6 +64,7 @@ namespace DAL
                 comando.Parameters.Add("@nOpcion", SqlDbType.Int).Value = nOpcion;
                 comando.Parameters.Add("@IDMarca", SqlDbType.Int).Value = ma.IDMarca;
                 comando.Parameters.Add("@cNombre", SqlDbType.VarChar).Value = ma.Nombre;
+                comando.Parameters.Add("@Estado", SqlDbType.Bit).Value = ma.Estado;
                 SqlCon.Open();
                 Rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "No se logro registrar el dato";
 

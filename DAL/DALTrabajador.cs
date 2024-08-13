@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    internal class DALTrabajador
+    public class DALTrabajador
     {
 
         public DataTable ListadoTrabajador(string cTexto)
@@ -43,24 +43,25 @@ namespace DAL
             }
         }
 
-        public string GuardarTrabajador(int nOpcion, ETTrabajador cl)
+        public string GuardarTrabajador(int nOpcion, ETTrabajador tr
+            )
         {
 
             string Rpta = "";
             SqlConnection SqlCon = new SqlConnection();
 
 
-            try
-            
+            try 
+            {
                 SqlCon = Conexion.GetInstancia().CrearConexion();
                 SqlCommand comando = new SqlCommand("USP_Guardar_Trabajador", SqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.Add("@nOpcion", SqlDbType.Int).Value = nOpcion;
-                comando.Parameters.Add("@estado", SqlDbType.Int).Value = cl.Eestado;
-                comando.Parameters.Add("@cNombre_cl", SqlDbType.VarChar).Value = cl.Nombre;
-                comando.Parameters.Add("@cCedula_cl", SqlDbType.VarChar).Value = cl.Cedula;
-                comando.Parameters.Add("@cCorreo_cl", SqlDbType.VarChar).Value = cl.Correo;
-                comando.Parameters.Add("@cTelefono_cl", SqlDbType.VarChar).Value = cl.Telefono;
+                comando.Parameters.Add("@cNombre_tr", SqlDbType.VarChar).Value = tr.Nombre;
+                comando.Parameters.Add("@cCedula_tr", SqlDbType.VarChar).Value = tr.Cedula;
+                comando.Parameters.Add("@cCorreo_tr", SqlDbType.VarChar).Value = tr.Correo;
+                comando.Parameters.Add("@cTelefono_tr", SqlDbType.VarChar).Value = tr.Telefono;
+                comando.Parameters.Add("@Estado", SqlDbType.Bit).Value = tr.Estado;
 
 
                 SqlCon.Open();
@@ -80,7 +81,7 @@ namespace DAL
             return Rpta;
         }
 
-        public string EliminaTrabajador(int IdTrabajador)
+        public string EliminaTrabajador(int IDTrabajador)
         {
 
             string Rpta = "";
@@ -92,7 +93,7 @@ namespace DAL
                 SqlCon = Conexion.GetInstancia().CrearConexion();
                 SqlCommand comando = new SqlCommand("USP_Eliminar_Trabajador", SqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.Add("@IdTrabajador", SqlDbType.Int).Value = IdTrabajador;
+                comando.Parameters.Add("@IdTrabajador", SqlDbType.Int).Value = IDTrabajador;
 
                 SqlCon.Open();
                 Rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "No se logro eliminar el dato";

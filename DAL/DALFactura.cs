@@ -58,7 +58,7 @@ namespace DAL
                 comando.Parameters.Add("@IDFactura", SqlDbType.Int).Value = fa.IDFactura;
                 comando.Parameters.Add("@IDTrabajador", SqlDbType.VarChar).Value = fa.IDTrabajador;
                 comando.Parameters.Add("@IDCliente", SqlDbType.VarChar).Value = fa.IDCliente;
-                comando.Parameters.Add("@Estado", SqlDbType.VarChar).Value = fa.Estado;
+                comando.Parameters.Add("@Estado", SqlDbType.Bit).Value = fa.Estado;
                 comando.Parameters.Add("@Total", SqlDbType.VarChar).Value = fa.Total;
                 comando.Parameters.Add("@SubTotal", SqlDbType.VarChar).Value = fa.Subtotal;
                 comando.Parameters.Add("@Iva", SqlDbType.VarChar).Value = fa.Iva;
@@ -96,7 +96,7 @@ namespace DAL
                 SqlCon = Conexion.GetInstancia().CrearConexion();
                 SqlCommand comando = new SqlCommand("USP_Eliminar_Factura", SqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.Add("@IdCliente", SqlDbType.Int).Value = IDFactura;
+                comando.Parameters.Add("@IdFactura", SqlDbType.Int).Value = IDFactura;
 
                 SqlCon.Open();
                 Rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "No se logro eliminar el dato";

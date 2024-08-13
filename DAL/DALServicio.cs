@@ -58,7 +58,8 @@ namespace DAL
                 comando.Parameters.Add("@IDServicio", SqlDbType.Int).Value = se.IDServicio;
                 comando.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = se.Descripcion;
                 comando.Parameters.Add("@Monto", SqlDbType.VarChar).Value = se.Monto;
-               
+                comando.Parameters.Add("@Estado", SqlDbType.Bit).Value = se.Estado;
+
 
                 SqlCon.Open();
                 Rpta = comando.ExecuteNonQuery() >= 1 ? "OK" : "No se logro registrar el dato";
@@ -77,7 +78,7 @@ namespace DAL
             return Rpta;
         }
 
-        public string EliminaCliente(int IdCliente)
+        public string EliminaCliente(int IDServicio)
         {
 
             string Rpta = "";
@@ -87,9 +88,9 @@ namespace DAL
             try
             {
                 SqlCon = Conexion.GetInstancia().CrearConexion();
-                SqlCommand comando = new SqlCommand("USP_Eliminar_Cliente", SqlCon);
+                SqlCommand comando = new SqlCommand("USP_Eliminar_Servicio", SqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.Add("@IdCliente", SqlDbType.Int).Value = IdCliente;
+                comando.Parameters.Add("@IDServicio", SqlDbType.Int).Value = IDServicio;
 
                 SqlCon.Open();
                 Rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "No se logro eliminar el dato";

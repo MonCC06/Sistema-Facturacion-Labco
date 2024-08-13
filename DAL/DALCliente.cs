@@ -60,6 +60,7 @@ namespace DAL
                 comando.Parameters.Add("@cCedula_cl", SqlDbType.VarChar).Value = cl.Cedula;
                 comando.Parameters.Add("@cCorreo_cl", SqlDbType.VarChar).Value = cl.Correo;
                 comando.Parameters.Add("@cTelefono_cl", SqlDbType.VarChar).Value = cl.Telefono;
+                comando.Parameters.Add("@Estado", SqlDbType.Bit).Value = cl.Estado;
 
 
                 SqlCon.Open();

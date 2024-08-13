@@ -52,7 +52,7 @@ namespace DAL
             try
             {
                 SqlCon = Conexion.GetInstancia().CrearConexion();
-                SqlCommand comando = new SqlCommand("USP_Guardar_Cliente", SqlCon);
+                SqlCommand comando = new SqlCommand("USP_Guardar_Detalle", SqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.Add("@nOpcion", SqlDbType.Int).Value = nOpcion;
                 comando.Parameters.Add("@IDDetalle", SqlDbType.Int).Value = de.IDDetalle;
@@ -60,7 +60,8 @@ namespace DAL
                 comando.Parameters.Add("@IDProducto", SqlDbType.Int).Value = de.IDProducto;
                 comando.Parameters.Add("@nMonto", SqlDbType.Decimal).Value = de.Monto;
                 comando.Parameters.Add("@nCantidad", SqlDbType.Int).Value = de.Cantidad;
-                
+                comando.Parameters.Add("@Estado", SqlDbType.Bit).Value = de.Estado;
+
 
 
                 SqlCon.Open();

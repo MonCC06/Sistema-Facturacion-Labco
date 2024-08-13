@@ -61,7 +61,7 @@ namespace DAL
                 comando.Parameters.Add("@nPrecio", SqlDbType.Decimal).Value = pr.Precio;
                 comando.Parameters.Add("@nStockMin", SqlDbType.Decimal).Value = pr.StockMin;
                 comando.Parameters.Add("@nStockMax", SqlDbType.Decimal).Value = pr.StockMax;
-                comando.Parameters.Add("@nCantidad", SqlDbType.Int).Value = pr.Cantidad;
+                comando.Parameters.Add("@nEstado", SqlDbType.Bit).Value = pr.Estado;
 
 
                 SqlCon.Open();
@@ -69,7 +69,7 @@ namespace DAL
 
 
             }
-
+            
             catch (Exception ex)
             {
                 Rpta = ex.Message;
