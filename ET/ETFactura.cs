@@ -20,7 +20,7 @@ namespace ET
         private DateTime _Fecha;
 
         public int IDFactura { get => _IDFactura; set => _IDFactura = value; }
-        public int IDDetelle { get => _IDDetelle; set => _IDDetelle = value; }
+        public int IDDetalle { get => _IDDetelle; set => _IDDetelle = value; }
         public int IDTrabajador { get => _IDTrabajador; set => _IDTrabajador = value; }
         public int IDCliente { get => _IDCliente; set => _IDCliente = value; }
         public bool Estado { get => _Estado; set => _Estado = value; }
