@@ -59,7 +59,8 @@ namespace DAL
                 comando.Parameters.Add("@IDProducto", SqlDbType.Int).Value = pr.IDProducto;
                 comando.Parameters.Add("@cDescripcion_pr", SqlDbType.VarChar).Value = pr.Descripcion    ;
                 comando.Parameters.Add("@nPrecio", SqlDbType.Decimal).Value = pr.Precio;
-                comando.Parameters.Add("@nStock", SqlDbType.Int).Value = pr.Stock;
+                comando.Parameters.Add("@nStockMin", SqlDbType.Decimal).Value = pr.StockMin;
+                comando.Parameters.Add("@nStockMax", SqlDbType.Decimal).Value = pr.StockMax;
                 comando.Parameters.Add("@nCantidad", SqlDbType.Int).Value = pr.Cantidad;
 
 

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ET
+namespace DAL
 {
-    internal class ETPersona
+    internal class DALStockDetalle
     {
     }
 }
