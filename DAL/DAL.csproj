@@ -48,6 +48,7 @@
     <Compile Include="DALMarca.cs" />
     <Compile Include="DALProducto.cs" />
     <Compile Include="DALServicio.cs" />
+    <Compile Include="DALStockDetalle.cs" />
     <Compile Include="DALTrabajador.cs" />
     <Compile Include="DALVehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

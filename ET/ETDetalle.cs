@@ -13,12 +13,14 @@ namespace ET
         private int _IDProducto;
         private float _Monto;
         private int _Cantidad;
-     
+        private bool _Estado;
+
 
         public int IDDetalle { get => _IDDetalle; set => _IDDetalle = value; }
         public int IDServicio { get => _IDServicio; set => _IDServicio = value; }
         public int IDProducto { get => _IDProducto; set => _IDProducto = value; }
         public float Monto { get => _Monto; set => _Monto = value; }
         public int Cantidad { get => _Cantidad; set => _Cantidad = value; }
+        public bool Estado { get => _Estado; set => _Estado = value; }
     }
 }

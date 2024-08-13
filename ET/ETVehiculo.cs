@@ -17,6 +17,7 @@ namespace ET
         private string _Placa;
         private bool _TipodeDistancia;
         private float _DistaciaRecorrida;
+        private bool _Estado;
 
         public int IDVehiculo { get => _IDVehiculo; set => _IDVehiculo = value; }
         public int IDCliente { get => _IDCliente; set => _IDCliente = value; }
@@ -27,5 +28,6 @@ namespace ET
         public string Placa { get => _Placa; set => _Placa = value; }
         public bool TipodeDistancia { get => _TipodeDistancia; set => _TipodeDistancia = value; }
         public float DistaciaRecorrida { get => _DistaciaRecorrida; set => _DistaciaRecorrida = value; }
+        public bool Estado { get => _Estado; set => _Estado = value; }
     }
 }

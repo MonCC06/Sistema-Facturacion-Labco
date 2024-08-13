@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ETPersona.cs" />
     <Compile Include="ETServicio.cs" />
     <Compile Include="ETTrabajador.cs" />
     <Compile Include="ETDetalle.cs" />
@@ -51,6 +50,7 @@
     <Compile Include="ETProducto.cs" />
     <Compile Include="ETVehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ETStockDetalle.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
