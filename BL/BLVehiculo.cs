@@ -15,28 +15,28 @@ namespace BL
         {
 
             DALVehiculo Datos = new DALVehiculo();
-            return Datos.ListadoVE(cTexto);
+            return Datos.ListadoVe(cTexto);
         }
 
         public static string GuardarVE(int nOpcion, ETVehiculo ve)
         {
 
             DALVehiculo Datos = new DALVehiculo();
-            return Datos.GuardarVE (nOpcion, ve);
+            return Datos.GuardarVe(nOpcion, ve);
         }
 
         public static string ActualizarVE(int IDVehiculo)
         {
 
             DALVehiculo Datos = new DALVehiculo();
-            return Datos.ActualizarVE(IDVehiculo);
+            return Datos.ActualizarVe(IDVehiculo);
         }
 
         public static string EliminaVE(int IDVehiculo)
         {
 
             DALVehiculo Datos = new DALVehiculo(); ;
-            return Datos.EliminaVE(IDVehiculo);
+            return Datos.EliminaVe(IDVehiculo);
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ET;
+using System.Globalization;
 
 namespace DAL
 {
@@ -16,16 +17,16 @@ namespace DAL
 
             SqlDataReader Resultado;
             DataTable Tabla = new DataTable();
-            SqlConnection SQLCon = new SqlConnection();
+            SqlConnection SqlCon = new SqlConnection();
 
 
             try
             {
-                SQLCon = Conexion.GetInstancia().CrearConexion();
-                SqlCommand Comando = new SqlCommand("USP_Listado_Cliente",SQLCon);
+                SqlCon = Conexion.GetInstancia().CrearConexion();
+                SqlCommand Comando = new SqlCommand("USP_Listado_Cliente",SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value=cTexto;
-                SQLCon.Open();
+                SqlCon.Open();
                 Resultado = Comando.ExecuteReader();
                 Tabla.Load(Resultado);
                 
@@ -38,7 +39,7 @@ namespace DAL
             }
             finally
             {
-                if(SQLCon.State==ConnectionState.Open)SQLCon.Close();
+                if(SqlCon.State==ConnectionState.Open)SqlCon.Close();
             }
         }
 
@@ -100,6 +101,52 @@ namespace DAL
 
             }
 
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return Rpta;
+        }
+
+        public string ActualizarCliente(string cTexto,int nOpcion, int IDCliente, ETCliente cl)
+        {
+            string Rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            
+            try
+            {
+                SqlCon = Conexion.GetInstancia().CrearConexion();
+                SqlCommand Comando = new SqlCommand("USP_Listado_Cliente", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
+                SqlCon.Open();
+                SqlDataReader reader = Comando.ExecuteReader();
+
+                if (reader.Read()) 
+                {
+                    string ClienteEncontrado = Convert.ToString(reader[cTexto]);
+                    if (ClienteEncontrado != cTexto)
+                    {
+                        Rpta = "Los datos ingresados no coinciden";
+                    }
+                    else 
+                    {
+                        string RptaEliminar = EliminaCliente(IDCliente);
+                        if (RptaEliminar != "OK")
+                        {
+                            Rpta = RptaEliminar;
+                        }
+                        else
+                        {
+                            string RptaAgregar = GuardarCliente(nOpcion, cl);
+                        }
+                    }
+                }
+            }
             catch (Exception ex)
             {
                 Rpta = ex.Message;

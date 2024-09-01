@@ -15,28 +15,28 @@ namespace BL
         {
 
             DALProducto Datos = new DALProducto();
-            return Datos.ListadoPR(cTexto);
+            return Datos.ListadoProducto(cTexto);
         }
 
         public static string GuardarPR(int nOpcion, ETProducto pr)
         {
 
             DALProducto Datos = new DALProducto();
-            return Datos.GuardarPR(nOpcion, pr);
+            return Datos.GuardarProducto(nOpcion, pr);
         }
 
         public static string ActualizarPR (int IDProducto)
         {
 
             DALProducto Datos = new DALProducto();
-            return Datos.ActualizarPR(IDProducto);
+            return Datos.ActualizarProducto(IDProducto);
         }
 
         public static string EliminaPR(int IDProducto)
         {
 
             DALProducto Datos = new DALProducto(); ;
-            return Datos.EliminaPR(IDProducto);
+            return Datos.EliminaProducto(IDProducto);
         }
 
     }

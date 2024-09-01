@@ -15,28 +15,28 @@ namespace BL
         {
 
             DALMarca Datos = new DALMarca();
-            return Datos.ListadoMA(cTexto);
+            return Datos.ListadoMarca(cTexto);
         }
 
         public static string GuardarMA(int nOpcion, ETMarca ma)
         {
 
             DALMarca Datos = new DALMarca();
-            return Datos.GuardarMA(nOpcion, ma);
+            return Datos.GuardarMarca(nOpcion, ma);
         }
 
         public static string ActualizarMA(int IDMarca)
         {
 
             DALMarca Datos = new DALMarca();
-            return Datos.ActualizarMA(IDMarca);
+            return Datos.ActualizarMarca(IDMarca);
         }
 
         public static string EliminarMA(int IDMarca)
         {
 
             DALMarca Datos = new DALMarca();
-            return Datos.EliminaRFA(IDMarca);
+            return Datos.EliminarMarca(IDMarca);
         }
     }
 }

@@ -15,28 +15,28 @@ namespace BL
         {
 
             DALFactura Datos = new DALFactura();
-            return Datos.ListadoFA(cTexto);
+            return Datos.ListadoFactura(cTexto);
         }
 
         public static string GuardarFA(int nOpcion, ETFactura fa)
         {
 
             DALFactura Datos = new DALFactura();
-            return Datos.GuardarFA(nOpcion, fa);
+            return Datos.GuardarFactura(nOpcion, fa);
         }
 
         public static string ActualizarFA(int IDFactura)
         {
 
             DALFactura Datos = new DALFactura();
-            return Datos.ActualizarFA(IDFactura);
+            return Datos.ActualizarFactura(IDFactura);
         }
 
         public static string EliminarFA(int IDFactura)
         {
 
             DALFactura Datos = new DALFactura();
-            return Datos.EliminaRFA(IDFactura);
+            return Datos.EliminaFactura(IDFactura);
         }
     }
 }

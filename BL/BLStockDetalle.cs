@@ -14,29 +14,29 @@ namespace BL
         public static DataTable ListadoSD(string cTexto)
         {
 
-            DALCliente Datos = new DALCliente();
-            return Datos.ListadoSD(cTexto);
+            DALStockDetalle Datos = new DALStockDetalle();
+            return Datos.ListadoSd(cTexto);
         }
 
         public static string GuardarSD(int nOpcion, ETStockDetalle sd)
         {
 
-            DALCliente Datos = new DALCliente();
-            return Datos.GuardarSD(nOpcion, sd);
+            DALStockDetalle Datos = new DALStockDetalle();
+            return Datos.GuardarSd(nOpcion, sd);
         }
 
         public static string ActualizarSD(int IDProducto)
         {
 
-            DALCliente Datos = new DALCliente();
-            return Datos.ActualizarSD(IDProducto);
+            DALStockDetalle Datos = new DALStockDetalle();
+            return Datos.ActualizarSd(IDProducto);
         }
 
         public static string EliminarSD(int IDProducto)
         {
 
-            DALCliente Datos = new DALCliente();
-            return Datos.EliminarSD(IDProducto);
+            DALStockDetalle Datos = new DALStockDetalle();
+            return Datos.EliminarSd(IDProducto);
         }
     }
 }

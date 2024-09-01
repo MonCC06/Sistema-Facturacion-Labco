@@ -78,7 +78,7 @@ namespace DAL
             return Rpta;
         }
 
-        public string EliminaSd(int IDProducto)
+        public string EliminarSd(int IDProducto)
         {
 
             string Rpta = "";

@@ -15,28 +15,28 @@ namespace BL
         {
 
             DALServicio Datos = new DALServicio();
-            return Datos.ListadoSE(cTexto);
+            return Datos.ListadoServicio(cTexto);
         }
 
         public static string GuardarSE(int nOpcion, ETServicio se)
         {
 
             DALServicio Datos = new DALServicio();
-            return Datos.GuardarSE(nOpcion, se);
+            return Datos.GuardarServicio(nOpcion, se);
         }
 
         public static string ActualizarSE(int IDServicio)
         {
 
             DALServicio Datos = new DALServicio();
-            return Datos.ActualizarSE(IDServicio);
+            return Datos.ActualizarServicio(IDServicio);
         }
 
         public static string EliminaSE(int IDServicio)
         {
 
             DALServicio Datos = new DALServicio(); ;
-            return Datos.EliminaSE(IDServicio);
+            return Datos.EliminarServicio(IDServicio);
         }
 
     }

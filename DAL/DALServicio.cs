@@ -78,7 +78,7 @@ namespace DAL
             return Rpta;
         }
 
-        public string EliminaCliente(int IDServicio)
+        public string EliminarServicio(int IDServicio)
         {
 
             string Rpta = "";

@@ -82,7 +82,7 @@ namespace DAL
             return Rpta;
         }
 
-        public string EliminaMA(int IDMarca)
+        public string EliminarMarca(int IDMarca)
         {
 
             string Rpta = "";

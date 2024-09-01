@@ -17,6 +17,14 @@ namespace GUI
             InitializeComponent();
         }
 
+        #region Variables
+        int Estado = 0;
+        int IDDetalle = 0;
+        int IDCliente = 0;
+        int IDTrabajador = 0;
+        int IDFactura = 0;
+        #endregion
+
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
@@ -127,5 +135,7 @@ namespace GUI
         {
 
         }
+
+        
     }
 }

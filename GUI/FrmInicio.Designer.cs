@@ -83,16 +83,16 @@
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.TxtFechaFactura = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtEstadoFactura = new System.Windows.Forms.TextBox();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.AgregarCL = new System.Windows.Forms.Button();
+            this.TxtEmailCliente = new System.Windows.Forms.TextBox();
+            this.TxtTelefonoCliente = new System.Windows.Forms.TextBox();
+            this.TxtNombreCliente = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -119,6 +119,15 @@
             this.txtCedula1 = new System.Windows.Forms.TextBox();
             this.txtNombre1 = new System.Windows.Forms.TextBox();
             this.tabTrabajador = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -203,15 +212,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.TBPrecioProducto = new System.Windows.Forms.TextBox();
             this.TBDescripcionProducto = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.TabServicicos.SuspendLayout();
             this.tabFactura.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -229,6 +229,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabTrabajador.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -246,8 +248,6 @@
             this.groupBox17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducto)).BeginInit();
             this.groupBox18.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // TabServicicos
@@ -293,7 +293,7 @@
             this.tabPage3.Controls.Add(this.groupBox12);
             this.tabPage3.Controls.Add(this.groupBox13);
             this.tabPage3.Controls.Add(this.label31);
-            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.TxtEstadoFactura);
             this.tabPage3.Controls.Add(this.groupBox14);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -737,7 +737,7 @@
             // 
             this.groupBox13.Controls.Add(this.comboBox1);
             this.groupBox13.Controls.Add(this.button2);
-            this.groupBox13.Controls.Add(this.textBox5);
+            this.groupBox13.Controls.Add(this.TxtFechaFactura);
             this.groupBox13.Controls.Add(this.label29);
             this.groupBox13.Controls.Add(this.label30);
             this.groupBox13.Location = new System.Drawing.Point(595, 40);
@@ -764,12 +764,12 @@
             this.button2.Text = "Agregar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // TxtFechaFactura
             // 
-            this.textBox5.Location = new System.Drawing.Point(115, 27);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(180, 20);
-            this.textBox5.TabIndex = 8;
+            this.TxtFechaFactura.Location = new System.Drawing.Point(115, 27);
+            this.TxtFechaFactura.Name = "TxtFechaFactura";
+            this.TxtFechaFactura.Size = new System.Drawing.Size(180, 20);
+            this.TxtFechaFactura.TabIndex = 8;
             // 
             // label29
             // 
@@ -798,19 +798,19 @@
             this.label31.TabIndex = 1;
             this.label31.Text = "Estado";
             // 
-            // textBox1
+            // TxtEstadoFactura
             // 
-            this.textBox1.Location = new System.Drawing.Point(864, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 20);
-            this.textBox1.TabIndex = 0;
+            this.TxtEstadoFactura.Location = new System.Drawing.Point(864, 14);
+            this.TxtEstadoFactura.Name = "TxtEstadoFactura";
+            this.TxtEstadoFactura.Size = new System.Drawing.Size(128, 20);
+            this.TxtEstadoFactura.TabIndex = 0;
             // 
             // groupBox14
             // 
-            this.groupBox14.Controls.Add(this.button1);
-            this.groupBox14.Controls.Add(this.textBox4);
-            this.groupBox14.Controls.Add(this.textBox3);
-            this.groupBox14.Controls.Add(this.textBox2);
+            this.groupBox14.Controls.Add(this.AgregarCL);
+            this.groupBox14.Controls.Add(this.TxtEmailCliente);
+            this.groupBox14.Controls.Add(this.TxtTelefonoCliente);
+            this.groupBox14.Controls.Add(this.TxtNombreCliente);
             this.groupBox14.Controls.Add(this.label32);
             this.groupBox14.Controls.Add(this.label33);
             this.groupBox14.Controls.Add(this.label34);
@@ -821,35 +821,35 @@
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Datos del Cliente";
             // 
-            // button1
+            // AgregarCL
             // 
-            this.button1.Location = new System.Drawing.Point(320, 57);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AgregarCL.Location = new System.Drawing.Point(320, 57);
+            this.AgregarCL.Name = "AgregarCL";
+            this.AgregarCL.Size = new System.Drawing.Size(75, 23);
+            this.AgregarCL.TabIndex = 8;
+            this.AgregarCL.Text = "Agregar";
+            this.AgregarCL.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // TxtEmailCliente
             // 
-            this.textBox4.Location = new System.Drawing.Point(358, 27);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(180, 20);
-            this.textBox4.TabIndex = 7;
+            this.TxtEmailCliente.Location = new System.Drawing.Point(358, 27);
+            this.TxtEmailCliente.Name = "TxtEmailCliente";
+            this.TxtEmailCliente.Size = new System.Drawing.Size(180, 20);
+            this.TxtEmailCliente.TabIndex = 7;
             // 
-            // textBox3
+            // TxtTelefonoCliente
             // 
-            this.textBox3.Location = new System.Drawing.Point(113, 61);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(180, 20);
-            this.textBox3.TabIndex = 6;
+            this.TxtTelefonoCliente.Location = new System.Drawing.Point(113, 61);
+            this.TxtTelefonoCliente.Name = "TxtTelefonoCliente";
+            this.TxtTelefonoCliente.Size = new System.Drawing.Size(180, 20);
+            this.TxtTelefonoCliente.TabIndex = 6;
             // 
-            // textBox2
+            // TxtNombreCliente
             // 
-            this.textBox2.Location = new System.Drawing.Point(113, 27);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 20);
-            this.textBox2.TabIndex = 2;
+            this.TxtNombreCliente.Location = new System.Drawing.Point(113, 27);
+            this.TxtNombreCliente.Name = "TxtNombreCliente";
+            this.TxtNombreCliente.Size = new System.Drawing.Size(180, 20);
+            this.TxtNombreCliente.TabIndex = 2;
             // 
             // label32
             // 
@@ -874,9 +874,9 @@
             this.label34.AutoSize = true;
             this.label34.Location = new System.Drawing.Point(36, 31);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(71, 13);
+            this.label34.Size = new System.Drawing.Size(80, 13);
             this.label34.TabIndex = 2;
-            this.label34.Text = "Nombre Fact.";
+            this.label34.Text = "Nombre Clente.";
             // 
             // tabPage4
             // 
@@ -1106,6 +1106,98 @@
             this.tabTrabajador.TabIndex = 2;
             this.tabTrabajador.Text = "Trabajador";
             this.tabTrabajador.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.Gainsboro;
+            this.groupBox4.Controls.Add(this.dataGridView4);
+            this.groupBox4.Controls.Add(this.button7);
+            this.groupBox4.Controls.Add(this.button8);
+            this.groupBox4.Controls.Add(this.textBox29);
+            this.groupBox4.Controls.Add(this.label44);
+            this.groupBox4.Controls.Add(this.button9);
+            this.groupBox4.Controls.Add(this.checkBox1);
+            this.groupBox4.Controls.Add(this.checkBox4);
+            this.groupBox4.Location = new System.Drawing.Point(26, 153);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(968, 294);
+            this.groupBox4.TabIndex = 24;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Buscar";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.GridColor = System.Drawing.Color.LightGray;
+            this.dataGridView4.Location = new System.Drawing.Point(22, 89);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.Size = new System.Drawing.Size(919, 193);
+            this.dataGridView4.TabIndex = 8;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(278, 47);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(67, 23);
+            this.button7.TabIndex = 7;
+            this.button7.Text = "Eliminar";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(202, 47);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(67, 23);
+            this.button8.TabIndex = 6;
+            this.button8.Text = "Modificar";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // textBox29
+            // 
+            this.textBox29.Location = new System.Drawing.Point(268, 19);
+            this.textBox29.Name = "textBox29";
+            this.textBox29.Size = new System.Drawing.Size(188, 20);
+            this.textBox29.TabIndex = 5;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(213, 24);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(40, 13);
+            this.label44.TabIndex = 4;
+            this.label44.Text = "Buscar";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(472, 19);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(67, 23);
+            this.button9.TabIndex = 3;
+            this.button9.Text = "Buscar";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(75, 53);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(59, 17);
+            this.checkBox1.TabIndex = 2;
+            this.checkBox1.Text = "Cedula";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(75, 23);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(63, 17);
+            this.checkBox4.TabIndex = 1;
+            this.checkBox4.Text = "Nombre";
+            this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -1943,98 +2035,6 @@
             this.TBDescripcionProducto.Size = new System.Drawing.Size(188, 20);
             this.TBDescripcionProducto.TabIndex = 9;
             // 
-            // groupBox4
-            // 
-            this.groupBox4.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox4.Controls.Add(this.dataGridView4);
-            this.groupBox4.Controls.Add(this.button7);
-            this.groupBox4.Controls.Add(this.button8);
-            this.groupBox4.Controls.Add(this.textBox29);
-            this.groupBox4.Controls.Add(this.label44);
-            this.groupBox4.Controls.Add(this.button9);
-            this.groupBox4.Controls.Add(this.checkBox1);
-            this.groupBox4.Controls.Add(this.checkBox4);
-            this.groupBox4.Location = new System.Drawing.Point(26, 153);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(968, 294);
-            this.groupBox4.TabIndex = 24;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Buscar";
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.GridColor = System.Drawing.Color.LightGray;
-            this.dataGridView4.Location = new System.Drawing.Point(22, 89);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(919, 193);
-            this.dataGridView4.TabIndex = 8;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(278, 47);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(67, 23);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Eliminar";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(202, 47);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(67, 23);
-            this.button8.TabIndex = 6;
-            this.button8.Text = "Modificar";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // textBox29
-            // 
-            this.textBox29.Location = new System.Drawing.Point(268, 19);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(188, 20);
-            this.textBox29.TabIndex = 5;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(213, 24);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(40, 13);
-            this.label44.TabIndex = 4;
-            this.label44.Text = "Buscar";
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(472, 19);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(67, 23);
-            this.button9.TabIndex = 3;
-            this.button9.Text = "Buscar";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(75, 53);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(59, 17);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "Cedula";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(75, 23);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(63, 17);
-            this.checkBox4.TabIndex = 1;
-            this.checkBox4.Text = "Nombre";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2068,6 +2068,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabTrabajador.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -2094,9 +2097,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducto)).EndInit();
             this.groupBox18.ResumeLayout(false);
             this.groupBox18.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2228,16 +2228,16 @@
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox TxtFechaFactura;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtEstadoFactura;
         private System.Windows.Forms.GroupBox groupBox14;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button AgregarCL;
+        private System.Windows.Forms.TextBox TxtEmailCliente;
+        private System.Windows.Forms.TextBox TxtTelefonoCliente;
+        private System.Windows.Forms.TextBox TxtNombreCliente;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;

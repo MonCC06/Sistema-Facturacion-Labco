@@ -111,5 +111,12 @@ namespace DAL
             }
             return Rpta;
         }
+
+        public DataTable ActualizarDetalle(int IDDetalle)
+        {
+
+            DataTable Tabla = new DataTable();
+            return Tabla;
+        }
     }
 }
