@@ -25,11 +25,11 @@ namespace BL
             return Datos.GuardarMarca(nOpcion, ma);
         }
 
-        public static string ActualizarMA(int IDMarca)
+        public static string ActualizarMA(string cTexto, int nOpcion, int IDMarca, ETMarca ma)
         {
 
             DALMarca Datos = new DALMarca();
-            return Datos.ActualizarMarca(IDMarca);
+            return Datos.ActualizarMarca(cTexto, nOpcion, IDMarca, ma);
         }
 
         public static string EliminarMA(int IDMarca)

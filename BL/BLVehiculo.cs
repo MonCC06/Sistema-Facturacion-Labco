@@ -25,11 +25,11 @@ namespace BL
             return Datos.GuardarVe(nOpcion, ve);
         }
 
-        public static string ActualizarVE(int IDVehiculo)
+        public static string ActualizarVE(string cTexto, int nOpcion, int IDVehiculo, ETVehiculo ve)
         {
 
             DALVehiculo Datos = new DALVehiculo();
-            return Datos.ActualizarVe(IDVehiculo);
+            return Datos.ActualizarVe(cTexto, nOpcion, IDVehiculo, ve);
         }
 
         public static string EliminaVE(int IDVehiculo)

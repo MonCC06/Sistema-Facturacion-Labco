@@ -25,18 +25,18 @@ namespace BL
             return Datos.GuardarTrabajador(nOpcion, tr);
         }
 
-        public static string ActualizarTR(int IDServicio)
+        public static string ActualizarTR(string cTexto, int nOpcion, int IDTrabajador, ETTrabajador tr)
         {
 
             DALTrabajador Datos = new DALTrabajador();
-            return Datos.ActualizarTrabajador(IDServicio);
+            return Datos.ActualizarTrabajador(cTexto, nOpcion, IDTrabajador, tr);
         }
 
-        public static string EliminaTR(int IDServicio)
+        public static string EliminaTR(int IDTrabajador)
         {
 
             DALTrabajador Datos = new DALTrabajador(); ;
-            return Datos.EliminaTrabajador(IDServicio);
+            return Datos.EliminaTrabajador(IDTrabajador);
         }
     }
 }

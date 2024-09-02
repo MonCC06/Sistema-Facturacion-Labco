@@ -25,11 +25,11 @@ namespace BL
             return Datos.GuardarFactura(nOpcion, fa);
         }
 
-        public static string ActualizarFA(int IDFactura)
+        public static string ActualizarFA(string cTexto, int nOpcion, int IDFactura, ETFactura fa)
         {
 
             DALFactura Datos = new DALFactura();
-            return Datos.ActualizarFactura(IDFactura);
+            return Datos.ActualizarFactura(cTexto, nOpcion, IDFactura, fa);
         }
 
         public static string EliminarFA(int IDFactura)

@@ -114,5 +114,51 @@ namespace DAL
             }
             return Rpta;
         }
+
+        public string ActualizarFactura(string cTexto, int nOpcion, int IDFactura, ETFactura fa)
+        {
+            string Rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {
+                SqlCon = Conexion.GetInstancia().CrearConexion();
+                SqlCommand Comando = new SqlCommand("USP_Listado_Factura", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
+                SqlCon.Open();
+                SqlDataReader reader = Comando.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    string FacturaEncontrada = Convert.ToString(reader[cTexto]);
+                    if (FacturaEncontrada != cTexto)
+                    {
+                        Rpta = "Los datos ingresados no coinciden";
+                    }
+                    else
+                    {
+                        string RptaEliminar = EliminaFactura(IDFactura);
+                        if (RptaEliminar != "OK")
+                        {
+                            Rpta = RptaEliminar;
+                        }
+                        else
+                        {
+                            string RptaAgregar = GuardarFactura(nOpcion, fa);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return Rpta;
+        }
     }
 }

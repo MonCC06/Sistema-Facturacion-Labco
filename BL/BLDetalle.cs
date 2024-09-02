@@ -25,11 +25,11 @@ namespace BL
             return Datos.GuardarDetalle(nOpcion, de);
         }
 
-        public static DataTable ActualizarCL(int IDDetalle)
+        public static string ActualizarCL(string cTexto, int nOpcion, int IDDetalle, ETDetalle de)
         {
 
             DALDetalle Datos = new DALDetalle();
-            return Datos.ActualizarDetalle(IDDetalle);
+            return Datos.ActualizarDetalle(cTexto, nOpcion, IDDetalle, de);
         }
 
         public static string EliminarDE(int IDDetalle)

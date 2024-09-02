@@ -25,11 +25,11 @@ namespace BL
             return Datos.GuardarSd(nOpcion, sd);
         }
 
-        public static string ActualizarSD(int IDProducto)
+        public static string ActualizarSD(string cTexto, int nOpcion, int IDProducto, ETStockDetalle sd)
         {
 
             DALStockDetalle Datos = new DALStockDetalle();
-            return Datos.ActualizarSd(IDProducto);
+            return Datos.ActualizarSd(cTexto, nOpcion, IDProducto, sd);
         }
 
         public static string EliminarSD(int IDProducto)

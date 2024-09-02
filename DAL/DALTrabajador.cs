@@ -43,8 +43,7 @@ namespace DAL
             }
         }
 
-        public string GuardarTrabajador(int nOpcion, ETTrabajador tr
-            )
+        public string GuardarTrabajador(int nOpcion, ETTrabajador tr)
         {
 
             string Rpta = "";
@@ -112,7 +111,51 @@ namespace DAL
             return Rpta;
         }
 
+        public string ActualizarTrabajador(string cTexto, int nOpcion, int IDTrabajador, ETTrabajador tr)
+        {
+            string Rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
 
+            try
+            {
+                SqlCon = Conexion.GetInstancia().CrearConexion();
+                SqlCommand Comando = new SqlCommand("USP_Listado_Trabajador", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
+                SqlCon.Open();
+                SqlDataReader reader = Comando.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    string TrabajadorEncontrado = Convert.ToString(reader[cTexto]);
+                    if (TrabajadorEncontrado != cTexto)
+                    {
+                        Rpta = "Los datos ingresados no coinciden";
+                    }
+                    else
+                    {
+                        string RptaEliminar = EliminaTrabajador(IDTrabajador);
+                        if (RptaEliminar != "OK")
+                        {
+                            Rpta = RptaEliminar;
+                        }
+                        else
+                        {
+                            string RptaAgregar = GuardarTrabajador(nOpcion, tr);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return Rpta;
+        }
 
     }
 }

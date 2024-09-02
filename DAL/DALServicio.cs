@@ -108,5 +108,51 @@ namespace DAL
             }
             return Rpta;
         }
+
+        public string ActualizarServicio(string cTexto, int nOpcion, int IDServicio, ETServicio se)
+        {
+            string Rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {
+                SqlCon = Conexion.GetInstancia().CrearConexion();
+                SqlCommand Comando = new SqlCommand("USP_Listado_Servicio", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
+                SqlCon.Open();
+                SqlDataReader reader = Comando.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    string ServicioEncontrado = Convert.ToString(reader[cTexto]);
+                    if (ServicioEncontrado != cTexto)
+                    {
+                        Rpta = "Los datos ingresados no coinciden";
+                    }
+                    else
+                    {
+                        string RptaEliminar = EliminarServicio(IDServicio);
+                        if (RptaEliminar != "OK")
+                        {
+                            Rpta = RptaEliminar;
+                        }
+                        else
+                        {
+                            string RptaAgregar = GuardarServicio(nOpcion, se);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return Rpta;
+        }
     }
 }

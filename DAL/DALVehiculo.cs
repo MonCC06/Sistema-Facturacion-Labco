@@ -115,5 +115,51 @@ namespace DAL
             }
             return Rpta;
         }
+
+        public string ActualizarVe(string cTexto, int nOpcion, int IDVehiculo, ETVehiculo ve)
+        {
+            string Rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {
+                SqlCon = Conexion.GetInstancia().CrearConexion();
+                SqlCommand Comando = new SqlCommand("USP_Listado_Vehiculo", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
+                SqlCon.Open();
+                SqlDataReader reader = Comando.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    string VehiculoEncontrado = Convert.ToString(reader[cTexto]);
+                    if (VehiculoEncontrado != cTexto)
+                    {
+                        Rpta = "Los datos ingresados no coinciden";
+                    }
+                    else
+                    {
+                        string RptaEliminar = EliminaVe(IDVehiculo);
+                        if (RptaEliminar != "OK")
+                        {
+                            Rpta = RptaEliminar;
+                        }
+                        else
+                        {
+                            string RptaAgregar = GuardarVe(nOpcion, ve);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return Rpta;
+        }
     }
 }

@@ -25,11 +25,11 @@ namespace BL
             return Datos.GuardarServicio(nOpcion, se);
         }
 
-        public static string ActualizarSE(int IDServicio)
+        public static string ActualizarSE(string cTexto, int nOpcion, int IDServicio, ETServicio se)
         {
 
             DALServicio Datos = new DALServicio();
-            return Datos.ActualizarServicio(IDServicio);
+            return Datos.ActualizarServicio(cTexto, nOpcion, IDServicio, se);
         }
 
         public static string EliminaSE(int IDServicio)

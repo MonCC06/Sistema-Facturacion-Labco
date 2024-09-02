@@ -25,11 +25,11 @@ namespace BL
             return Datos.GuardarProducto(nOpcion, pr);
         }
 
-        public static string ActualizarPR (int IDProducto)
+        public static string ActualizarPR (string cTexto, int nOpcion, int IDProducto, ETProducto pr)
         {
 
             DALProducto Datos = new DALProducto();
-            return Datos.ActualizarProducto(IDProducto);
+            return Datos.ActualizarProducto(cTexto, nOpcion, IDProducto, pr);
         }
 
         public static string EliminaPR(int IDProducto)
