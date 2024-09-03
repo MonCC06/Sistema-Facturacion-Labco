@@ -49,9 +49,9 @@
             this.DgvFacturaProducto = new System.Windows.Forms.DataGridView();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.TxtDistanciaVehiculoFactura = new System.Windows.Forms.TextBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.CkbKilometros = new System.Windows.Forms.CheckBox();
             this.TxtAnnoVehiculoFactura = new System.Windows.Forms.TextBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.CkbMillas = new System.Windows.Forms.CheckBox();
             this.TxtMarcaVehiculoFactura = new System.Windows.Forms.TextBox();
             this.TxtPlacaVehiculoFactura = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             this.label28 = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtTrabajador = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.TxtEstadoFactura = new System.Windows.Forms.TextBox();
@@ -420,9 +420,9 @@
             // 
             this.groupBox12.BackColor = System.Drawing.Color.Gainsboro;
             this.groupBox12.Controls.Add(this.TxtDistanciaVehiculoFactura);
-            this.groupBox12.Controls.Add(this.checkBox2);
+            this.groupBox12.Controls.Add(this.CkbKilometros);
             this.groupBox12.Controls.Add(this.TxtAnnoVehiculoFactura);
-            this.groupBox12.Controls.Add(this.checkBox3);
+            this.groupBox12.Controls.Add(this.CkbMillas);
             this.groupBox12.Controls.Add(this.TxtMarcaVehiculoFactura);
             this.groupBox12.Controls.Add(this.TxtPlacaVehiculoFactura);
             this.groupBox12.Controls.Add(this.label17);
@@ -442,15 +442,15 @@
             this.TxtDistanciaVehiculoFactura.Size = new System.Drawing.Size(176, 20);
             this.TxtDistanciaVehiculoFactura.TabIndex = 14;
             // 
-            // checkBox2
+            // CkbKilometros
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(707, 29);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(74, 17);
-            this.checkBox2.TabIndex = 12;
-            this.checkBox2.Text = "Kilometros";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.CkbKilometros.AutoSize = true;
+            this.CkbKilometros.Location = new System.Drawing.Point(707, 29);
+            this.CkbKilometros.Name = "CkbKilometros";
+            this.CkbKilometros.Size = new System.Drawing.Size(74, 17);
+            this.CkbKilometros.TabIndex = 12;
+            this.CkbKilometros.Text = "Kilometros";
+            this.CkbKilometros.UseVisualStyleBackColor = true;
             // 
             // TxtAnnoVehiculoFactura
             // 
@@ -459,15 +459,15 @@
             this.TxtAnnoVehiculoFactura.Size = new System.Drawing.Size(138, 20);
             this.TxtAnnoVehiculoFactura.TabIndex = 13;
             // 
-            // checkBox3
+            // CkbMillas
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(649, 30);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(52, 17);
-            this.checkBox3.TabIndex = 13;
-            this.checkBox3.Text = "Millas";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.CkbMillas.AutoSize = true;
+            this.CkbMillas.Location = new System.Drawing.Point(649, 30);
+            this.CkbMillas.Name = "CkbMillas";
+            this.CkbMillas.Size = new System.Drawing.Size(52, 17);
+            this.CkbMillas.TabIndex = 13;
+            this.CkbMillas.Text = "Millas";
+            this.CkbMillas.UseVisualStyleBackColor = true;
             // 
             // TxtMarcaVehiculoFactura
             // 
@@ -514,7 +514,7 @@
             // 
             this.groupBox13.BackColor = System.Drawing.Color.Gainsboro;
             this.groupBox13.Controls.Add(this.dateTimePicker1);
-            this.groupBox13.Controls.Add(this.textBox2);
+            this.groupBox13.Controls.Add(this.TxtTrabajador);
             this.groupBox13.Controls.Add(this.label31);
             this.groupBox13.Controls.Add(this.label29);
             this.groupBox13.Controls.Add(this.TxtEstadoFactura);
@@ -533,12 +533,12 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 11;
             // 
-            // textBox2
+            // TxtTrabajador
             // 
-            this.textBox2.Location = new System.Drawing.Point(115, 90);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(264, 20);
-            this.textBox2.TabIndex = 10;
+            this.TxtTrabajador.Location = new System.Drawing.Point(115, 90);
+            this.TxtTrabajador.Name = "TxtTrabajador";
+            this.TxtTrabajador.Size = new System.Drawing.Size(264, 20);
+            this.TxtTrabajador.TabIndex = 10;
             // 
             // label31
             // 
@@ -1956,9 +1956,9 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.TextBox TxtDistanciaVehiculoFactura;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox CkbKilometros;
         private System.Windows.Forms.TextBox TxtAnnoVehiculoFactura;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox CkbMillas;
         private System.Windows.Forms.TextBox TxtMarcaVehiculoFactura;
         private System.Windows.Forms.TextBox TxtPlacaVehiculoFactura;
         private System.Windows.Forms.Label label17;
@@ -2020,7 +2020,7 @@
         private System.Windows.Forms.CheckBox ckbNombreTrabajador;
 
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtTrabajador;
         private System.Windows.Forms.DataGridView DgvFacturaProducto;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox TxtCedulaCliente;

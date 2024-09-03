@@ -1380,5 +1380,103 @@ namespace GUI
         {
             this.ListadoPR(TBBuscarProducto.Text.Trim());
         }
+
+        #region Eventos Factura
+        private void BtnAnularFA_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnGuardarFA_Click(object sender, EventArgs e)
+        {
+            if (TxtCedulaCliente.Text == String.Empty ||
+                TxtNombreCliente.Text == String.Empty ||
+                TxtTelefonoCliente.Text == String.Empty ||
+                TxtEmailCliente.Text == String.Empty ||
+                TxtEstadoFactura.Text == String.Empty ||
+                TxtTrabajador.Text == String.Empty ||
+                TxtPlacaVehiculoFactura.Text == String.Empty ||
+                TxtMarcaVehiculoFactura.Text == String.Empty ||
+                TxtAnnoVehiculoFactura.Text == String.Empty ||
+                CkbMillas.Text == String.Empty ||
+                CkbKilometros.Text == String.Empty ||
+                TxtDistanciaVehiculoFactura.Text == String.Empty)
+
+            {
+                MessageBox.Show("Falta ingresar datos requeridos(*)", "Aviso del sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else
+            {
+                string Rpta = "";
+                ETCliente etCliente = new ETCliente();
+                ETVehiculo etVehiculo = new ETVehiculo();
+                ETTrabajador etTrabajador = new ETTrabajador();
+                ETMarca etMarca = new ETMarca();
+
+                etCliente.Nombre = this.TxtNombreCliente.Text.Trim();
+                etCliente.Cedula = this.TxtCedulaCliente.Text.Trim();
+                etCliente.Telefono = this.TxtTelefonoCliente.Text.Trim();
+                etCliente.Correo = this.TxtEmailCliente.Text.Trim();
+                etCliente.Correo = this.TxtEmailCliente.Text.Trim();
+                etVehiculo.Placa = this.TxtPlacaVehiculoFactura.Text.Trim();
+                etMarca.Nombre = this.TxtMarcaVehiculoFactura.Text.Trim();
+                etVehiculo.Anno = this.TxtAnnoVehiculoFactura.Text.Trim();
+                etVehiculo.DistanciaRecorrida = this.TxtDistanciaVehiculoFactura.Text.Trim();
+
+                if (Rpta == "OK")
+                {
+                    this.ListadoFA("%");
+                    MessageBox.Show("Los datos se han registrado", "Aviso del sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Information);
+
+                    EstadoGuarda = 0; // si no guardo nada
+
+                    TxtCedulaCliente.Text = " ";
+                    TxtNombreCliente.Text = " ";
+                    TxtTelefonoCliente.Text = " ";
+                    TxtEmailCliente.Text = " ";
+                    TxtEstadoFactura.Text = " ";
+                    TxtTrabajador.Text = " ";
+                    TxtPlacaVehiculoFactura.Text = " ";
+                    TxtMarcaVehiculoFactura.Text = " ";
+                    TxtAnnoVehiculoFactura.Text = " ";
+                    TxtDistanciaVehiculoFactura.Text = " ";
+
+                    if (CkbMillas.Checked == true)
+                    {
+                        TxtDistanciaVehiculoFactura.Text = "";
+                    }
+                    if (CkbKilometros.Checked == true)
+                    {
+                        TxtDistanciaVehiculoFactura.Text = "";
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(Rpta, "Aviso del sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+
+                }
+
+            }
+        }
+
+        private void BtnImprimirFA_Click(object sender, EventArgs e)
+        {
+            TxtCedulaCliente.ReadOnly = true;
+            TxtNombreCliente.ReadOnly = true;
+            TxtTelefonoCliente.ReadOnly = true;
+            TxtEmailCliente.ReadOnly = true;
+            TxtEstadoFactura.ReadOnly = true;
+            TxtTrabajador.ReadOnly = true;
+            TxtPlacaVehiculoFactura.ReadOnly = true;
+            TxtMarcaVehiculoFactura.ReadOnly = true;
+            TxtAnnoVehiculoFactura.ReadOnly = true;
+            TxtDistanciaVehiculoFactura.ReadOnly = true;
+
+
+        }
+        #endregion
     }
 }
