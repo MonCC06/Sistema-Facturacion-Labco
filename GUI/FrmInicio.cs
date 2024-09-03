@@ -138,7 +138,65 @@ namespace GUI
 
         #endregion
 
+        #region Metodos Cliente
+        private void FormatoCL()
+        {
+            DgvCliente.Columns[0].Width = 100;
+            DgvCliente.Columns[0].HeaderText = "ID_Cliente";
+            DgvCliente.Columns[1].Width = 100;
+            DgvCliente.Columns[1].HeaderText = "Nombre";
+            DgvCliente.Columns[2].Width = 100;
+            DgvCliente.Columns[2].HeaderText = "Cedula";
+            DgvCliente.Columns[3].Width = 100;
+            DgvCliente.Columns[3].HeaderText = "Telefono";
+            DgvCliente.Columns[4].Width = 100;
+            DgvCliente.Columns[4].HeaderText = "Correo";
+            DgvCliente.Columns[5].Width = 100;
+            DgvCliente.Columns[5].HeaderText = "Estado";
+        }
 
+        private void ListadoCL(string tTexto)
+        {
+            try
+            {
+                DgvCliente.DataSource = BLCliente.ListadoCL(tTexto);
+                this.FormatoCL();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+            //datasource nos dice de donde vamos a consumir los datos
+        }
+
+        private void BotonesCliente(bool LEstado)
+        {
+            this.btnGuardarNuevoCliente.Enabled = LEstado;
+            this.btnBuscarCliente.Enabled = LEstado;
+            this.btnModficarCliente.Enabled = LEstado;
+            this.btnCancelarNuevoCliente.Enabled = LEstado;
+            this.btnEliminarCliente.Enabled = LEstado;
+        }
+
+        private void SeleccionaCliente()
+        {
+            //convertir dato de string a un valor 
+            if (string.IsNullOrEmpty(Convert.ToString(DgvCliente.CurrentRow.Cells["IDCliente"].Value)))
+            {
+                MessageBox.Show("No hay datos que mostar", "Aviso del Sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+            }
+            else
+            {
+                //convertir el id del cliente de la celda seleccionada de string a entero
+                this.IDCliente = Convert.ToInt32(DgvCliente.CurrentRow.Cells["IDCliente"].Value);
+                txtNuevoNombreCliente.Text = Convert.ToString(DgvCliente.CurrentRow.Cells["Nombre"].Value);
+                txtNuevoCedulaCliente.Text = Convert.ToString(DgvCliente.CurrentRow.Cells["Cedula"].Value);
+                txtNuevoCorreoCliente.Text = Convert.ToString(DgvCliente.CurrentRow.Cells["Correo"].Value);
+                txtNuevoTelefonoCliente.Text = Convert.ToString(DgvCliente.CurrentRow.Cells["Telefono"].Value);
+            }
+        }
+        #endregion
 
         #region Metodos Factura
         private void FormatoFA()
