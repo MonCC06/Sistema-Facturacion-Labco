@@ -12,7 +12,7 @@ namespace DAL
     public class DALTrabajador
     {
 
-        public DataTable ListadoTrabajador(string cTexto)
+        public DataTable ListadoTR(string cTexto)
         {
 
             SqlDataReader Resultado;
@@ -43,7 +43,7 @@ namespace DAL
             }
         }
 
-        public string GuardarTrabajador(int nOpcion, ETTrabajador tr
+        public string GuardarTR(int nOpcion, ETTrabajador tr
             )
         {
 
@@ -81,7 +81,7 @@ namespace DAL
             return Rpta;
         }
 
-        public string EliminaTrabajador(int IDTrabajador)
+        public string EliminaTR(int IDTrabajador)
         {
 
             string Rpta = "";
