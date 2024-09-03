@@ -101,7 +101,8 @@ namespace GUI
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-        }        private void SeleccionaFactura()
+        }        
+        private void SeleccionaFactura()
         {
             //Validasmos que el DATAGEIP tenga datos para que no nos de error
 
