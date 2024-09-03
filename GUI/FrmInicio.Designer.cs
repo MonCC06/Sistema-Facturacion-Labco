@@ -33,16 +33,6 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -56,9 +46,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label14 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -202,6 +190,9 @@
             this.label42 = new System.Windows.Forms.Label();
             this.TBPrecioProducto = new System.Windows.Forms.TextBox();
             this.TBDescripcionProducto = new System.Windows.Forms.TextBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TabServicicos.SuspendLayout();
             this.tabFactura.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -293,112 +284,28 @@
             // groupBox9
             // 
             this.groupBox9.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox9.Controls.Add(this.textBox1);
-            this.groupBox9.Controls.Add(this.textBox20);
-            this.groupBox9.Controls.Add(this.textBox19);
-            this.groupBox9.Controls.Add(this.textBox18);
-            this.groupBox9.Controls.Add(this.textBox17);
-            this.groupBox9.Controls.Add(this.textBox16);
-            this.groupBox9.Controls.Add(this.textBox15);
-            this.groupBox9.Controls.Add(this.textBox14);
-            this.groupBox9.Controls.Add(this.textBox13);
-            this.groupBox9.Controls.Add(this.label26);
             this.groupBox9.Controls.Add(this.label25);
             this.groupBox9.Controls.Add(this.button6);
             this.groupBox9.Controls.Add(this.button5);
             this.groupBox9.Controls.Add(this.button4);
             this.groupBox9.Controls.Add(this.groupBox10);
             this.groupBox9.Controls.Add(this.groupBox11);
-            this.groupBox9.Controls.Add(this.label13);
             this.groupBox9.Controls.Add(this.dataGridView2);
-            this.groupBox9.Controls.Add(this.label14);
             this.groupBox9.Location = new System.Drawing.Point(7, 226);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(985, 437);
             this.groupBox9.TabIndex = 4;
             this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Contenido";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(282, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 15;
-            // 
-            // textBox20
-            // 
-            this.textBox20.Location = new System.Drawing.Point(53, 235);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(63, 20);
-            this.textBox20.TabIndex = 35;
-            // 
-            // textBox19
-            // 
-            this.textBox19.Location = new System.Drawing.Point(53, 209);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(63, 20);
-            this.textBox19.TabIndex = 34;
-            // 
-            // textBox18
-            // 
-            this.textBox18.Location = new System.Drawing.Point(53, 183);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(63, 20);
-            this.textBox18.TabIndex = 33;
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(53, 157);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(63, 20);
-            this.textBox17.TabIndex = 32;
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(53, 131);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(63, 20);
-            this.textBox16.TabIndex = 31;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(53, 105);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(63, 20);
-            this.textBox15.TabIndex = 30;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(53, 79);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(63, 20);
-            this.textBox14.TabIndex = 28;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(53, 53);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(63, 20);
-            this.textBox13.TabIndex = 15;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(841, 27);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(74, 13);
-            this.label26.TabIndex = 27;
-            this.label26.Text = "Precio Unidad";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(119, 29);
+            this.label25.Location = new System.Drawing.Point(45, 27);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(55, 13);
+            this.label25.Size = new System.Drawing.Size(40, 13);
             this.label25.TabIndex = 26;
-            this.label25.Text = "Productos";
+            this.label25.Text = "Detalle";
+            this.label25.Click += new System.EventHandler(this.label25_Click);
             // 
             // button6
             // 
@@ -508,32 +415,18 @@
             this.richTextBox1.TabIndex = 21;
             this.richTextBox1.Text = "";
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(50, 29);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 13);
-            this.label13.TabIndex = 18;
-            this.label13.Text = "Cantidad";
-            // 
             // dataGridView2
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(122, 53);
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            this.dataGridView2.Location = new System.Drawing.Point(76, 53);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(845, 202);
+            this.dataGridView2.Size = new System.Drawing.Size(891, 202);
             this.dataGridView2.TabIndex = 17;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(232, 29);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(44, 13);
-            this.label14.TabIndex = 15;
-            this.label14.Text = "Agregar";
             // 
             // groupBox12
             // 
@@ -726,7 +619,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(401, 60);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(149, 95);
+            this.listBox1.Size = new System.Drawing.Size(149, 69);
             this.listBox1.TabIndex = 9;
             // 
             // AgregarCL
@@ -1943,6 +1836,22 @@
             this.TBDescripcionProducto.Size = new System.Drawing.Size(188, 20);
             this.TBDescripcionProducto.TabIndex = 9;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Cantidad";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Producto";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 650;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Precio unitario";
+            this.Column3.Name = "Column3";
+            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2085,15 +1994,6 @@
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
@@ -2107,9 +2007,7 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.CheckBox checkBox2;
@@ -2182,7 +2080,9 @@
         private System.Windows.Forms.CheckBox ckbCedulaTrabajador;
         private System.Windows.Forms.CheckBox ckbNombreTrabajador;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

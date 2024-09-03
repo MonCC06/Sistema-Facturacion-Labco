@@ -594,5 +594,10 @@ namespace GUI
 
         }
         #endregion
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
