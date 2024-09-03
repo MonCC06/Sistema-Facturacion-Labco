@@ -202,6 +202,7 @@
             this.TBDescripcionProducto = new System.Windows.Forms.TextBox();
             this.BtnBuscar2 = new System.Windows.Forms.Button();
             this.BtnRetornar2 = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
             this.TabServicicos.SuspendLayout();
             this.tabFactura.SuspendLayout();
             this.PnlListaCL.SuspendLayout();
@@ -273,6 +274,7 @@
             // 
             // PnlListaCL
             // 
+            this.PnlListaCL.Controls.Add(this.label26);
             this.PnlListaCL.Controls.Add(this.BtnRetornar2);
             this.PnlListaCL.Controls.Add(this.BtnBuscar2);
             this.PnlListaCL.Controls.Add(this.DgvListaCL);
@@ -1995,6 +1997,15 @@
             this.BtnRetornar2.UseVisualStyleBackColor = true;
             this.BtnRetornar2.Click += new System.EventHandler(this.BtnRetornar2_Click);
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(125, 9);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(100, 13);
+            this.label26.TabIndex = 5;
+            this.label26.Text = "Lista de los Clientes";
+            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2247,5 +2258,6 @@
         private System.Windows.Forms.Button BtnLupa1;
         private System.Windows.Forms.Button BtnBuscar2;
         private System.Windows.Forms.Button BtnRetornar2;
+        private System.Windows.Forms.Label label26;
     }
 }
