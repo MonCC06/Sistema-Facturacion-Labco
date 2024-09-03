@@ -239,11 +239,8 @@ namespace GUI
 
         private void FrmInicio_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-
-        }
-=======
             this.ListadoTR("%");
+            this.ListadoFA("%");
         }
 
         #region Eventos Trabajador
@@ -391,5 +388,151 @@ namespace GUI
             }
 
         }
+        #endregion
+
+        #region Eventos Clientes
+        private void btnGuardarNuevoCliente_Click(object sender, EventArgs e)
+        {
+            if (txtNuevoNombreCliente.Text == String.Empty)
+            {
+                MessageBox.Show("Nombre del Cliente requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
+            if (txtNuevoCedulaCliente.Text == String.Empty)
+            {
+                MessageBox.Show("Cedula del Cliente requerida(*)", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
+            if (txtNuevoCorreoCliente.Text == String.Empty)
+            {
+                MessageBox.Show("Correo del Cliente requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
+            if (txtNuevoTelefonoCliente.Text == String.Empty)
+            {
+                MessageBox.Show("Telefono del  requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                ETCliente eTCliente = new ETCliente();
+                //Respuesta de la bl y la que recibe de dal cuando se hace el insert (cuando guardamos)
+                //para saber si el proceso fue exitoso o no
+                String Rpta = "";
+                eTCliente.IDCliente = this.IDCliente;
+                //lo que el usuario digite en ese campo se va a capturar y se va a enviar a la bd como propiedad
+                eTCliente.Nombre = txtNuevoNombreCliente.Text.Trim();
+                eTCliente.Cedula = txtNuevoCedulaCliente.Text.Trim();
+                eTCliente.Correo = txtNuevoCorreoCliente.Text.Trim();
+                eTCliente.Telefono = txtNuevoTelefonoCliente.Text.Trim();
+                //respuesta igual a los que nos retorne, enviar parametros para saber si es nuevo o no
+                Rpta = BLCliente.GuardarCL(EstadoGuarda, eTCliente);
+
+
+                //
+                if (Rpta == "OK")
+                {
+                    //volver a actualizar para que apareza el cambio
+                    this.ListadoTR("%");
+                    MessageBox.Show("Los dato se han registrado", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                    EstadoGuarda = 0;
+                    //activar botones
+                    this.BotonesTrabajador(true);
+                    //volver todo a su estado original
+                    txtNuevoNombreCliente.Text = "";
+                    txtNuevoCedulaCliente.Text = "";
+                    txtNuevoCorreoCliente.Text = "";
+                    txtNuevoTelefonoCliente.Text = "";
+                    this.IDCliente = 0;
+
+                }
+                else
+                {
+                    MessageBox.Show("No se logro registrar el dato", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                }
+            }
+
+        }
+        private void btnModficarCliente_Click(object sender, EventArgs e)
+        {
+            EstadoGuarda = 2;
+            this.IDCliente = 0;
+            this.BotonesTrabajador(true);
+            //txtNuevoNombreTrabajador.Text = "";
+            DgvCliente.SelectedIndex = 1;
+            this.SeleccionaItems();
+            //Poner el cursor en donde se empiezan a cambiar datos
+            txtNuevoNombreCliente.Focus();
+
+
+
+        }
+        private void btnEliminarCliente_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(Convert.ToString(DgvCliente.CurrentRow.Cells["IDCliente"].Value)))
+            {
+                MessageBox.Show("No hay datos que mostar", "Aviso del Sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult opcion;
+                //preguntar si se quiere realizar procedimiento y a opcion se le asignael valor de la respuesta
+                opcion = MessageBox.Show("¿Está seguro de eliminar el registro seleccionado?", "Aviso del Sistema", MessageBoxButtons.YesNoCancel,
+                   MessageBoxIcon.Question);
+                if (opcion == DialogResult.Yes)
+                {
+                    String Rpta = "";
+                    //convertir a int
+                    this.IDTrabajador = Convert.ToInt32(DgvCliente.CurrentRow.Cells["IDCliente"].Value);
+                    Rpta = BLCliente.EliminaCL(this.IDCliente);
+
+                    if (Rpta.Equals("OK"))
+                    {
+                        this.ListadoTR("%");
+                        this.IDCliente = 0;
+                        MessageBox.Show("Registro Eliminado", "Aviso del Sistema", MessageBoxButtons.YesNoCancel,
+                         MessageBoxIcon.Exclamation);
+
+                    }
+                }
+
+            }
+        }
+        private void btnCancelarNuevoCliente_Click(object sender, EventArgs e)
+        {
+            EstadoGuarda = 0;
+            this.IDCliente = 0;
+            txtNuevoNombreCliente.Text = "";
+            txtNuevoCedulaCliente.Text = "";
+            txtNuevoCorreoCliente.Text = "";
+            txtNuevoTelefonoCliente.Text = "";
+            this.BotonesTrabajador(true);
+            this.SeleccionaItems();
+        }
+
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            if (ckb.Checked == true)
+            {
+                this.ListadoCL(Textbox29.Text.Trim());
+            }
+
+            if (ckb.Checked == true)
+            {
+                this.ListadoCL(Textbox29.Text.Trim());
+            }
+
+        }
+
+        #endregion
     }
 }
