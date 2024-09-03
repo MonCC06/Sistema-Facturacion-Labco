@@ -110,21 +110,21 @@
             this.txtNombre1 = new System.Windows.Forms.TextBox();
             this.tabTrabajador = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.DgvTrabajador = new System.Windows.Forms.DataGridView();
+            this.btnEliminarTrabajador = new System.Windows.Forms.Button();
+            this.btnModficarTrabajador = new System.Windows.Forms.Button();
+            this.txtBuscarTrabajador = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.btnBuscarTrabajador = new System.Windows.Forms.Button();
+            this.ckbCedulaTrabajador = new System.Windows.Forms.CheckBox();
+            this.ckbNombreTrabajador = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtCedula = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.btnGuardarNuevoTrabajador = new System.Windows.Forms.Button();
+            this.btnCancelarNuevoTrabajador = new System.Windows.Forms.Button();
+            this.txtNuevoTelefonoTrabajador = new System.Windows.Forms.TextBox();
+            this.txtNuevoCorreoTrabajador = new System.Windows.Forms.TextBox();
+            this.txtNuevoCedulaTrabajador = new System.Windows.Forms.TextBox();
+            this.txtNuevoNombreTrabajador = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -219,7 +219,7 @@
             this.groupBox1.SuspendLayout();
             this.tabTrabajador.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvTrabajador)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -1018,14 +1018,14 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox4.Controls.Add(this.dataGridView4);
-            this.groupBox4.Controls.Add(this.button7);
-            this.groupBox4.Controls.Add(this.button8);
-            this.groupBox4.Controls.Add(this.textBox29);
+            this.groupBox4.Controls.Add(this.DgvTrabajador);
+            this.groupBox4.Controls.Add(this.btnEliminarTrabajador);
+            this.groupBox4.Controls.Add(this.btnModficarTrabajador);
+            this.groupBox4.Controls.Add(this.txtBuscarTrabajador);
             this.groupBox4.Controls.Add(this.label44);
-            this.groupBox4.Controls.Add(this.button9);
-            this.groupBox4.Controls.Add(this.checkBox1);
-            this.groupBox4.Controls.Add(this.checkBox4);
+            this.groupBox4.Controls.Add(this.btnBuscarTrabajador);
+            this.groupBox4.Controls.Add(this.ckbCedulaTrabajador);
+            this.groupBox4.Controls.Add(this.ckbNombreTrabajador);
             this.groupBox4.Location = new System.Drawing.Point(26, 153);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(968, 294);
@@ -1034,40 +1034,40 @@
             this.groupBox4.Text = "Buscar";
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
-            // dataGridView4
+            // DgvTrabajador
             // 
-            this.dataGridView4.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.GridColor = System.Drawing.Color.LightGray;
-            this.dataGridView4.Location = new System.Drawing.Point(22, 89);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(919, 193);
-            this.dataGridView4.TabIndex = 8;
+            this.DgvTrabajador.BackgroundColor = System.Drawing.Color.White;
+            this.DgvTrabajador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvTrabajador.GridColor = System.Drawing.Color.LightGray;
+            this.DgvTrabajador.Location = new System.Drawing.Point(22, 89);
+            this.DgvTrabajador.Name = "DgvTrabajador";
+            this.DgvTrabajador.Size = new System.Drawing.Size(919, 193);
+            this.DgvTrabajador.TabIndex = 8;
             // 
-            // button7
+            // btnEliminarTrabajador
             // 
-            this.button7.Location = new System.Drawing.Point(278, 47);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(67, 23);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Eliminar";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnEliminarTrabajador.Location = new System.Drawing.Point(278, 47);
+            this.btnEliminarTrabajador.Name = "btnEliminarTrabajador";
+            this.btnEliminarTrabajador.Size = new System.Drawing.Size(67, 23);
+            this.btnEliminarTrabajador.TabIndex = 7;
+            this.btnEliminarTrabajador.Text = "Eliminar";
+            this.btnEliminarTrabajador.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnModficarTrabajador
             // 
-            this.button8.Location = new System.Drawing.Point(202, 47);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(67, 23);
-            this.button8.TabIndex = 6;
-            this.button8.Text = "Modificar";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnModficarTrabajador.Location = new System.Drawing.Point(202, 47);
+            this.btnModficarTrabajador.Name = "btnModficarTrabajador";
+            this.btnModficarTrabajador.Size = new System.Drawing.Size(67, 23);
+            this.btnModficarTrabajador.TabIndex = 6;
+            this.btnModficarTrabajador.Text = "Modificar";
+            this.btnModficarTrabajador.UseVisualStyleBackColor = true;
             // 
-            // textBox29
+            // txtBuscarTrabajador
             // 
-            this.textBox29.Location = new System.Drawing.Point(268, 19);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(188, 20);
-            this.textBox29.TabIndex = 5;
+            this.txtBuscarTrabajador.Location = new System.Drawing.Point(268, 19);
+            this.txtBuscarTrabajador.Name = "txtBuscarTrabajador";
+            this.txtBuscarTrabajador.Size = new System.Drawing.Size(188, 20);
+            this.txtBuscarTrabajador.TabIndex = 5;
             // 
             // label44
             // 
@@ -1078,44 +1078,44 @@
             this.label44.TabIndex = 4;
             this.label44.Text = "Buscar";
             // 
-            // button9
+            // btnBuscarTrabajador
             // 
-            this.button9.Location = new System.Drawing.Point(472, 19);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(67, 23);
-            this.button9.TabIndex = 3;
-            this.button9.Text = "Buscar";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnBuscarTrabajador.Location = new System.Drawing.Point(472, 19);
+            this.btnBuscarTrabajador.Name = "btnBuscarTrabajador";
+            this.btnBuscarTrabajador.Size = new System.Drawing.Size(67, 23);
+            this.btnBuscarTrabajador.TabIndex = 3;
+            this.btnBuscarTrabajador.Text = "Buscar";
+            this.btnBuscarTrabajador.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // ckbCedulaTrabajador
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(75, 53);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(59, 17);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "Cedula";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckbCedulaTrabajador.AutoSize = true;
+            this.ckbCedulaTrabajador.Location = new System.Drawing.Point(75, 53);
+            this.ckbCedulaTrabajador.Name = "ckbCedulaTrabajador";
+            this.ckbCedulaTrabajador.Size = new System.Drawing.Size(59, 17);
+            this.ckbCedulaTrabajador.TabIndex = 2;
+            this.ckbCedulaTrabajador.Text = "Cedula";
+            this.ckbCedulaTrabajador.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // ckbNombreTrabajador
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(75, 23);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(63, 17);
-            this.checkBox4.TabIndex = 1;
-            this.checkBox4.Text = "Nombre";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.ckbNombreTrabajador.AutoSize = true;
+            this.ckbNombreTrabajador.Location = new System.Drawing.Point(75, 23);
+            this.ckbNombreTrabajador.Name = "ckbNombreTrabajador";
+            this.ckbNombreTrabajador.Size = new System.Drawing.Size(63, 17);
+            this.ckbNombreTrabajador.TabIndex = 1;
+            this.ckbNombreTrabajador.Text = "Nombre";
+            this.ckbNombreTrabajador.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox3.Controls.Add(this.btnAceptar);
-            this.groupBox3.Controls.Add(this.btnCancelar);
-            this.groupBox3.Controls.Add(this.txtTelefono);
-            this.groupBox3.Controls.Add(this.txtCorreo);
-            this.groupBox3.Controls.Add(this.txtCedula);
-            this.groupBox3.Controls.Add(this.txtNombre);
+            this.groupBox3.Controls.Add(this.btnGuardarNuevoTrabajador);
+            this.groupBox3.Controls.Add(this.btnCancelarNuevoTrabajador);
+            this.groupBox3.Controls.Add(this.txtNuevoTelefonoTrabajador);
+            this.groupBox3.Controls.Add(this.txtNuevoCorreoTrabajador);
+            this.groupBox3.Controls.Add(this.txtNuevoCedulaTrabajador);
+            this.groupBox3.Controls.Add(this.txtNuevoNombreTrabajador);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label7);
@@ -1128,52 +1128,52 @@
             this.groupBox3.Text = "Nuevo";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
-            // btnAceptar
+            // btnGuardarNuevoTrabajador
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(705, 59);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 9;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnGuardarNuevoTrabajador.Location = new System.Drawing.Point(705, 59);
+            this.btnGuardarNuevoTrabajador.Name = "btnGuardarNuevoTrabajador";
+            this.btnGuardarNuevoTrabajador.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarNuevoTrabajador.TabIndex = 9;
+            this.btnGuardarNuevoTrabajador.Text = "Guardar";
+            this.btnGuardarNuevoTrabajador.UseVisualStyleBackColor = true;
             // 
-            // btnCancelar
+            // btnCancelarNuevoTrabajador
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(705, 25);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelarNuevoTrabajador.Location = new System.Drawing.Point(705, 25);
+            this.btnCancelarNuevoTrabajador.Name = "btnCancelarNuevoTrabajador";
+            this.btnCancelarNuevoTrabajador.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarNuevoTrabajador.TabIndex = 8;
+            this.btnCancelarNuevoTrabajador.Text = "Cancelar";
+            this.btnCancelarNuevoTrabajador.UseVisualStyleBackColor = true;
             // 
-            // txtTelefono
+            // txtNuevoTelefonoTrabajador
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(450, 59);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(209, 20);
-            this.txtTelefono.TabIndex = 7;
-            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
+            this.txtNuevoTelefonoTrabajador.Location = new System.Drawing.Point(450, 59);
+            this.txtNuevoTelefonoTrabajador.Name = "txtNuevoTelefonoTrabajador";
+            this.txtNuevoTelefonoTrabajador.Size = new System.Drawing.Size(209, 20);
+            this.txtNuevoTelefonoTrabajador.TabIndex = 7;
+            this.txtNuevoTelefonoTrabajador.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             // 
-            // txtCorreo
+            // txtNuevoCorreoTrabajador
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(450, 25);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(209, 20);
-            this.txtCorreo.TabIndex = 6;
+            this.txtNuevoCorreoTrabajador.Location = new System.Drawing.Point(450, 25);
+            this.txtNuevoCorreoTrabajador.Name = "txtNuevoCorreoTrabajador";
+            this.txtNuevoCorreoTrabajador.Size = new System.Drawing.Size(209, 20);
+            this.txtNuevoCorreoTrabajador.TabIndex = 6;
             // 
-            // txtCedula
+            // txtNuevoCedulaTrabajador
             // 
-            this.txtCedula.Location = new System.Drawing.Point(132, 59);
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(200, 20);
-            this.txtCedula.TabIndex = 5;
+            this.txtNuevoCedulaTrabajador.Location = new System.Drawing.Point(132, 59);
+            this.txtNuevoCedulaTrabajador.Name = "txtNuevoCedulaTrabajador";
+            this.txtNuevoCedulaTrabajador.Size = new System.Drawing.Size(200, 20);
+            this.txtNuevoCedulaTrabajador.TabIndex = 5;
             // 
-            // txtNombre
+            // txtNuevoNombreTrabajador
             // 
-            this.txtNombre.Location = new System.Drawing.Point(132, 25);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(200, 20);
-            this.txtNombre.TabIndex = 4;
+            this.txtNuevoNombreTrabajador.Location = new System.Drawing.Point(132, 25);
+            this.txtNuevoNombreTrabajador.Name = "txtNuevoNombreTrabajador";
+            this.txtNuevoNombreTrabajador.Size = new System.Drawing.Size(200, 20);
+            this.txtNuevoNombreTrabajador.TabIndex = 4;
             // 
             // label9
             // 
@@ -1977,7 +1977,7 @@
             this.tabTrabajador.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvTrabajador)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -2039,12 +2039,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.TextBox txtCedula;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.TextBox txtNuevoCorreoTrabajador;
+        private System.Windows.Forms.TextBox txtNuevoCedulaTrabajador;
+        private System.Windows.Forms.TextBox txtNuevoNombreTrabajador;
+        private System.Windows.Forms.TextBox txtNuevoTelefonoTrabajador;
+        private System.Windows.Forms.Button btnGuardarNuevoTrabajador;
+        private System.Windows.Forms.Button btnCancelarNuevoTrabajador;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -2173,14 +2173,14 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox TBStockProducto;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TextBox textBox29;
+        private System.Windows.Forms.DataGridView DgvTrabajador;
+        private System.Windows.Forms.Button btnEliminarTrabajador;
+        private System.Windows.Forms.Button btnModficarTrabajador;
+        private System.Windows.Forms.TextBox txtBuscarTrabajador;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.Button btnBuscarTrabajador;
+        private System.Windows.Forms.CheckBox ckbCedulaTrabajador;
+        private System.Windows.Forms.CheckBox ckbNombreTrabajador;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
