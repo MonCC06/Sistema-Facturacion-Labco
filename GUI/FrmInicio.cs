@@ -809,6 +809,13 @@ this.btnEliminarTrabajador.Enabled = LEstado;
         {
             this.ListadoTR("%");
             this.ListadoFA("%");
+            this.ListadoVe("%");
+            this.ListadoMarca("%");
+            this.ListadoCL("%");
+            this.ListadoLCL("%");
+            this.ListadoPR("%");
+            this.ListadoSE("%");
+
         }
 
         #region Eventos Clientes
