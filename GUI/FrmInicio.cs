@@ -160,27 +160,62 @@ namespace GUI
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-        }        private void SeleccionaFactura()
+        }
+        private void Seleccionacl(string cTexto)
         {
             //Validasmos que el DATAGEIP tenga datos para que no nos de error
 
-            if (string.IsNullOrEmpty(Convert.ToString(DgvFacturaProducto.CurrentRow.Cells["IDProducto"].Value)))
+            if (string.IsNullOrEmpty(Convert.ToString(TxtNombreCliente)))
             {
                 MessageBox.Show("No hay datos que mostrar", "Aviso del sistema", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
             else
             {
-                this.IDFactura = Convert.ToInt32(DgvFacturaProducto.CurrentRow.Cells["Descripcion"].Value);
-                
-
+                TxtNombreCliente.
             }
 
         }
-        #endregion
 
-        #region Metodos Trabajador
-        private void FormatoTR()
+        private void Calcular_Totales()
+        {
+
+
+            decimal nSubtotal = 0;
+            decimal nIva = 0;
+            decimal nTotal = 0;
+
+            if (DgvFacturaProducto.Rows.Count == 0)
+            {
+                nSubtotal = 0;
+                nIva = 0;
+                nTotal = 0;
+            }
+            else
+            {
+
+                TablaDetalle.AcceptChanges();
+
+                foreach (DataRow FilaTemp in TablaDetalle.Rows)
+                {
+
+                    nTotal = nTotal + Convert.ToDecimal(FilaTemp["total"]); // total con IVA
+                }
+
+
+                //nTotal = decimal.Round(nTotal, 2);
+                nSubtotal = nTotal / (1 + Convert.ToDecimal("0.13")); // Subtotal sin el IVA
+                nIva = (nTotal - nSubtotal);
+
+                Txt_subtotal.Text = decimal.Round(nSubtotal, 2).ToString("#0.00");
+                Txt_iva.Text = decimal.Round(nIva, 2).ToString("#0.00");
+                Txt_total_importe.Text = decimal.Round(nTotal, 2).ToString("#0.00");
+            }
+        }
+#endregion
+
+#region Metodos Trabajador
+private void FormatoTR()
         {
             DgvTrabajador.Columns[0].Width = 100;
             DgvTrabajador.Columns[0].HeaderText = "ID_Trabajador";
