@@ -1044,11 +1044,50 @@ namespace GUI
             
         }
 
+        private void buttonCancelarMarca_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonEliminarMarca_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(dataGridViewMarca.CurrentRow.Cells["IDMarca"].Value)))
+            {
+                MessageBox.Show("No hay datos que mostrar", "Aviso del sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult opcion;
+                opcion = MessageBox.Show("Esta seguro de eliminar el registro seleccionado ?", "Aviso del sistema", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (opcion == DialogResult.Yes)
+                {
+                    string Rpta = "";
+                    this.IDMarca = Convert.ToInt32(dataGridViewMarca.CurrentRow.Cells["IDMarca"].Value);
+                    Rpta = BLMarca.EliminarMA(this.IDMarca);
+
+                    if (Rpta.Equals("OK"))
+                    {
+                        this.ListadoMarca("%");//LLAMAMOS EL METODO PARA ACTUALIZAR LA LISTA
+                        this.IDMarca = 0;
+                        MessageBox.Show("Registro eliminado", "Aviso del sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Exclamation);
+                    }
+
+                }
+
+
+            }
+
+        }
 
 
 
 
 
+        #endregion
 
 
         //hola

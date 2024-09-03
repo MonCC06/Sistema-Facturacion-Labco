@@ -1345,6 +1345,7 @@
             this.buttonEliminarMarca.TabIndex = 7;
             this.buttonEliminarMarca.Text = "Eliminar";
             this.buttonEliminarMarca.UseVisualStyleBackColor = true;
+            this.buttonEliminarMarca.Click += new System.EventHandler(this.buttonEliminarMarca_Click);
             // 
             // buttonModificarMarca
             // 
@@ -1412,6 +1413,7 @@
             this.buttonCancelarMarca.TabIndex = 18;
             this.buttonCancelarMarca.Text = "Cancelar";
             this.buttonCancelarMarca.UseVisualStyleBackColor = true;
+            this.buttonCancelarMarca.Click += new System.EventHandler(this.buttonCancelarMarca_Click);
             // 
             // buttonGuardarMarca
             // 
