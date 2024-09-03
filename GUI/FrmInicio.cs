@@ -28,6 +28,7 @@ namespace GUI
         int IDFactura = 0;
         int IDVehiculo = 0;
         int IDProducto = 0;
+        int IDMarca = 0;
 <<<<<<< HEAD
 =======
         int IDServicio = 0;
@@ -994,6 +995,61 @@ namespace GUI
         {
 
         }
+        #region Metodo Marca
+        private void buttonGuardarMarca_Click(object sender, EventArgs e)
+        {
+            if (TxTNombreMarca.Text == String.Empty)
+            {
+                MessageBox.Show("Falta ingresar datos requeridos(*)", "Aviso del sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else
+            {
+
+                ETMarca etmarca = new ETMarca();
+                string Rpta = "";
+                etmarca.IDMarca = this.id;
+                etmarca.Nombre = TxTNombreMarca.Text.Trim();
+                Rpta = BLMarca.GuardarMA(EstadoGuarda, etmarca);
+
+
+                if (Rpta == "OK")
+                {
+                    this.ListadoVe("%");
+                    MessageBox.Show("Los datos se han registrado", "Aviso del sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Information);
+
+                    EstadoGuarda = 0; // si no guardo nada
+
+                    TxTNombreMarca.Text = "";
+                    TxTNombreMarca.ReadOnly = true;
+                    this.IdMarca = 0;
+
+                }
+                else
+                {
+                    MessageBox.Show(Rpta, "Aviso del sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+
+                }
+
+            }
+
+
+        }
+
+        private void buttonBuscarMarca_Click(object sender, EventArgs e)
+        {
+                this.ListadoMarca(TxTBuscarMarca.Text.Trim());
+            
+        }
+
+
+
+
+
+
+
 
         //hola
     }

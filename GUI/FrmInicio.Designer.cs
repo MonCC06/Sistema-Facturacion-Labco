@@ -46,6 +46,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.DgvFacturaProducto = new System.Windows.Forms.DataGridView();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.TxtDistanciaVehiculoFactura = new System.Windows.Forms.TextBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -182,7 +183,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.TBPrecioProducto = new System.Windows.Forms.TextBox();
             this.TBDescripcionProducto = new System.Windows.Forms.TextBox();
-            this.DgvFacturaProducto = new System.Windows.Forms.DataGridView();
             this.TabServicicos.SuspendLayout();
             this.tabFactura.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -190,6 +190,7 @@
             this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvFacturaProducto)).BeginInit();
             this.groupBox12.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -217,7 +218,6 @@
             this.groupBox17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducto)).BeginInit();
             this.groupBox18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvFacturaProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // TabServicicos
@@ -404,6 +404,15 @@
             this.richTextBox1.Size = new System.Drawing.Size(550, 88);
             this.richTextBox1.TabIndex = 21;
             this.richTextBox1.Text = "";
+            // 
+            // DgvFacturaProducto
+            // 
+            this.DgvFacturaProducto.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.DgvFacturaProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvFacturaProducto.Location = new System.Drawing.Point(76, 53);
+            this.DgvFacturaProducto.Name = "DgvFacturaProducto";
+            this.DgvFacturaProducto.Size = new System.Drawing.Size(891, 202);
+            this.DgvFacturaProducto.TabIndex = 17;
             // 
             // groupBox12
             // 
@@ -1370,6 +1379,7 @@
             this.buttonBuscarMarca.TabIndex = 3;
             this.buttonBuscarMarca.Text = "Buscar";
             this.buttonBuscarMarca.UseVisualStyleBackColor = true;
+            this.buttonBuscarMarca.Click += new System.EventHandler(this.buttonBuscarMarca_Click);
             // 
             // groupBox8
             // 
@@ -1411,6 +1421,7 @@
             this.buttonGuardarMarca.TabIndex = 17;
             this.buttonGuardarMarca.Text = "Guardar";
             this.buttonGuardarMarca.UseVisualStyleBackColor = true;
+            this.buttonGuardarMarca.Click += new System.EventHandler(this.buttonGuardarMarca_Click);
             // 
             // TxTNombreMarca
             // 
@@ -1743,15 +1754,6 @@
             this.TBDescripcionProducto.Size = new System.Drawing.Size(188, 20);
             this.TBDescripcionProducto.TabIndex = 9;
             // 
-            // DgvFacturaProducto
-            // 
-            this.DgvFacturaProducto.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.DgvFacturaProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvFacturaProducto.Location = new System.Drawing.Point(76, 53);
-            this.DgvFacturaProducto.Name = "DgvFacturaProducto";
-            this.DgvFacturaProducto.Size = new System.Drawing.Size(891, 202);
-            this.DgvFacturaProducto.TabIndex = 17;
-            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1770,6 +1772,7 @@
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.groupBox11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvFacturaProducto)).EndInit();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.groupBox13.ResumeLayout(false);
@@ -1812,7 +1815,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducto)).EndInit();
             this.groupBox18.ResumeLayout(false);
             this.groupBox18.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvFacturaProducto)).EndInit();
             this.ResumeLayout(false);
 
         }
