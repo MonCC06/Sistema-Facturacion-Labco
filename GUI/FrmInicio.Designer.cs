@@ -185,6 +185,16 @@
             this.label42 = new System.Windows.Forms.Label();
             this.TBPrecioProducto = new System.Windows.Forms.TextBox();
             this.TBDescripcionProducto = new System.Windows.Forms.TextBox();
+            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.TabServicicos.SuspendLayout();
             this.tabFactura.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -196,6 +206,7 @@
             this.groupBox12.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox14.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.tabClientes.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCliente)).BeginInit();
@@ -220,6 +231,8 @@
             this.groupBox17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducto)).BeginInit();
             this.groupBox18.SuspendLayout();
+            this.groupBox19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // TabServicicos
@@ -664,6 +677,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.groupBox19);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -697,7 +711,7 @@
             this.groupBox2.Controls.Add(this.ckbNombreCliente);
             this.groupBox2.Location = new System.Drawing.Point(25, 150);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(968, 294);
+            this.groupBox2.Size = new System.Drawing.Size(968, 528);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Buscar";
@@ -710,7 +724,7 @@
             this.DgvCliente.GridColor = System.Drawing.Color.LightGray;
             this.DgvCliente.Location = new System.Drawing.Point(22, 89);
             this.DgvCliente.Name = "DgvCliente";
-            this.DgvCliente.Size = new System.Drawing.Size(919, 193);
+            this.DgvCliente.Size = new System.Drawing.Size(919, 419);
             this.DgvCliente.TabIndex = 8;
             // 
             // btnEliminarCliente
@@ -1494,7 +1508,7 @@
             this.groupBox15.Controls.Add(this.BTBuscarServicio);
             this.groupBox15.Location = new System.Drawing.Point(21, 113);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(968, 294);
+            this.groupBox15.Size = new System.Drawing.Size(968, 560);
             this.groupBox15.TabIndex = 25;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Buscar";
@@ -1506,7 +1520,7 @@
             this.DGVServicio.GridColor = System.Drawing.Color.LightGray;
             this.DGVServicio.Location = new System.Drawing.Point(22, 89);
             this.DGVServicio.Name = "DGVServicio";
-            this.DGVServicio.Size = new System.Drawing.Size(919, 193);
+            this.DGVServicio.Size = new System.Drawing.Size(919, 443);
             this.DGVServicio.TabIndex = 8;
             // 
             // BTEliminarServicio
@@ -1644,7 +1658,7 @@
             this.groupBox17.Controls.Add(this.BTBusarProducto);
             this.groupBox17.Location = new System.Drawing.Point(17, 139);
             this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(968, 294);
+            this.groupBox17.Size = new System.Drawing.Size(968, 541);
             this.groupBox17.TabIndex = 27;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Buscar";
@@ -1657,7 +1671,7 @@
             this.DGVProducto.GridColor = System.Drawing.Color.LightGray;
             this.DGVProducto.Location = new System.Drawing.Point(22, 89);
             this.DGVProducto.Name = "DGVProducto";
-            this.DGVProducto.Size = new System.Drawing.Size(919, 193);
+            this.DGVProducto.Size = new System.Drawing.Size(919, 429);
             this.DGVProducto.TabIndex = 8;
             // 
             // BTEliminararProducto
@@ -1799,6 +1813,108 @@
             this.TBDescripcionProducto.Size = new System.Drawing.Size(188, 20);
             this.TBDescripcionProducto.TabIndex = 9;
             // 
+            // groupBox19
+            // 
+            this.groupBox19.BackColor = System.Drawing.Color.Gainsboro;
+            this.groupBox19.Controls.Add(this.checkBox3);
+            this.groupBox19.Controls.Add(this.dataGridView1);
+            this.groupBox19.Controls.Add(this.button1);
+            this.groupBox19.Controls.Add(this.button2);
+            this.groupBox19.Controls.Add(this.textBox2);
+            this.groupBox19.Controls.Add(this.label13);
+            this.groupBox19.Controls.Add(this.button3);
+            this.groupBox19.Controls.Add(this.checkBox1);
+            this.groupBox19.Controls.Add(this.checkBox2);
+            this.groupBox19.Location = new System.Drawing.Point(6, 16);
+            this.groupBox19.Name = "groupBox19";
+            this.groupBox19.Size = new System.Drawing.Size(968, 633);
+            this.groupBox19.TabIndex = 24;
+            this.groupBox19.TabStop = false;
+            this.groupBox19.Text = "Buscar";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.Color.LightGray;
+            this.dataGridView1.Location = new System.Drawing.Point(22, 89);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(919, 516);
+            this.dataGridView1.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(360, 53);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(67, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(275, 53);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(67, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Modificar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(327, 19);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(188, 20);
+            this.textBox2.TabIndex = 5;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(272, 24);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(40, 13);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Buscar";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(531, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(67, 23);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Buscar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(75, 53);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(59, 17);
+            this.checkBox1.TabIndex = 2;
+            this.checkBox1.Text = "Estado";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(75, 23);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(63, 17);
+            this.checkBox2.TabIndex = 1;
+            this.checkBox2.Text = "Nombre";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(158, 23);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(56, 17);
+            this.checkBox3.TabIndex = 9;
+            this.checkBox3.Text = "Fecha";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1824,6 +1940,7 @@
             this.groupBox13.PerformLayout();
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
             this.tabClientes.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -1860,6 +1977,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducto)).EndInit();
             this.groupBox18.ResumeLayout(false);
             this.groupBox18.PerformLayout();
+            this.groupBox19.ResumeLayout(false);
+            this.groupBox19.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2027,7 +2147,15 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
 
         private System.Windows.Forms.TextBox textBox1;
-     
-
+        private System.Windows.Forms.GroupBox groupBox19;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox3;
     }
 }

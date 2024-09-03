@@ -329,6 +329,75 @@ namespace GUI
 
 
         }
+        private void GuardarTrabajador() {
+            if (txtNuevoNombreTrabajador.Text == String.Empty)
+            {
+                MessageBox.Show("Nombre del trabajador requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
+            if (txtNuevoCedulaTrabajador.Text == String.Empty)
+            {
+                MessageBox.Show("Cedula del trabajador requerida(*)", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
+            if (txtNuevoCorreoTrabajador.Text == String.Empty)
+            {
+                MessageBox.Show("Correo del trabajador requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
+            if (txtNuevoTelefonoTrabajador.Text == String.Empty)
+            {
+                MessageBox.Show("Telefono del trabajador requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                ETTrabajador eTTrabajador = new ETTrabajador();
+                //Respuesta de la bl y la que recibe de dal cuando se hace el insert (cuando guardamos)
+                //para saber si el proceso fue exitoso o no
+                String Rpta = "";
+                eTTrabajador.IDTrabajador = this.IDTrabajador;
+                //lo que el usuario digite en ese campo se va a capturar y se va a enviar a la bd como propiedad
+                eTTrabajador.Nombre = txtNuevoNombreTrabajador.Text.Trim();
+                eTTrabajador.Cedula = txtNuevoCedulaTrabajador.Text.Trim();
+                eTTrabajador.Correo = txtNuevoCorreoTrabajador.Text.Trim();
+                eTTrabajador.Telefono = txtNuevoTelefonoTrabajador.Text.Trim();
+                //respuesta igual a los que nos retorne, enviar parametros para saber si es nuevo o no
+                Rpta = BLTrabajador.GuardarTR(EstadoGuarda, eTTrabajador);
+
+
+                //
+                if (Rpta == "OK")
+                {
+                    //volver a actualizar para que apareza el cambio
+                    this.ListadoTR("%");
+                    MessageBox.Show("Los dato se han registrado", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                    EstadoGuarda = 0;
+                    //activar botones
+                    this.BotonesTrabajador(true);
+                    //volver todo a su estado original
+                    txtNuevoNombreTrabajador.Text = "";
+                    txtNuevoCedulaTrabajador.Text = "";
+                    txtNuevoCorreoTrabajador.Text = "";
+                    txtNuevoTelefonoTrabajador.Text = "";
+                    this.IDTrabajador = 0;
+
+                }
+                else
+                {
+                    MessageBox.Show("No se logro registrar el dato", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                }
+            }
+
+        }
         #endregion
         #region Metodos producto
         int iDProducto = 0;
@@ -1166,72 +1235,8 @@ namespace GUI
         #region Eventos Trabajador
         private void btnGuardarNuevoTrabajador_Click(object sender, EventArgs e)
         {
-            if (txtNuevoNombreTrabajador.Text == String.Empty)
-            {
-                MessageBox.Show("Nombre del trabajador requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-            }
-            if (txtNuevoCedulaTrabajador.Text == String.Empty)
-            {
-                MessageBox.Show("Cedula del trabajador requerida(*)", "Aviso del Sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-            }
-            if (txtNuevoCorreoTrabajador.Text == String.Empty)
-            {
-                MessageBox.Show("Correo del trabajador requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-            }
-            if (txtNuevoTelefonoTrabajador.Text == String.Empty)
-            {
-                MessageBox.Show("Telefono del trabajador requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-            }
-            else
-            {
-                ETTrabajador eTTrabajador = new ETTrabajador();
-                //Respuesta de la bl y la que recibe de dal cuando se hace el insert (cuando guardamos)
-                //para saber si el proceso fue exitoso o no
-                String Rpta = "";
-                eTTrabajador.IDTrabajador = this.IDTrabajador;
-                //lo que el usuario digite en ese campo se va a capturar y se va a enviar a la bd como propiedad
-                eTTrabajador.Nombre = txtNuevoNombreTrabajador.Text.Trim();
-                eTTrabajador.Cedula = txtNuevoCedulaTrabajador.Text.Trim();
-                eTTrabajador.Correo = txtNuevoCorreoTrabajador.Text.Trim();
-                eTTrabajador.Telefono = txtNuevoTelefonoTrabajador.Text.Trim();
-                //respuesta igual a los que nos retorne, enviar parametros para saber si es nuevo o no
-                Rpta = BLTrabajador.GuardarTR(EstadoGuarda, eTTrabajador);
-
-
-                //
-                if (Rpta == "OK")
-                {
-                    //volver a actualizar para que apareza el cambio
-                    this.ListadoTR("%");
-                    MessageBox.Show("Los dato se han registrado", "Aviso del Sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-
-                    EstadoGuarda = 0;
-                    //activar botones
-                    this.BotonesTrabajador(true);
-                    //volver todo a su estado original
-                    txtNuevoNombreTrabajador.Text = "";
-                    txtNuevoCedulaTrabajador.Text = "";
-                    txtNuevoCorreoTrabajador.Text = "";
-                    txtNuevoTelefonoTrabajador.Text = "";
-                    this.IDTrabajador = 0;
-
-                }
-                else
-                {
-                    MessageBox.Show("No se logro registrar el dato", "Aviso del Sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-                }
-            }
+            EstadoGuarda = 1;
+            GuardarTrabajador();
 
         }
 
@@ -1304,6 +1309,7 @@ namespace GUI
                 this.ListadoTR(txtBuscarTrabajador.Text.Trim());
             }
         }
+
         #endregion
 
         private void BTGuardarProducto_Click(object sender, EventArgs e)
