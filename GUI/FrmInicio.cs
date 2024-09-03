@@ -101,19 +101,7 @@ namespace GUI
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-        }
-
-        private void BotonesFactura(bool LEstado)
-        {
-            this.BtnAgregarCL.Enabled = LEstado;
-            this.BtnAgregarTR.Enabled = LEstado;
-            this.BtnAgregarVE.Enabled = LEstado;
-            this.BtnAnularFA.Enabled = LEstado;
-            this.BtnGuardarFA.Enabled = LEstado;
-            this.BtnImprimirFA.Enabled = LEstado;
-        }
-
-        private void SeleccionaFactura()
+        }        private void SeleccionaFactura()
         {
             //Validasmos que el DATAGEIP tenga datos para que no nos de error
 
