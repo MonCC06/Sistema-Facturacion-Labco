@@ -134,20 +134,20 @@
             this.dataGridViewVehiculo = new System.Windows.Forms.DataGridView();
             this.buttonEliminarVehiculo = new System.Windows.Forms.Button();
             this.buttonModificarVehiculo = new System.Windows.Forms.Button();
-            this.textBoxBusacarVehiculo = new System.Windows.Forms.TextBox();
+            this.TxTBuscarVehiculo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.buttonBuscarVehiculo = new System.Windows.Forms.Button();
-            this.checkBoxBuscarPorPlaca = new System.Windows.Forms.CheckBox();
-            this.checkBoxBuscarPorCedulaDueno = new System.Windows.Forms.CheckBox();
+            this.chkplacavehiculo = new System.Windows.Forms.CheckBox();
+            this.chkceduvehi = new System.Windows.Forms.CheckBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.checkBoxDistanciaMillas = new System.Windows.Forms.CheckBox();
             this.checkBoxDistanciaKilometros = new System.Windows.Forms.CheckBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBoxDistanciaRecorrida = new System.Windows.Forms.TextBox();
-            this.textBoxVINVehiculo = new System.Windows.Forms.TextBox();
+            this.DistanciaTxTVehiculo = new System.Windows.Forms.TextBox();
+            this.TxTVINVehiculo = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBoxPlacaVehiculo = new System.Windows.Forms.TextBox();
+            this.TxTPlacaVehiculo = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.buttonCancelarVehiculo = new System.Windows.Forms.Button();
             this.buttonGuardarVehiculo = new System.Windows.Forms.Button();
@@ -1228,11 +1228,11 @@
             this.groupBox5.Controls.Add(this.dataGridViewVehiculo);
             this.groupBox5.Controls.Add(this.buttonEliminarVehiculo);
             this.groupBox5.Controls.Add(this.buttonModificarVehiculo);
-            this.groupBox5.Controls.Add(this.textBoxBusacarVehiculo);
+            this.groupBox5.Controls.Add(this.TxTBuscarVehiculo);
             this.groupBox5.Controls.Add(this.label10);
             this.groupBox5.Controls.Add(this.buttonBuscarVehiculo);
-            this.groupBox5.Controls.Add(this.checkBoxBuscarPorPlaca);
-            this.groupBox5.Controls.Add(this.checkBoxBuscarPorCedulaDueno);
+            this.groupBox5.Controls.Add(this.chkplacavehiculo);
+            this.groupBox5.Controls.Add(this.chkceduvehi);
             this.groupBox5.Location = new System.Drawing.Point(22, 207);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(968, 228);
@@ -1268,12 +1268,12 @@
             this.buttonModificarVehiculo.Text = "Modificar";
             this.buttonModificarVehiculo.UseVisualStyleBackColor = true;
             // 
-            // textBoxBusacarVehiculo
+            // TxTBuscarVehiculo
             // 
-            this.textBoxBusacarVehiculo.Location = new System.Drawing.Point(297, 22);
-            this.textBoxBusacarVehiculo.Name = "textBoxBusacarVehiculo";
-            this.textBoxBusacarVehiculo.Size = new System.Drawing.Size(188, 20);
-            this.textBoxBusacarVehiculo.TabIndex = 5;
+            this.TxTBuscarVehiculo.Location = new System.Drawing.Point(297, 22);
+            this.TxTBuscarVehiculo.Name = "TxTBuscarVehiculo";
+            this.TxTBuscarVehiculo.Size = new System.Drawing.Size(188, 20);
+            this.TxTBuscarVehiculo.TabIndex = 5;
             // 
             // label10
             // 
@@ -1293,25 +1293,25 @@
             this.buttonBuscarVehiculo.Text = "Buscar";
             this.buttonBuscarVehiculo.UseVisualStyleBackColor = true;
             // 
-            // checkBoxBuscarPorPlaca
+            // chkplacavehiculo
             // 
-            this.checkBoxBuscarPorPlaca.AutoSize = true;
-            this.checkBoxBuscarPorPlaca.Location = new System.Drawing.Point(98, 64);
-            this.checkBoxBuscarPorPlaca.Name = "checkBoxBuscarPorPlaca";
-            this.checkBoxBuscarPorPlaca.Size = new System.Drawing.Size(53, 17);
-            this.checkBoxBuscarPorPlaca.TabIndex = 2;
-            this.checkBoxBuscarPorPlaca.Text = "Placa";
-            this.checkBoxBuscarPorPlaca.UseVisualStyleBackColor = true;
+            this.chkplacavehiculo.AutoSize = true;
+            this.chkplacavehiculo.Location = new System.Drawing.Point(98, 64);
+            this.chkplacavehiculo.Name = "chkplacavehiculo";
+            this.chkplacavehiculo.Size = new System.Drawing.Size(53, 17);
+            this.chkplacavehiculo.TabIndex = 2;
+            this.chkplacavehiculo.Text = "Placa";
+            this.chkplacavehiculo.UseVisualStyleBackColor = true;
             // 
-            // checkBoxBuscarPorCedulaDueno
+            // chkceduvehi
             // 
-            this.checkBoxBuscarPorCedulaDueno.AutoSize = true;
-            this.checkBoxBuscarPorCedulaDueno.Location = new System.Drawing.Point(98, 24);
-            this.checkBoxBuscarPorCedulaDueno.Name = "checkBoxBuscarPorCedulaDueno";
-            this.checkBoxBuscarPorCedulaDueno.Size = new System.Drawing.Size(109, 17);
-            this.checkBoxBuscarPorCedulaDueno.TabIndex = 1;
-            this.checkBoxBuscarPorCedulaDueno.Text = "Cedula del dueno";
-            this.checkBoxBuscarPorCedulaDueno.UseVisualStyleBackColor = true;
+            this.chkceduvehi.AutoSize = true;
+            this.chkceduvehi.Location = new System.Drawing.Point(98, 24);
+            this.chkceduvehi.Name = "chkceduvehi";
+            this.chkceduvehi.Size = new System.Drawing.Size(109, 17);
+            this.chkceduvehi.TabIndex = 1;
+            this.chkceduvehi.Text = "Cedula del dueno";
+            this.chkceduvehi.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
@@ -1320,10 +1320,10 @@
             this.groupBox6.Controls.Add(this.checkBoxDistanciaKilometros);
             this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Controls.Add(this.label20);
-            this.groupBox6.Controls.Add(this.textBoxDistanciaRecorrida);
-            this.groupBox6.Controls.Add(this.textBoxVINVehiculo);
+            this.groupBox6.Controls.Add(this.DistanciaTxTVehiculo);
+            this.groupBox6.Controls.Add(this.TxTVINVehiculo);
             this.groupBox6.Controls.Add(this.label18);
-            this.groupBox6.Controls.Add(this.textBoxPlacaVehiculo);
+            this.groupBox6.Controls.Add(this.TxTPlacaVehiculo);
             this.groupBox6.Controls.Add(this.label19);
             this.groupBox6.Controls.Add(this.buttonCancelarVehiculo);
             this.groupBox6.Controls.Add(this.buttonGuardarVehiculo);
@@ -1374,19 +1374,19 @@
             this.label20.TabIndex = 22;
             this.label20.Text = "Distancia de recorrido";
             // 
-            // textBoxDistanciaRecorrida
+            // DistanciaTxTVehiculo
             // 
-            this.textBoxDistanciaRecorrida.Location = new System.Drawing.Point(416, 102);
-            this.textBoxDistanciaRecorrida.Name = "textBoxDistanciaRecorrida";
-            this.textBoxDistanciaRecorrida.Size = new System.Drawing.Size(131, 20);
-            this.textBoxDistanciaRecorrida.TabIndex = 21;
+            this.DistanciaTxTVehiculo.Location = new System.Drawing.Point(416, 102);
+            this.DistanciaTxTVehiculo.Name = "DistanciaTxTVehiculo";
+            this.DistanciaTxTVehiculo.Size = new System.Drawing.Size(131, 20);
+            this.DistanciaTxTVehiculo.TabIndex = 21;
             // 
-            // textBoxVINVehiculo
+            // TxTVINVehiculo
             // 
-            this.textBoxVINVehiculo.Location = new System.Drawing.Point(684, 48);
-            this.textBoxVINVehiculo.Name = "textBoxVINVehiculo";
-            this.textBoxVINVehiculo.Size = new System.Drawing.Size(131, 20);
-            this.textBoxVINVehiculo.TabIndex = 18;
+            this.TxTVINVehiculo.Location = new System.Drawing.Point(684, 48);
+            this.TxTVINVehiculo.Name = "TxTVINVehiculo";
+            this.TxTVINVehiculo.Size = new System.Drawing.Size(131, 20);
+            this.TxTVINVehiculo.TabIndex = 18;
             // 
             // label18
             // 
@@ -1398,12 +1398,12 @@
             this.label18.TabIndex = 20;
             this.label18.Text = "VIN";
             // 
-            // textBoxPlacaVehiculo
+            // TxTPlacaVehiculo
             // 
-            this.textBoxPlacaVehiculo.Location = new System.Drawing.Point(416, 38);
-            this.textBoxPlacaVehiculo.Name = "textBoxPlacaVehiculo";
-            this.textBoxPlacaVehiculo.Size = new System.Drawing.Size(131, 20);
-            this.textBoxPlacaVehiculo.TabIndex = 17;
+            this.TxTPlacaVehiculo.Location = new System.Drawing.Point(416, 38);
+            this.TxTPlacaVehiculo.Name = "TxTPlacaVehiculo";
+            this.TxTPlacaVehiculo.Size = new System.Drawing.Size(131, 20);
+            this.TxTPlacaVehiculo.TabIndex = 17;
             // 
             // label19
             // 
@@ -2051,20 +2051,20 @@
         private System.Windows.Forms.DataGridView dataGridViewVehiculo;
         private System.Windows.Forms.Button buttonEliminarVehiculo;
         private System.Windows.Forms.Button buttonModificarVehiculo;
-        private System.Windows.Forms.TextBox textBoxBusacarVehiculo;
+        private System.Windows.Forms.TextBox TxTBuscarVehiculo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button buttonBuscarVehiculo;
-        private System.Windows.Forms.CheckBox checkBoxBuscarPorPlaca;
-        private System.Windows.Forms.CheckBox checkBoxBuscarPorCedulaDueno;
+        private System.Windows.Forms.CheckBox chkplacavehiculo;
+        private System.Windows.Forms.CheckBox chkceduvehi;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.CheckBox checkBoxDistanciaMillas;
         private System.Windows.Forms.CheckBox checkBoxDistanciaKilometros;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBoxDistanciaRecorrida;
-        private System.Windows.Forms.TextBox textBoxVINVehiculo;
+        private System.Windows.Forms.TextBox DistanciaTxTVehiculo;
+        private System.Windows.Forms.TextBox TxTVINVehiculo;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBoxPlacaVehiculo;
+        private System.Windows.Forms.TextBox TxTPlacaVehiculo;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button buttonCancelarVehiculo;
         private System.Windows.Forms.Button buttonGuardarVehiculo;
