@@ -2039,10 +2039,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1037, 533);
+            this.ClientSize = new System.Drawing.Size(1050, 612);
             this.Controls.Add(this.TabServicicos);
             this.Name = "FrmInicio";
             this.Text = "FrmInicio";
+            this.Load += new System.EventHandler(this.FrmInicio_Load);
             this.TabServicicos.ResumeLayout(false);
             this.tabFactura.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
