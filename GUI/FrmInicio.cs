@@ -774,12 +774,6 @@ namespace GUI
 
         #endregion
 
-        #region Eventos Factura
-
-        #endregion
-
-       
-
         #region Eventos Servicio
         private void BTGuardarServicio_Click(object sender, EventArgs e)
         {
