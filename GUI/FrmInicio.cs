@@ -143,8 +143,8 @@ namespace GUI
         #region Metodos Factura
         private void FormatoFA()
         {
-            DgvTrabajador.Columns[0].Width = 100;
-            DgvTrabajador.Columns[0].HeaderText = "ID_Producto";
+            DgvFacturaProducto.Columns[0].Width = 100;
+            DgvFacturaProducto.Columns[0].HeaderText = "ID_Producto";
             DgvTrabajador.Columns[1].Width = 100;
             DgvTrabajador.Columns[1].HeaderText = "Descripcion";
         }
@@ -183,6 +183,7 @@ namespace GUI
 
             decimal nSubtotal = 0;
             decimal nIva = 0;
+            decimal nPrecio = 0;
             decimal nTotal = 0;
 
             if (DgvFacturaProducto.Rows.Count == 0)
@@ -194,12 +195,10 @@ namespace GUI
             else
             {
 
-                TablaDetalle.AcceptChanges();
-
-                foreach (DataRow FilaTemp in TablaDetalle.Rows)
+                foreach (DataRow FilaTemp in DgvFacturaProducto.Rows)
                 {
 
-                    nTotal = nTotal + Convert.ToDecimal(FilaTemp["total"]); // total con IVA
+                    nPrecio = nPrecio + Convert.ToDecimal(FilaTemp["total"]); // total con IVA
                 }
 
 
