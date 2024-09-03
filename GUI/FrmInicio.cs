@@ -534,5 +534,14 @@ namespace GUI
         }
 
         #endregion
+
+        #region Eventos Factura
+        private void BtnAgregarCL_Click(object sender, EventArgs e)
+        {
+
+            ListBoxClientes.Visible = true;
+
+        }
+        #endregion
     }
 }
