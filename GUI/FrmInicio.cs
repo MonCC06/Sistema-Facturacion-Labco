@@ -88,6 +88,56 @@ namespace GUI
 
         #endregion
 
+        #region Metodo Marca
+
+        private void FormatoMa()
+        {
+            dataGridViewMarca.Columns[0].Width = 100;
+            dataGridViewMarca.Columns[0].HeaderText = "ID Marca";
+            dataGridViewMarca.Columns[1].Width = 100;
+            dataGridViewMarca.Columns[1].HeaderText = "Marca";
+
+        }
+
+        private void ListadoMarca(string cTexto)
+        {
+
+            try
+            {
+                dataGridViewMarca.DataSource = BLMarca.ListadoMA(cTexto);
+                this.FormatoMa();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+
+
+
+        }
+
+        private void SeleccionaItemMarca()
+        {
+            //Validasmos que el DATAGEIP tenga datos para que no nos de error
+
+            if (string.IsNullOrEmpty(Convert.ToString(dataGridViewVehiculo.CurrentRow.Cells["IDMarca"].Value)))
+            {
+                MessageBox.Show("No hay datos que mostrar", "Aviso del sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.IDMarca = Convert.ToInt32(dataGridViewVehiculo.CurrentRow.Cells["IDMarca"].Value);
+                TxTNombreMarca.Text = Convert.ToString(dataGridViewVehiculo.CurrentRow.Cells["Nombre"].Value);
+
+            }
+
+        }
+
+        #endregion
+
+
 
         #region Metodos Factura
         private void FormatoFA()
