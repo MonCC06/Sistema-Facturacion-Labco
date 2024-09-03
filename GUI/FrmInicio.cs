@@ -376,23 +376,39 @@ namespace GUI
         {
             try
             {
+                // Asigna a "DgvTrabajador" los datos provenientes del método "ListadoTR" de la capa de lógica de negocios, basado en el texto de búsqueda "tTexto".
                 DgvTrabajador.DataSource = BLTrabajador.ListadoTR(tTexto);
+
+                // Llama al método "FormatoTR" para aplicar un formato personalizado a la tabla o DataGridView.
                 this.FormatoTR();
             }
             catch (Exception ex)
             {
+                // Si ocurre una excepción, muestra un mensaje con la descripción del error y la pila de llamadas.
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-            //datasource nos dice de donde vamos a consumir los datos
+
+            // "DataSource" define la fuente de datos para el DataGridView, indicando de dónde se obtendrán los datos que se mostrarán.
+            
         }
 
         private void BotonesTrabajador(bool LEstado)
         {
-            this.btnGuardarNuevoTrabajador.Enabled = LEstado;
-            this.btnBuscarTrabajador.Enabled = LEstado;
-            this.btnModficarTrabajador.Enabled = LEstado;
-            this.btnCancelarNuevoTrabajador.Enabled = LEstado;
-            this.btnEliminarTrabajador.Enabled = LEstado;
+            // Habilita o deshabilita el botón "Guardar Nuevo Trabajador" según el estado de "LEstado".
+this.btnGuardarNuevoTrabajador.Enabled = LEstado;
+
+// Habilita o deshabilita el botón "Buscar Trabajador" según el estado de "LEstado".
+this.btnBuscarTrabajador.Enabled = LEstado;
+
+// Habilita o deshabilita el botón "Modificar Trabajador" según el estado de "LEstado".
+this.btnModficarTrabajador.Enabled = LEstado;
+
+// Habilita o deshabilita el botón "Cancelar Nuevo Trabajador" según el estado de "LEstado".
+this.btnCancelarNuevoTrabajador.Enabled = LEstado;
+
+// Habilita o deshabilita el botón "Eliminar Trabajador" según el estado de "LEstado".
+this.btnEliminarTrabajador.Enabled = LEstado;
+
         }
 
         private void SeleccionaTrabajador()
@@ -465,6 +481,31 @@ namespace GUI
             else
             {
                 MessageBox.Show(Rpta, "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void ModificarTrabajador()
+        {
+            EstadoGuarda = 2; // Indica que se trata de una actualización
+
+            // Verificar si hay una fila seleccionada en el DataGridView
+            if (DgvTrabajador.CurrentRow != null)
+            {
+                // Obtener el IDCliente de la fila seleccionada
+                this.IDTrabajador = Convert.ToInt32(DgvTrabajador.CurrentRow.Cells["IDTrabajador"].Value);
+
+                // Poblar los campos con los datos actuales del cliente
+                txtNuevoNombreTrabajador.Text = Convert.ToString(DgvTrabajador.CurrentRow.Cells["Nombre"].Value);
+                txtNuevoCedulaTrabajador.Text = Convert.ToString(DgvTrabajador.CurrentRow.Cells["Cedula"].Value);
+                txtNuevoCorreoTrabajador.Text = Convert.ToString(DgvTrabajador.CurrentRow.Cells["Correo"].Value);
+                txtNuevoTelefonoTrabajador.Text = Convert.ToString(DgvTrabajador.CurrentRow.Cells["Telefono"].Value);
+
+
+                // Establecer el enfoque en el primer campo editable
+                txtNuevoNombreTrabajador.Focus();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un trabajador para modificar.", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         #endregion
@@ -1276,6 +1317,7 @@ namespace GUI
 
         private void btnModficarTrabajador_Click(object sender, EventArgs e)
         {
+            //2= actualizar
             EstadoGuarda = 2;
             this.IDTrabajador = 0;
             this.BotonesTrabajador(true);
@@ -1288,60 +1330,85 @@ namespace GUI
 
         private void btnEliminarTrabajador_Click(object sender, EventArgs e)
         {
+            // Verifica si la celda "IDTrabajador" de la fila actual en "DgvTrabajador" está vacía o es nula
             if (String.IsNullOrEmpty(Convert.ToString(DgvTrabajador.CurrentRow.Cells["IDTrabajador"].Value)))
             {
-                MessageBox.Show("No hay datos que mostar", "Aviso del Sistema", MessageBoxButtons.OK,
+                // Muestra un mensaje de error si no hay datos que mostrar
+                MessageBox.Show("No hay datos que mostrar", "Aviso del Sistema", MessageBoxButtons.OK,
                    MessageBoxIcon.Error);
             }
             else
             {
                 DialogResult opcion;
-                //preguntar si se quiere realizar procedimiento y a opcion se le asignael valor de la respuesta
+                // Pregunta al usuario si está seguro de eliminar el registro seleccionado
+                // y almacena la respuesta en la variable "opcion"
                 opcion = MessageBox.Show("¿Está seguro de eliminar el registro seleccionado?", "Aviso del Sistema", MessageBoxButtons.YesNoCancel,
                    MessageBoxIcon.Question);
+
+                // Si el usuario confirma que desea eliminar el registro
                 if (opcion == DialogResult.Yes)
                 {
                     String Rpta = "";
-                    //convertir a int
+                    // Convierte el valor de la celda "IDTrabajador" a un entero y lo asigna a "IDTrabajador"
                     this.IDTrabajador = Convert.ToInt32(DgvTrabajador.CurrentRow.Cells["IDTrabajador"].Value);
+
+                    // Llama al método "EliminaTR" del negocio lógico "BLTrabajador" para eliminar el trabajador
                     Rpta = BLTrabajador.EliminaTR(this.IDTrabajador);
 
+                    // Si la respuesta es "OK", significa que el registro fue eliminado con éxito
                     if (Rpta.Equals("OK"))
                     {
+                        // Actualiza la lista de trabajadores y resetea el "IDTrabajador"
                         this.ListadoTR("%");
                         this.IDTrabajador = 0;
-                        MessageBox.Show("Registro Eliminado", "Aviso del Sistema", MessageBoxButtons.YesNoCancel,
-                         MessageBoxIcon.Exclamation);
 
+                        // Muestra un mensaje informando que el registro fue eliminado
+                        MessageBox.Show("Registro Eliminado", "Aviso del Sistema", MessageBoxButtons.OK,
+                         MessageBoxIcon.Exclamation);
                     }
                 }
-
             }
+
         }
 
         private void btnCancelarNuevoTrabajador_Click(object sender, EventArgs e)
         {
+            // Inicializa el estado de guardado en 0, lo que probablemente indica que no hay cambios pendientes o que se está en modo de inserción
             EstadoGuarda = 0;
+
+            // Resetea el ID del trabajador a 0, lo que podría significar que no hay ningún trabajador seleccionado o se está preparando para un nuevo registro
             this.IDTrabajador = 0;
+
+            // Limpia los campos de texto asociados con los datos del trabajador, estableciendo su valor a una cadena vacía
             txtNuevoNombreTrabajador.Text = "";
             txtNuevoCedulaTrabajador.Text = "";
             txtNuevoCorreoTrabajador.Text = "";
             txtNuevoTelefonoTrabajador.Text = "";
+
+            // Habilita o deshabilita botones relacionados con la gestión de trabajadores, posiblemente habilitando los botones para añadir un nuevo trabajador
             this.BotonesTrabajador(true);
+
+            // Llama a un método que selecciona un trabajador, lo que podría ser para refrescar la vista o preparar la interfaz para la selección de un nuevo trabajador
             this.SeleccionaTrabajador();
+
         }
 
         private void btnBuscarTrabajador_Click(object sender, EventArgs e)
         {
+            // Verifica si el checkbox "ckbNombreTrabajador" está marcado
             if (ckbNombreTrabajador.Checked == true)
             {
+                // Si está marcado, llama al método "ListadoTR" pasando el texto ingresado en "txtBuscarTrabajador", eliminando espacios en blanco adicionales
                 this.ListadoTR(txtBuscarTrabajador.Text.Trim());
             }
 
+            // Verifica si el checkbox "ckbCedulaTrabajador" está marcado
             if (ckbCedulaTrabajador.Checked == true)
             {
+                // Si está marcado, llama al método "ListadoTR" pasando el texto ingresado en "txtBuscarTrabajador", eliminando espacios en blanco adicionales
                 this.ListadoTR(txtBuscarTrabajador.Text.Trim());
             }
+
         }
 
         #endregion
@@ -1369,14 +1436,7 @@ namespace GUI
 
         private void BTModificarProducto_Click(object sender, EventArgs e)
         {
-            EstadoGuarda = 2;//Sera una actualizacion  
-            this.EstadoBotonesPrincipales(false);
-            this.EstadoBotonesProcesos(true);
-            this.SeleccionaItemProducto();
-            TBDescripcionProducto.ReadOnly = false;
-            TBStockProducto.ReadOnly = false;
-            TBPrecioProducto.ReadOnly = false;
-            TBDescripcionProducto.Focus();
+            ModificarTrabajador();
         }
 
         private void BTEliminararProducto_Click(object sender, EventArgs e)
