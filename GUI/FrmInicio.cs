@@ -83,17 +83,17 @@ namespace GUI
         #region Metodos Factura
         private void FormatoFA()
         {
-            DgvFacturaProducto.Columns[0].Width = 100;
-            DgvFacturaProducto.Columns[0].HeaderText = "ID_Producto";
-            DgvFacturaProducto.Columns[1].Width = 100;
-            DgvFacturaProducto.Columns[1].HeaderText = "Descripcion";
+            DgvTrabajador.Columns[0].Width = 100;
+            DgvTrabajador.Columns[0].HeaderText = "ID_Producto";
+            DgvTrabajador.Columns[1].Width = 100;
+            DgvTrabajador.Columns[1].HeaderText = "Descripcion";
         }
 
         private void ListadoFA(string cTexto)
         {
             try
             {
-                DgvFacturaProducto.DataSource = BLProducto.ListadoPR(cTexto);
+                DgvTrabajador.DataSource = BLProducto.ListadoPR(cTexto);
                 this.FormatoFA();
             }
             catch (Exception ex)
@@ -335,7 +335,7 @@ namespace GUI
                 eTTrabajador.Correo = txtNuevoCorreoTrabajador.Text.Trim();
                 eTTrabajador.Telefono = txtNuevoTelefonoTrabajador.Text.Trim();
                 //respuesta igual a los que nos retorne, enviar parametros para saber si es nuevo o no
-                Rpta = BLTrabajador.GuardarSE(EstadoGuarda, eTTrabajador);
+                Rpta = BLTrabajador.GuardarTR(EstadoGuarda, eTTrabajador);
 
 
                 //
@@ -373,8 +373,7 @@ namespace GUI
             this.IDTrabajador = 0;
             this.BotonesTrabajador(true);
             //txtNuevoNombreTrabajador.Text = "";
-            DgvTrabajador.SelectedIndex = 1;
-            this.SeleccionaItems();
+            this.SeleccionaTrabajador();
             //Poner el cursor en donde se empiezan a cambiar datos
             txtNuevoNombreTrabajador.Focus();
 
@@ -400,7 +399,7 @@ namespace GUI
                     String Rpta = "";
                     //convertir a int
                     this.IDTrabajador = Convert.ToInt32(DgvTrabajador.CurrentRow.Cells["IDTrabajador"].Value);
-                    Rpta = BLTrabajador.EliminaSE(this.IDTrabajador);
+                    Rpta = BLTrabajador.EliminaTR(this.IDTrabajador);
 
                     if (Rpta.Equals("OK"))
                     {
@@ -424,19 +423,19 @@ namespace GUI
             txtNuevoCorreoTrabajador.Text = "";
             txtNuevoTelefonoTrabajador.Text = "";
             this.BotonesTrabajador(true);
-            this.SeleccionaItems();
+            this.SeleccionaTrabajador();
         }
 
         private void btnBuscarTrabajador_Click(object sender, EventArgs e)
         {
-            if (ckb.Checked == true)
+            if (ckbNombreTrabajador.Checked == true)
             {
-                this.ListadoTR(Textbox29.Text.Trim());
+                this.ListadoTR(txtBuscarTrabajador.Text.Trim());
             }
 
-            if (ckb.Checked == true)
+            if (ckbCedulaTrabajador.Checked == true)
             {
-                this.ListadoTR(Textbox29.Text.Trim());
+                this.ListadoTR(txtBuscarTrabajador.Text.Trim());
             }
 
         }
