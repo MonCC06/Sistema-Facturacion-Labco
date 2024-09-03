@@ -15,28 +15,28 @@ namespace BL
         {
 
             DALDetalle Datos = new DALDetalle();
-            return Datos.ListadoDE(cTexto);
+            return Datos.ListadoDetalle(cTexto);
         }
 
         public static string GuardarDE(int nOpcion, ETDetalle de)
         {
 
             DALDetalle Datos = new DALDetalle();
-            return Datos.GuardarDE (nOpcion, de);
+            return Datos.GuardarDetalle(nOpcion, de);
         }
 
-        public static string ActualizarCL(int IDDetalle)
+        public static string ActualizarCL(string cTexto, int nOpcion, int IDDetalle, ETDetalle de)
         {
 
             DALDetalle Datos = new DALDetalle();
-            return Datos.ActualizarDE(IDDetalle);
+            return Datos.ActualizarDetalle(cTexto, nOpcion, IDDetalle, de);
         }
 
         public static string EliminarDE(int IDDetalle)
         {
 
             DALDetalle Datos = new DALDetalle();
-            return Datos.EliminaDE(IDDetalle);
+            return Datos.EliminaDetalle(IDDetalle);
         }
     }
 }

@@ -15,28 +15,26 @@ namespace BL
         {
 
             DALCliente Datos = new DALCliente();
-            return Datos.ListadoCL(cTexto);
+            return Datos.ListadoCliente(cTexto);
         }
 
         public static string GuardarCL (int nOpcion, ETCliente cl)
         {
-
             DALCliente Datos = new DALCliente();
-            return Datos.GuardarCL(nOpcion, cl);
+            return Datos.GuardarCliente(nOpcion, cl);
         }
 
-        public static string ActualizarCL(int IDCliente)
+        public static string ActualizarCL(string cTexto,int nOpcion, int IDCliente, ETCliente cl)
         {
-
             DALCliente Datos = new DALCliente();
-            return Datos.ActualizarCL(IDCliente);
+            return Datos.ActualizarCliente(cTexto, IDCliente, nOpcion, cl);
         }
 
         public static string EliminaCL(int IDCliente)
         {
 
             DALCliente Datos = new DALCliente();
-            return Datos.EliminaCL(IDCliente);
+            return Datos.EliminaCliente(IDCliente);
         }
 
 

@@ -78,7 +78,7 @@ namespace DAL
             return Rpta;
         }
 
-        public string EliminaSd(int IDProducto)
+        public string EliminarSd(int IDProducto)
         {
 
             string Rpta = "";
@@ -98,6 +98,52 @@ namespace DAL
 
             }
 
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return Rpta;
+        }
+
+        public string ActualizarSd(string cTexto, int nOpcion, int IDProducto, ETStockDetalle sd)
+        {
+            string Rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {
+                SqlCon = Conexion.GetInstancia().CrearConexion();
+                SqlCommand Comando = new SqlCommand("USP_Listado_StockDetalle", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
+                SqlCon.Open();
+                SqlDataReader reader = Comando.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    string StockEncontrado = Convert.ToString(reader[cTexto]);
+                    if (StockEncontrado != cTexto)
+                    {
+                        Rpta = "Los datos ingresados no coinciden";
+                    }
+                    else
+                    {
+                        string RptaEliminar = EliminarSd(IDProducto);
+                        if (RptaEliminar != "OK")
+                        {
+                            Rpta = RptaEliminar;
+                        }
+                        else
+                        {
+                            string RptaAgregar = GuardarSd(nOpcion, sd);
+                        }
+                    }
+                }
+            }
             catch (Exception ex)
             {
                 Rpta = ex.Message;

@@ -82,7 +82,7 @@ namespace DAL
             return Rpta;
         }
 
-        public string EliminaMA(int IDMarca)
+        public string EliminarMarca(int IDMarca)
         {
 
             string Rpta = "";
@@ -102,6 +102,52 @@ namespace DAL
 
             }
 
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return Rpta;
+        }
+
+        public string ActualizarMarca(string cTexto, int nOpcion, int IDMarca, ETMarca ma)
+        {
+            string Rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {
+                SqlCon = Conexion.GetInstancia().CrearConexion();
+                SqlCommand Comando = new SqlCommand("USP_Listado_Marca", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
+                SqlCon.Open();
+                SqlDataReader reader = Comando.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    string MarcaEncontrada = Convert.ToString(reader[cTexto]);
+                    if (MarcaEncontrada != cTexto)
+                    {
+                        Rpta = "Los datos ingresados no coinciden";
+                    }
+                    else
+                    {
+                        string RptaEliminar = EliminarMarca(IDMarca);
+                        if (RptaEliminar != "OK")
+                        {
+                            Rpta = RptaEliminar;
+                        }
+                        else
+                        {
+                            string RptaAgregar = GuardarMarca(nOpcion, ma);
+                        }
+                    }
+                }
+            }
             catch (Exception ex)
             {
                 Rpta = ex.Message;

@@ -15,16 +15,17 @@ namespace BL
         {
 
             DALTrabajador Datos = new DALTrabajador();
-            return Datos.ListadoTR(cTexto);
+            return Datos.ListadoTrabajador(cTexto);
         }
 
         public static string GuardarTR(int nOpcion, ETTrabajador tr)
         {
 
             DALTrabajador Datos = new DALTrabajador();
-            return Datos.GuardarTR(nOpcion, tr);
+            return Datos.GuardarTrabajador(nOpcion, tr);
         }
 
+<<<<<<< HEAD
         public static string ActualizarTR(int IDServicio)
         {
 
@@ -37,6 +38,20 @@ namespace BL
 
             DALTrabajador Datos = new DALTrabajador(); ;
             return Datos.EliminarTR(IDServicio);
+=======
+        public static string ActualizarTR(string cTexto, int nOpcion, int IDTrabajador, ETTrabajador tr)
+        {
+
+            DALTrabajador Datos = new DALTrabajador();
+            return Datos.ActualizarTrabajador(cTexto, nOpcion, IDTrabajador, tr);
+        }
+
+        public static string EliminaTR(int IDTrabajador)
+        {
+
+            DALTrabajador Datos = new DALTrabajador(); ;
+            return Datos.EliminaTrabajador(IDTrabajador);
+>>>>>>> ed0928e80b52815efe1f83d4ed0edcd2fd83d458
         }
     }
 }
