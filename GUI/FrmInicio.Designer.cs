@@ -110,21 +110,21 @@
             this.txtNombre1 = new System.Windows.Forms.TextBox();
             this.tabTrabajador = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.DgvTrabajador = new System.Windows.Forms.DataGridView();
+            this.btnEliminarTrabajador = new System.Windows.Forms.Button();
+            this.btnModficarTrabajador = new System.Windows.Forms.Button();
+            this.txtBuscarTrabajador = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.btnBuscarTrabajador = new System.Windows.Forms.Button();
+            this.ckbCedulaTrabajador = new System.Windows.Forms.CheckBox();
+            this.ckbNombreTrabajador = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtCedula = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.btnGuardarNuevoTrabajador = new System.Windows.Forms.Button();
+            this.btnCancelarNuevoTrabajador = new System.Windows.Forms.Button();
+            this.txtNuevoTelefonoTrabajador = new System.Windows.Forms.TextBox();
+            this.txtNuevoCorreoTrabajador = new System.Windows.Forms.TextBox();
+            this.txtNuevoCedulaTrabajador = new System.Windows.Forms.TextBox();
+            this.txtNuevoNombreTrabajador = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -134,25 +134,25 @@
             this.dataGridViewVehiculo = new System.Windows.Forms.DataGridView();
             this.buttonEliminarVehiculo = new System.Windows.Forms.Button();
             this.buttonModificarVehiculo = new System.Windows.Forms.Button();
-            this.textBoxBusacarVehiculo = new System.Windows.Forms.TextBox();
+            this.TxTBuscarVehiculo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.buttonBuscarVehiculo = new System.Windows.Forms.Button();
-            this.checkBoxBuscarPorPlaca = new System.Windows.Forms.CheckBox();
-            this.checkBoxBuscarPorCedulaDueno = new System.Windows.Forms.CheckBox();
+            this.chkplacavehiculo = new System.Windows.Forms.CheckBox();
+            this.chkceduvehi = new System.Windows.Forms.CheckBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.checkBoxDistanciaMillas = new System.Windows.Forms.CheckBox();
             this.checkBoxDistanciaKilometros = new System.Windows.Forms.CheckBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBoxDistanciaRecorrida = new System.Windows.Forms.TextBox();
-            this.textBoxVINVehiculo = new System.Windows.Forms.TextBox();
+            this.DistanciaTxTVehiculo = new System.Windows.Forms.TextBox();
+            this.TxTVINVehiculo = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBoxPlacaVehiculo = new System.Windows.Forms.TextBox();
+            this.TxTPlacaVehiculo = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.buttonCancelarVehiculo = new System.Windows.Forms.Button();
             this.buttonGuardarVehiculo = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBoxModeloVehiculo = new System.Windows.Forms.TextBox();
+            this.TxTModeloVehiculo = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dataGridViewMarca = new System.Windows.Forms.DataGridView();
@@ -219,7 +219,7 @@
             this.groupBox1.SuspendLayout();
             this.tabTrabajador.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvTrabajador)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -1018,14 +1018,14 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox4.Controls.Add(this.dataGridView4);
-            this.groupBox4.Controls.Add(this.button7);
-            this.groupBox4.Controls.Add(this.button8);
-            this.groupBox4.Controls.Add(this.textBox29);
+            this.groupBox4.Controls.Add(this.DgvTrabajador);
+            this.groupBox4.Controls.Add(this.btnEliminarTrabajador);
+            this.groupBox4.Controls.Add(this.btnModficarTrabajador);
+            this.groupBox4.Controls.Add(this.txtBuscarTrabajador);
             this.groupBox4.Controls.Add(this.label44);
-            this.groupBox4.Controls.Add(this.button9);
-            this.groupBox4.Controls.Add(this.checkBox1);
-            this.groupBox4.Controls.Add(this.checkBox4);
+            this.groupBox4.Controls.Add(this.btnBuscarTrabajador);
+            this.groupBox4.Controls.Add(this.ckbCedulaTrabajador);
+            this.groupBox4.Controls.Add(this.ckbNombreTrabajador);
             this.groupBox4.Location = new System.Drawing.Point(26, 153);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(968, 294);
@@ -1034,40 +1034,40 @@
             this.groupBox4.Text = "Buscar";
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
-            // dataGridView4
+            // DgvTrabajador
             // 
-            this.dataGridView4.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.GridColor = System.Drawing.Color.LightGray;
-            this.dataGridView4.Location = new System.Drawing.Point(22, 89);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(919, 193);
-            this.dataGridView4.TabIndex = 8;
+            this.DgvTrabajador.BackgroundColor = System.Drawing.Color.White;
+            this.DgvTrabajador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvTrabajador.GridColor = System.Drawing.Color.LightGray;
+            this.DgvTrabajador.Location = new System.Drawing.Point(22, 89);
+            this.DgvTrabajador.Name = "DgvTrabajador";
+            this.DgvTrabajador.Size = new System.Drawing.Size(919, 193);
+            this.DgvTrabajador.TabIndex = 8;
             // 
-            // button7
+            // btnEliminarTrabajador
             // 
-            this.button7.Location = new System.Drawing.Point(278, 47);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(67, 23);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Eliminar";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnEliminarTrabajador.Location = new System.Drawing.Point(278, 47);
+            this.btnEliminarTrabajador.Name = "btnEliminarTrabajador";
+            this.btnEliminarTrabajador.Size = new System.Drawing.Size(67, 23);
+            this.btnEliminarTrabajador.TabIndex = 7;
+            this.btnEliminarTrabajador.Text = "Eliminar";
+            this.btnEliminarTrabajador.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnModficarTrabajador
             // 
-            this.button8.Location = new System.Drawing.Point(202, 47);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(67, 23);
-            this.button8.TabIndex = 6;
-            this.button8.Text = "Modificar";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnModficarTrabajador.Location = new System.Drawing.Point(202, 47);
+            this.btnModficarTrabajador.Name = "btnModficarTrabajador";
+            this.btnModficarTrabajador.Size = new System.Drawing.Size(67, 23);
+            this.btnModficarTrabajador.TabIndex = 6;
+            this.btnModficarTrabajador.Text = "Modificar";
+            this.btnModficarTrabajador.UseVisualStyleBackColor = true;
             // 
-            // textBox29
+            // txtBuscarTrabajador
             // 
-            this.textBox29.Location = new System.Drawing.Point(268, 19);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(188, 20);
-            this.textBox29.TabIndex = 5;
+            this.txtBuscarTrabajador.Location = new System.Drawing.Point(268, 19);
+            this.txtBuscarTrabajador.Name = "txtBuscarTrabajador";
+            this.txtBuscarTrabajador.Size = new System.Drawing.Size(188, 20);
+            this.txtBuscarTrabajador.TabIndex = 5;
             // 
             // label44
             // 
@@ -1078,44 +1078,44 @@
             this.label44.TabIndex = 4;
             this.label44.Text = "Buscar";
             // 
-            // button9
+            // btnBuscarTrabajador
             // 
-            this.button9.Location = new System.Drawing.Point(472, 19);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(67, 23);
-            this.button9.TabIndex = 3;
-            this.button9.Text = "Buscar";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnBuscarTrabajador.Location = new System.Drawing.Point(472, 19);
+            this.btnBuscarTrabajador.Name = "btnBuscarTrabajador";
+            this.btnBuscarTrabajador.Size = new System.Drawing.Size(67, 23);
+            this.btnBuscarTrabajador.TabIndex = 3;
+            this.btnBuscarTrabajador.Text = "Buscar";
+            this.btnBuscarTrabajador.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // ckbCedulaTrabajador
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(75, 53);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(59, 17);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "Cedula";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckbCedulaTrabajador.AutoSize = true;
+            this.ckbCedulaTrabajador.Location = new System.Drawing.Point(75, 53);
+            this.ckbCedulaTrabajador.Name = "ckbCedulaTrabajador";
+            this.ckbCedulaTrabajador.Size = new System.Drawing.Size(59, 17);
+            this.ckbCedulaTrabajador.TabIndex = 2;
+            this.ckbCedulaTrabajador.Text = "Cedula";
+            this.ckbCedulaTrabajador.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // ckbNombreTrabajador
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(75, 23);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(63, 17);
-            this.checkBox4.TabIndex = 1;
-            this.checkBox4.Text = "Nombre";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.ckbNombreTrabajador.AutoSize = true;
+            this.ckbNombreTrabajador.Location = new System.Drawing.Point(75, 23);
+            this.ckbNombreTrabajador.Name = "ckbNombreTrabajador";
+            this.ckbNombreTrabajador.Size = new System.Drawing.Size(63, 17);
+            this.ckbNombreTrabajador.TabIndex = 1;
+            this.ckbNombreTrabajador.Text = "Nombre";
+            this.ckbNombreTrabajador.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox3.Controls.Add(this.btnAceptar);
-            this.groupBox3.Controls.Add(this.btnCancelar);
-            this.groupBox3.Controls.Add(this.txtTelefono);
-            this.groupBox3.Controls.Add(this.txtCorreo);
-            this.groupBox3.Controls.Add(this.txtCedula);
-            this.groupBox3.Controls.Add(this.txtNombre);
+            this.groupBox3.Controls.Add(this.btnGuardarNuevoTrabajador);
+            this.groupBox3.Controls.Add(this.btnCancelarNuevoTrabajador);
+            this.groupBox3.Controls.Add(this.txtNuevoTelefonoTrabajador);
+            this.groupBox3.Controls.Add(this.txtNuevoCorreoTrabajador);
+            this.groupBox3.Controls.Add(this.txtNuevoCedulaTrabajador);
+            this.groupBox3.Controls.Add(this.txtNuevoNombreTrabajador);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label7);
@@ -1128,52 +1128,52 @@
             this.groupBox3.Text = "Nuevo";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
-            // btnAceptar
+            // btnGuardarNuevoTrabajador
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(705, 59);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 9;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnGuardarNuevoTrabajador.Location = new System.Drawing.Point(705, 59);
+            this.btnGuardarNuevoTrabajador.Name = "btnGuardarNuevoTrabajador";
+            this.btnGuardarNuevoTrabajador.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarNuevoTrabajador.TabIndex = 9;
+            this.btnGuardarNuevoTrabajador.Text = "Guardar";
+            this.btnGuardarNuevoTrabajador.UseVisualStyleBackColor = true;
             // 
-            // btnCancelar
+            // btnCancelarNuevoTrabajador
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(705, 25);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelarNuevoTrabajador.Location = new System.Drawing.Point(705, 25);
+            this.btnCancelarNuevoTrabajador.Name = "btnCancelarNuevoTrabajador";
+            this.btnCancelarNuevoTrabajador.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarNuevoTrabajador.TabIndex = 8;
+            this.btnCancelarNuevoTrabajador.Text = "Cancelar";
+            this.btnCancelarNuevoTrabajador.UseVisualStyleBackColor = true;
             // 
-            // txtTelefono
+            // txtNuevoTelefonoTrabajador
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(450, 59);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(209, 20);
-            this.txtTelefono.TabIndex = 7;
-            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
+            this.txtNuevoTelefonoTrabajador.Location = new System.Drawing.Point(450, 59);
+            this.txtNuevoTelefonoTrabajador.Name = "txtNuevoTelefonoTrabajador";
+            this.txtNuevoTelefonoTrabajador.Size = new System.Drawing.Size(209, 20);
+            this.txtNuevoTelefonoTrabajador.TabIndex = 7;
+            this.txtNuevoTelefonoTrabajador.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             // 
-            // txtCorreo
+            // txtNuevoCorreoTrabajador
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(450, 25);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(209, 20);
-            this.txtCorreo.TabIndex = 6;
+            this.txtNuevoCorreoTrabajador.Location = new System.Drawing.Point(450, 25);
+            this.txtNuevoCorreoTrabajador.Name = "txtNuevoCorreoTrabajador";
+            this.txtNuevoCorreoTrabajador.Size = new System.Drawing.Size(209, 20);
+            this.txtNuevoCorreoTrabajador.TabIndex = 6;
             // 
-            // txtCedula
+            // txtNuevoCedulaTrabajador
             // 
-            this.txtCedula.Location = new System.Drawing.Point(132, 59);
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(200, 20);
-            this.txtCedula.TabIndex = 5;
+            this.txtNuevoCedulaTrabajador.Location = new System.Drawing.Point(132, 59);
+            this.txtNuevoCedulaTrabajador.Name = "txtNuevoCedulaTrabajador";
+            this.txtNuevoCedulaTrabajador.Size = new System.Drawing.Size(200, 20);
+            this.txtNuevoCedulaTrabajador.TabIndex = 5;
             // 
-            // txtNombre
+            // txtNuevoNombreTrabajador
             // 
-            this.txtNombre.Location = new System.Drawing.Point(132, 25);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(200, 20);
-            this.txtNombre.TabIndex = 4;
+            this.txtNuevoNombreTrabajador.Location = new System.Drawing.Point(132, 25);
+            this.txtNuevoNombreTrabajador.Name = "txtNuevoNombreTrabajador";
+            this.txtNuevoNombreTrabajador.Size = new System.Drawing.Size(200, 20);
+            this.txtNuevoNombreTrabajador.TabIndex = 4;
             // 
             // label9
             // 
@@ -1228,11 +1228,11 @@
             this.groupBox5.Controls.Add(this.dataGridViewVehiculo);
             this.groupBox5.Controls.Add(this.buttonEliminarVehiculo);
             this.groupBox5.Controls.Add(this.buttonModificarVehiculo);
-            this.groupBox5.Controls.Add(this.textBoxBusacarVehiculo);
+            this.groupBox5.Controls.Add(this.TxTBuscarVehiculo);
             this.groupBox5.Controls.Add(this.label10);
             this.groupBox5.Controls.Add(this.buttonBuscarVehiculo);
-            this.groupBox5.Controls.Add(this.checkBoxBuscarPorPlaca);
-            this.groupBox5.Controls.Add(this.checkBoxBuscarPorCedulaDueno);
+            this.groupBox5.Controls.Add(this.chkplacavehiculo);
+            this.groupBox5.Controls.Add(this.chkceduvehi);
             this.groupBox5.Location = new System.Drawing.Point(22, 207);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(968, 228);
@@ -1268,12 +1268,12 @@
             this.buttonModificarVehiculo.Text = "Modificar";
             this.buttonModificarVehiculo.UseVisualStyleBackColor = true;
             // 
-            // textBoxBusacarVehiculo
+            // TxTBuscarVehiculo
             // 
-            this.textBoxBusacarVehiculo.Location = new System.Drawing.Point(297, 22);
-            this.textBoxBusacarVehiculo.Name = "textBoxBusacarVehiculo";
-            this.textBoxBusacarVehiculo.Size = new System.Drawing.Size(188, 20);
-            this.textBoxBusacarVehiculo.TabIndex = 5;
+            this.TxTBuscarVehiculo.Location = new System.Drawing.Point(297, 22);
+            this.TxTBuscarVehiculo.Name = "TxTBuscarVehiculo";
+            this.TxTBuscarVehiculo.Size = new System.Drawing.Size(188, 20);
+            this.TxTBuscarVehiculo.TabIndex = 5;
             // 
             // label10
             // 
@@ -1293,25 +1293,25 @@
             this.buttonBuscarVehiculo.Text = "Buscar";
             this.buttonBuscarVehiculo.UseVisualStyleBackColor = true;
             // 
-            // checkBoxBuscarPorPlaca
+            // chkplacavehiculo
             // 
-            this.checkBoxBuscarPorPlaca.AutoSize = true;
-            this.checkBoxBuscarPorPlaca.Location = new System.Drawing.Point(98, 64);
-            this.checkBoxBuscarPorPlaca.Name = "checkBoxBuscarPorPlaca";
-            this.checkBoxBuscarPorPlaca.Size = new System.Drawing.Size(53, 17);
-            this.checkBoxBuscarPorPlaca.TabIndex = 2;
-            this.checkBoxBuscarPorPlaca.Text = "Placa";
-            this.checkBoxBuscarPorPlaca.UseVisualStyleBackColor = true;
+            this.chkplacavehiculo.AutoSize = true;
+            this.chkplacavehiculo.Location = new System.Drawing.Point(98, 64);
+            this.chkplacavehiculo.Name = "chkplacavehiculo";
+            this.chkplacavehiculo.Size = new System.Drawing.Size(53, 17);
+            this.chkplacavehiculo.TabIndex = 2;
+            this.chkplacavehiculo.Text = "Placa";
+            this.chkplacavehiculo.UseVisualStyleBackColor = true;
             // 
-            // checkBoxBuscarPorCedulaDueno
+            // chkceduvehi
             // 
-            this.checkBoxBuscarPorCedulaDueno.AutoSize = true;
-            this.checkBoxBuscarPorCedulaDueno.Location = new System.Drawing.Point(98, 24);
-            this.checkBoxBuscarPorCedulaDueno.Name = "checkBoxBuscarPorCedulaDueno";
-            this.checkBoxBuscarPorCedulaDueno.Size = new System.Drawing.Size(109, 17);
-            this.checkBoxBuscarPorCedulaDueno.TabIndex = 1;
-            this.checkBoxBuscarPorCedulaDueno.Text = "Cedula del dueno";
-            this.checkBoxBuscarPorCedulaDueno.UseVisualStyleBackColor = true;
+            this.chkceduvehi.AutoSize = true;
+            this.chkceduvehi.Location = new System.Drawing.Point(98, 24);
+            this.chkceduvehi.Name = "chkceduvehi";
+            this.chkceduvehi.Size = new System.Drawing.Size(109, 17);
+            this.chkceduvehi.TabIndex = 1;
+            this.chkceduvehi.Text = "Cedula del dueno";
+            this.chkceduvehi.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
@@ -1320,15 +1320,15 @@
             this.groupBox6.Controls.Add(this.checkBoxDistanciaKilometros);
             this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Controls.Add(this.label20);
-            this.groupBox6.Controls.Add(this.textBoxDistanciaRecorrida);
-            this.groupBox6.Controls.Add(this.textBoxVINVehiculo);
+            this.groupBox6.Controls.Add(this.DistanciaTxTVehiculo);
+            this.groupBox6.Controls.Add(this.TxTVINVehiculo);
             this.groupBox6.Controls.Add(this.label18);
-            this.groupBox6.Controls.Add(this.textBoxPlacaVehiculo);
+            this.groupBox6.Controls.Add(this.TxTPlacaVehiculo);
             this.groupBox6.Controls.Add(this.label19);
             this.groupBox6.Controls.Add(this.buttonCancelarVehiculo);
             this.groupBox6.Controls.Add(this.buttonGuardarVehiculo);
             this.groupBox6.Controls.Add(this.label12);
-            this.groupBox6.Controls.Add(this.textBoxModeloVehiculo);
+            this.groupBox6.Controls.Add(this.TxTModeloVehiculo);
             this.groupBox6.Location = new System.Drawing.Point(22, 13);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(968, 156);
@@ -1374,19 +1374,19 @@
             this.label20.TabIndex = 22;
             this.label20.Text = "Distancia de recorrido";
             // 
-            // textBoxDistanciaRecorrida
+            // DistanciaTxTVehiculo
             // 
-            this.textBoxDistanciaRecorrida.Location = new System.Drawing.Point(416, 102);
-            this.textBoxDistanciaRecorrida.Name = "textBoxDistanciaRecorrida";
-            this.textBoxDistanciaRecorrida.Size = new System.Drawing.Size(131, 20);
-            this.textBoxDistanciaRecorrida.TabIndex = 21;
+            this.DistanciaTxTVehiculo.Location = new System.Drawing.Point(416, 102);
+            this.DistanciaTxTVehiculo.Name = "DistanciaTxTVehiculo";
+            this.DistanciaTxTVehiculo.Size = new System.Drawing.Size(131, 20);
+            this.DistanciaTxTVehiculo.TabIndex = 21;
             // 
-            // textBoxVINVehiculo
+            // TxTVINVehiculo
             // 
-            this.textBoxVINVehiculo.Location = new System.Drawing.Point(684, 48);
-            this.textBoxVINVehiculo.Name = "textBoxVINVehiculo";
-            this.textBoxVINVehiculo.Size = new System.Drawing.Size(131, 20);
-            this.textBoxVINVehiculo.TabIndex = 18;
+            this.TxTVINVehiculo.Location = new System.Drawing.Point(684, 48);
+            this.TxTVINVehiculo.Name = "TxTVINVehiculo";
+            this.TxTVINVehiculo.Size = new System.Drawing.Size(131, 20);
+            this.TxTVINVehiculo.TabIndex = 18;
             // 
             // label18
             // 
@@ -1398,12 +1398,12 @@
             this.label18.TabIndex = 20;
             this.label18.Text = "VIN";
             // 
-            // textBoxPlacaVehiculo
+            // TxTPlacaVehiculo
             // 
-            this.textBoxPlacaVehiculo.Location = new System.Drawing.Point(416, 38);
-            this.textBoxPlacaVehiculo.Name = "textBoxPlacaVehiculo";
-            this.textBoxPlacaVehiculo.Size = new System.Drawing.Size(131, 20);
-            this.textBoxPlacaVehiculo.TabIndex = 17;
+            this.TxTPlacaVehiculo.Location = new System.Drawing.Point(416, 38);
+            this.TxTPlacaVehiculo.Name = "TxTPlacaVehiculo";
+            this.TxTPlacaVehiculo.Size = new System.Drawing.Size(131, 20);
+            this.TxTPlacaVehiculo.TabIndex = 17;
             // 
             // label19
             // 
@@ -1443,12 +1443,12 @@
             this.label12.TabIndex = 16;
             this.label12.Text = "Modelo";
             // 
-            // textBoxModeloVehiculo
+            // TxTModeloVehiculo
             // 
-            this.textBoxModeloVehiculo.Location = new System.Drawing.Point(110, 35);
-            this.textBoxModeloVehiculo.Name = "textBoxModeloVehiculo";
-            this.textBoxModeloVehiculo.Size = new System.Drawing.Size(131, 20);
-            this.textBoxModeloVehiculo.TabIndex = 12;
+            this.TxTModeloVehiculo.Location = new System.Drawing.Point(110, 35);
+            this.TxTModeloVehiculo.Name = "TxTModeloVehiculo";
+            this.TxTModeloVehiculo.Size = new System.Drawing.Size(131, 20);
+            this.TxTModeloVehiculo.TabIndex = 12;
             // 
             // tabPage2
             // 
@@ -1977,7 +1977,7 @@
             this.tabTrabajador.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvTrabajador)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -2039,37 +2039,37 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.TextBox txtCedula;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.TextBox txtNuevoCorreoTrabajador;
+        private System.Windows.Forms.TextBox txtNuevoCedulaTrabajador;
+        private System.Windows.Forms.TextBox txtNuevoNombreTrabajador;
+        private System.Windows.Forms.TextBox txtNuevoTelefonoTrabajador;
+        private System.Windows.Forms.Button btnGuardarNuevoTrabajador;
+        private System.Windows.Forms.Button btnCancelarNuevoTrabajador;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView dataGridViewVehiculo;
         private System.Windows.Forms.Button buttonEliminarVehiculo;
         private System.Windows.Forms.Button buttonModificarVehiculo;
-        private System.Windows.Forms.TextBox textBoxBusacarVehiculo;
+        private System.Windows.Forms.TextBox TxTBuscarVehiculo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button buttonBuscarVehiculo;
-        private System.Windows.Forms.CheckBox checkBoxBuscarPorPlaca;
-        private System.Windows.Forms.CheckBox checkBoxBuscarPorCedulaDueno;
+        private System.Windows.Forms.CheckBox chkplacavehiculo;
+        private System.Windows.Forms.CheckBox chkceduvehi;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.CheckBox checkBoxDistanciaMillas;
         private System.Windows.Forms.CheckBox checkBoxDistanciaKilometros;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBoxDistanciaRecorrida;
-        private System.Windows.Forms.TextBox textBoxVINVehiculo;
+        private System.Windows.Forms.TextBox DistanciaTxTVehiculo;
+        private System.Windows.Forms.TextBox TxTVINVehiculo;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBoxPlacaVehiculo;
+        private System.Windows.Forms.TextBox TxTPlacaVehiculo;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button buttonCancelarVehiculo;
         private System.Windows.Forms.Button buttonGuardarVehiculo;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBoxModeloVehiculo;
+        private System.Windows.Forms.TextBox TxTModeloVehiculo;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.DataGridView dataGridViewMarca;
         private System.Windows.Forms.Button buttonEliminarMarca;
@@ -2173,14 +2173,14 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox TBStockProducto;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TextBox textBox29;
+        private System.Windows.Forms.DataGridView DgvTrabajador;
+        private System.Windows.Forms.Button btnEliminarTrabajador;
+        private System.Windows.Forms.Button btnModficarTrabajador;
+        private System.Windows.Forms.TextBox txtBuscarTrabajador;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.Button btnBuscarTrabajador;
+        private System.Windows.Forms.CheckBox ckbCedulaTrabajador;
+        private System.Windows.Forms.CheckBox ckbNombreTrabajador;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
