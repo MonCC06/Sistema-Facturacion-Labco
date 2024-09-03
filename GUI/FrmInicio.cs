@@ -27,6 +27,7 @@ namespace GUI
         int IDTrabajador = 0;
         int IDFactura = 0;
         int IDVehiculo = 0;
+        int IDProducto = 0;
         #endregion
 
         #region Metodo vehiculo
@@ -110,6 +111,24 @@ namespace GUI
             this.BtnAnularFA.Enabled = LEstado;
             this.BtnGuardarFA.Enabled = LEstado;
             this.BtnImprimirFA.Enabled = LEstado;
+        }
+
+        private void SeleccionaFactura()
+        {
+            //Validasmos que el DATAGEIP tenga datos para que no nos de error
+
+            if (string.IsNullOrEmpty(Convert.ToString(DgvFacturaProducto.CurrentRow.Cells["IDProducto"].Value)))
+            {
+                MessageBox.Show("No hay datos que mostrar", "Aviso del sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.IDFactura = Convert.ToInt32(DgvFacturaProducto.CurrentRow.Cells["Descripcion"].Value);
+                
+
+            }
+
         }
         #endregion
 

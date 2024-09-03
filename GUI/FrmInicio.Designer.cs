@@ -46,7 +46,10 @@
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.DgvFacturaProducto = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.TxtDistanciaVehiculoFactura = new System.Windows.Forms.TextBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -187,14 +190,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.TBPrecioProducto = new System.Windows.Forms.TextBox();
             this.TBDescripcionProducto = new System.Windows.Forms.TextBox();
-<<<<<<< HEAD
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-=======
-            this.label11 = new System.Windows.Forms.Label();
-            this.TxtCedulaCliente = new System.Windows.Forms.TextBox();
->>>>>>> dc63a61eee01a38efb1ce6c836dce046a8de39ec
             this.TabServicicos.SuspendLayout();
             this.tabFactura.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -202,7 +197,7 @@
             this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvFacturaProducto)).BeginInit();
             this.groupBox12.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -292,7 +287,7 @@
             this.groupBox9.Controls.Add(this.button4);
             this.groupBox9.Controls.Add(this.groupBox10);
             this.groupBox9.Controls.Add(this.groupBox11);
-            this.groupBox9.Controls.Add(this.dataGridView2);
+            this.groupBox9.Controls.Add(this.DgvFacturaProducto);
             this.groupBox9.Location = new System.Drawing.Point(7, 226);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(985, 437);
@@ -417,18 +412,34 @@
             this.richTextBox1.TabIndex = 21;
             this.richTextBox1.Text = "";
             // 
-            // dataGridView2
+            // DgvFacturaProducto
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvFacturaProducto.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.DgvFacturaProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvFacturaProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dataGridView2.Location = new System.Drawing.Point(76, 53);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(891, 202);
-            this.dataGridView2.TabIndex = 17;
+            this.DgvFacturaProducto.Location = new System.Drawing.Point(76, 53);
+            this.DgvFacturaProducto.Name = "DgvFacturaProducto";
+            this.DgvFacturaProducto.Size = new System.Drawing.Size(891, 202);
+            this.DgvFacturaProducto.TabIndex = 17;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Cantidad";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Producto";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 650;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Precio unitario";
+            this.Column3.Name = "Column3";
             // 
             // groupBox12
             // 
@@ -591,7 +602,6 @@
             // groupBox14
             // 
             this.groupBox14.BackColor = System.Drawing.Color.Gainsboro;
-
             this.groupBox14.Controls.Add(this.TxtEmailCliente);
             this.groupBox14.Controls.Add(this.TxtTelefonoCliente);
             this.groupBox14.Controls.Add(this.TxtNombreCliente);
@@ -605,17 +615,6 @@
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Datos del Cliente";
             // 
-<<<<<<< HEAD
-            // listBox1
-            // 
-            
-            // 
-            // AgregarCL
-            // 
-            
-            // 
-=======
->>>>>>> dc63a61eee01a38efb1ce6c836dce046a8de39ec
             // TxtEmailCliente
             // 
             this.TxtEmailCliente.Location = new System.Drawing.Point(357, 36);
@@ -1821,40 +1820,6 @@
             this.TBDescripcionProducto.Size = new System.Drawing.Size(188, 20);
             this.TBDescripcionProducto.TabIndex = 9;
             // 
-<<<<<<< HEAD
-            // Column1
-            // 
-            this.Column1.HeaderText = "Cantidad";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Producto";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 650;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Precio unitario";
-            this.Column3.Name = "Column3";
-=======
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(316, 77);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(40, 13);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "Cedula";
-            // 
-            // TxtCedulaCliente
-            // 
-            this.TxtCedulaCliente.Location = new System.Drawing.Point(357, 74);
-            this.TxtCedulaCliente.Name = "TxtCedulaCliente";
-            this.TxtCedulaCliente.Size = new System.Drawing.Size(180, 20);
-            this.TxtCedulaCliente.TabIndex = 9;
->>>>>>> dc63a61eee01a38efb1ce6c836dce046a8de39ec
-            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1873,7 +1838,7 @@
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.groupBox11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvFacturaProducto)).EndInit();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.groupBox13.ResumeLayout(false);
@@ -2010,7 +1975,7 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView DgvFacturaProducto;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.TextBox TxtDistanciaVehiculoFactura;
         private System.Windows.Forms.CheckBox checkBox2;
