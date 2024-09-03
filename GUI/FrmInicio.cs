@@ -172,7 +172,7 @@ namespace GUI
             }
             else
             {
-                TxtNombreCliente.
+                TxtNombreCliente;
             }
 
         }
@@ -1074,8 +1074,8 @@ namespace GUI
 
         private void buttonBuscarMarca_Click(object sender, EventArgs e)
         {
-                this.ListadoMarca(TxTBuscarMarca.Text.Trim());
-            
+            this.ListadoMarca(TxTBuscarMarca.Text.Trim());
+
         }
 
         private void buttonCancelarMarca_Click(object sender, EventArgs e)
