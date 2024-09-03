@@ -33,6 +33,7 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
@@ -70,11 +71,12 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.TxtFechaFactura = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
             this.TxtEstadoFactura = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.AgregarCL = new System.Windows.Forms.Button();
@@ -150,7 +152,7 @@
             this.buttonCancelarVehiculo = new System.Windows.Forms.Button();
             this.buttonGuardarVehiculo = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBoxModeloVehiculo = new System.Windows.Forms.TextBox();
+            this.TxTModeloVehiculo = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dataGridViewMarca = new System.Windows.Forms.DataGridView();
@@ -200,8 +202,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.TBPrecioProducto = new System.Windows.Forms.TextBox();
             this.TBDescripcionProducto = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.TabServicicos.SuspendLayout();
             this.tabFactura.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -318,6 +318,13 @@
             this.groupBox9.TabIndex = 4;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Contenido";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(282, 27);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 20);
+            this.textBox1.TabIndex = 15;
             // 
             // textBox20
             // 
@@ -648,30 +655,19 @@
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Otra Informacion";
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(115, 90);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(180, 20);
+            this.textBox2.TabIndex = 10;
+            // 
             // TxtFechaFactura
             // 
             this.TxtFechaFactura.Location = new System.Drawing.Point(115, 56);
             this.TxtFechaFactura.Name = "TxtFechaFactura";
             this.TxtFechaFactura.Size = new System.Drawing.Size(180, 20);
             this.TxtFechaFactura.TabIndex = 8;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(36, 90);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(71, 13);
-            this.label29.TabIndex = 9;
-            this.label29.Text = "Nombre Fact.";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(36, 60);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(37, 13);
-            this.label30.TabIndex = 8;
-            this.label30.Text = "Fecha";
             // 
             // label31
             // 
@@ -682,12 +678,30 @@
             this.label31.TabIndex = 1;
             this.label31.Text = "Estado";
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(36, 90);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(71, 13);
+            this.label29.TabIndex = 9;
+            this.label29.Text = "Nombre Fact.";
+            // 
             // TxtEstadoFactura
             // 
             this.TxtEstadoFactura.Location = new System.Drawing.Point(115, 27);
             this.TxtEstadoFactura.Name = "TxtEstadoFactura";
             this.TxtEstadoFactura.Size = new System.Drawing.Size(180, 20);
             this.TxtEstadoFactura.TabIndex = 0;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(36, 60);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(37, 13);
+            this.label30.TabIndex = 8;
+            this.label30.Text = "Fecha";
             // 
             // groupBox14
             // 
@@ -1314,7 +1328,7 @@
             this.groupBox6.Controls.Add(this.buttonCancelarVehiculo);
             this.groupBox6.Controls.Add(this.buttonGuardarVehiculo);
             this.groupBox6.Controls.Add(this.label12);
-            this.groupBox6.Controls.Add(this.textBoxModeloVehiculo);
+            this.groupBox6.Controls.Add(this.TxTModeloVehiculo);
             this.groupBox6.Location = new System.Drawing.Point(22, 13);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(968, 156);
@@ -1429,12 +1443,12 @@
             this.label12.TabIndex = 16;
             this.label12.Text = "Modelo";
             // 
-            // textBoxModeloVehiculo
+            // TxTModeloVehiculo
             // 
-            this.textBoxModeloVehiculo.Location = new System.Drawing.Point(110, 35);
-            this.textBoxModeloVehiculo.Name = "textBoxModeloVehiculo";
-            this.textBoxModeloVehiculo.Size = new System.Drawing.Size(131, 20);
-            this.textBoxModeloVehiculo.TabIndex = 12;
+            this.TxTModeloVehiculo.Location = new System.Drawing.Point(110, 35);
+            this.TxTModeloVehiculo.Name = "TxTModeloVehiculo";
+            this.TxTModeloVehiculo.Size = new System.Drawing.Size(131, 20);
+            this.TxTModeloVehiculo.TabIndex = 12;
             // 
             // tabPage2
             // 
@@ -1929,20 +1943,6 @@
             this.TBDescripcionProducto.Size = new System.Drawing.Size(188, 20);
             this.TBDescripcionProducto.TabIndex = 9;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(282, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 15;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(115, 90);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 20);
-            this.textBox2.TabIndex = 10;
-            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2069,7 +2069,7 @@
         private System.Windows.Forms.Button buttonCancelarVehiculo;
         private System.Windows.Forms.Button buttonGuardarVehiculo;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBoxModeloVehiculo;
+        private System.Windows.Forms.TextBox TxTModeloVehiculo;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.DataGridView dataGridViewMarca;
         private System.Windows.Forms.Button buttonEliminarMarca;
