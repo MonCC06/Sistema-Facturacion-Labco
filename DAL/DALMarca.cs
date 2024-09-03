@@ -22,7 +22,7 @@ namespace DAL
             try
             {
                 SQLCon = Conexion.GetInstancia().CrearConexion();
-                SqlCommand Comando = new SqlCommand("USP_Listado_Marca", SQLCon);
+                SqlCommand Comando = new SqlCommand("USP_Listado_Ma", SQLCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
                 SQLCon.Open();
@@ -59,12 +59,11 @@ namespace DAL
             try
             {
                 SqlCon = Conexion.GetInstancia().CrearConexion();
-                SqlCommand comando = new SqlCommand("USP_Guardar_Marca", SqlCon);
+                SqlCommand comando = new SqlCommand("USP_Guardar_Ma", SqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.Add("@nOpcion", SqlDbType.Int).Value = nOpcion;
                 comando.Parameters.Add("@IDMarca", SqlDbType.Int).Value = ma.IDMarca;
                 comando.Parameters.Add("@cNombre", SqlDbType.VarChar).Value = ma.Nombre;
-                comando.Parameters.Add("@Estado", SqlDbType.Bit).Value = ma.Estado;
                 SqlCon.Open();
                 Rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "No se logro registrar el dato";
 
@@ -121,7 +120,7 @@ namespace DAL
             try
             {
                 SqlCon = Conexion.GetInstancia().CrearConexion();
-                SqlCommand Comando = new SqlCommand("USP_Listado_Marca", SqlCon);
+                SqlCommand Comando = new SqlCommand("USP_Listado_Ma", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
                 SqlCon.Open();

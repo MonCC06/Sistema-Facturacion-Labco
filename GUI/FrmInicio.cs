@@ -134,6 +134,52 @@ namespace GUI
 
         }
 
+
+
+        private void GuardarMarca()
+        {
+
+            if (TxTNombreMarca.Text == String.Empty)
+            {
+                MessageBox.Show("Falta ingresar datos requeridos(*)", "Aviso del sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else
+            {
+
+                ETMarca etmarca = new ETMarca();
+                string Rpta = "";
+                etmarca.IDMarca = this.IDMarca;
+                etmarca.Nombre = TxTNombreMarca.Text.Trim();
+                Rpta = BLMarca.GuardarMA(EstadoGuarda, etmarca);
+
+
+                if (Rpta == "OK")
+                {
+                    this.ListadoVe("%");
+                    MessageBox.Show("Los datos se han registrado", "Aviso del sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Information);
+                    EstadoGuarda = 0; // si no guardo nada
+                    TxTNombreMarca.Text = "";
+                    TxTNombreMarca.ReadOnly = true;
+                    this.IDMarca = 0;
+
+                }
+                else
+                {
+                    MessageBox.Show(Rpta, "Aviso del sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+
+                }
+
+            }
+
+
+
+        }
+
+
+
         #endregion
 
         #region Metodos Cliente
@@ -931,43 +977,8 @@ namespace GUI
         #region Metodo Marca
         private void buttonGuardarMarca_Click(object sender, EventArgs e)
         {
-            if (TxTNombreMarca.Text == String.Empty)
-            {
-                MessageBox.Show("Falta ingresar datos requeridos(*)", "Aviso del sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-            else
-            {
-
-                ETMarca etmarca = new ETMarca();
-                string Rpta = "";
-                etmarca.IDMarca = this.IDMarca;
-                etmarca.Nombre = TxTNombreMarca.Text.Trim();
-                Rpta = BLMarca.GuardarMA(EstadoGuarda, etmarca);
-
-
-                if (Rpta == "OK")
-                {
-                    this.ListadoVe("%");
-                    MessageBox.Show("Los datos se han registrado", "Aviso del sistema", MessageBoxButtons.OK,
-                   MessageBoxIcon.Information);
-
-                    EstadoGuarda = 0; // si no guardo nada
-
-                    TxTNombreMarca.Text = "";
-                    TxTNombreMarca.ReadOnly = true;
-                    this.IDMarca = 0;
-
-                }
-                else
-                {
-                    MessageBox.Show(Rpta, "Aviso del sistema", MessageBoxButtons.OK,
-                   MessageBoxIcon.Error);
-
-                }
-
-            }
-
+            EstadoGuarda = 1;
+            GuardarMarca();
 
         }
 
