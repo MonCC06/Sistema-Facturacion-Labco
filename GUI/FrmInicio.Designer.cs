@@ -1140,6 +1140,7 @@
             this.buttonModificarVehiculo.TabIndex = 6;
             this.buttonModificarVehiculo.Text = "Modificar";
             this.buttonModificarVehiculo.UseVisualStyleBackColor = true;
+            this.buttonModificarVehiculo.Click += new System.EventHandler(this.buttonModificarVehiculo_Click);
             // 
             // TxTBuscarVehiculo
             // 
@@ -1165,6 +1166,7 @@
             this.buttonBuscarVehiculo.TabIndex = 3;
             this.buttonBuscarVehiculo.Text = "Buscar";
             this.buttonBuscarVehiculo.UseVisualStyleBackColor = true;
+            this.buttonBuscarVehiculo.Click += new System.EventHandler(this.buttonBuscarVehiculo_Click);
             // 
             // chkplacavehiculo
             // 
@@ -1297,6 +1299,7 @@
             this.buttonCancelarVehiculo.TabIndex = 18;
             this.buttonCancelarVehiculo.Text = "Cancelar";
             this.buttonCancelarVehiculo.UseVisualStyleBackColor = true;
+            this.buttonCancelarVehiculo.Click += new System.EventHandler(this.buttonCancelarVehiculo_Click);
             // 
             // buttonGuardarVehiculo
             // 
@@ -1306,6 +1309,7 @@
             this.buttonGuardarVehiculo.TabIndex = 17;
             this.buttonGuardarVehiculo.Text = "Guardar";
             this.buttonGuardarVehiculo.UseVisualStyleBackColor = true;
+            this.buttonGuardarVehiculo.Click += new System.EventHandler(this.buttonGuardarVehiculo_Click);
             // 
             // label12
             // 
