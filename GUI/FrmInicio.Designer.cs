@@ -1131,6 +1131,7 @@
             this.buttonEliminarVehiculo.TabIndex = 7;
             this.buttonEliminarVehiculo.Text = "Eliminar";
             this.buttonEliminarVehiculo.UseVisualStyleBackColor = true;
+            this.buttonEliminarVehiculo.Click += new System.EventHandler(this.buttonEliminarVehiculo_Click);
             // 
             // buttonModificarVehiculo
             // 

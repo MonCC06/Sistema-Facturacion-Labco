@@ -903,7 +903,49 @@ namespace GUI
 
         }
 
-        #endregion
+       
+
+        private void buttonEliminarVehiculo_Click(object sender, EventArgs e)
+        {
+           
+            
+                if (string.IsNullOrEmpty(Convert.ToString(dataGridViewVehiculo.CurrentRow.Cells["IdVehiculo"].Value)))
+                {
+                    MessageBox.Show("No hay datos que mostrar", "Aviso del sistema", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+                else
+                {
+                    DialogResult opcion;
+                    opcion = MessageBox.Show("Esta seguro de eliminar el registro seleccionado ?", "Aviso del sistema", MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                    if (opcion == DialogResult.Yes)
+                    {
+                        string Rpta = "";
+                        this.IDVehiculo = Convert.ToInt32(dataGridViewVehiculo.CurrentRow.Cells["IDVehiculo"].Value);
+                        Rpta = BLVehiculo.EliminaVE(this.IDVehiculo);
+
+                        if (Rpta.Equals("OK"))
+                        {
+                            this.ListadoVe("%");
+                            this.IDVehiculo = 0;
+                            MessageBox.Show("Registro eliminado", "Aviso del sistema", MessageBoxButtons.OK,
+                       MessageBoxIcon.Exclamation);
+                        }
+
+                    }
+
+
+
+
+
+                }
+
+            #endregion
+        }
+    }
+        
     }
 
     //hola
