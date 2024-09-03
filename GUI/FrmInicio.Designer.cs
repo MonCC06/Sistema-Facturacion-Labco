@@ -591,8 +591,7 @@
             // groupBox14
             // 
             this.groupBox14.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox14.Controls.Add(this.TxtCedulaCliente);
-            this.groupBox14.Controls.Add(this.label11);
+
             this.groupBox14.Controls.Add(this.TxtEmailCliente);
             this.groupBox14.Controls.Add(this.TxtTelefonoCliente);
             this.groupBox14.Controls.Add(this.TxtNombreCliente);
@@ -609,20 +608,11 @@
 <<<<<<< HEAD
             // listBox1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(401, 60);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(149, 69);
-            this.listBox1.TabIndex = 9;
+            
             // 
             // AgregarCL
             // 
-            this.AgregarCL.Location = new System.Drawing.Point(320, 60);
-            this.AgregarCL.Name = "AgregarCL";
-            this.AgregarCL.Size = new System.Drawing.Size(75, 23);
-            this.AgregarCL.TabIndex = 8;
-            this.AgregarCL.Text = "Agregar";
-            this.AgregarCL.UseVisualStyleBackColor = true;
+            
             // 
 =======
 >>>>>>> dc63a61eee01a38efb1ce6c836dce046a8de39ec
