@@ -399,72 +399,72 @@
             // 
             // textBox20
             // 
-            this.textBox20.Location = new System.Drawing.Point(691, 235);
+            this.textBox20.Location = new System.Drawing.Point(53, 235);
             this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(103, 20);
+            this.textBox20.Size = new System.Drawing.Size(63, 20);
             this.textBox20.TabIndex = 35;
             // 
             // textBox19
             // 
-            this.textBox19.Location = new System.Drawing.Point(691, 209);
+            this.textBox19.Location = new System.Drawing.Point(53, 209);
             this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(103, 20);
+            this.textBox19.Size = new System.Drawing.Size(63, 20);
             this.textBox19.TabIndex = 34;
             // 
             // textBox18
             // 
-            this.textBox18.Location = new System.Drawing.Point(691, 183);
+            this.textBox18.Location = new System.Drawing.Point(53, 183);
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(103, 20);
+            this.textBox18.Size = new System.Drawing.Size(63, 20);
             this.textBox18.TabIndex = 33;
             // 
             // textBox17
             // 
-            this.textBox17.Location = new System.Drawing.Point(691, 157);
+            this.textBox17.Location = new System.Drawing.Point(53, 157);
             this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(103, 20);
+            this.textBox17.Size = new System.Drawing.Size(63, 20);
             this.textBox17.TabIndex = 32;
             // 
             // textBox16
             // 
-            this.textBox16.Location = new System.Drawing.Point(691, 131);
+            this.textBox16.Location = new System.Drawing.Point(53, 131);
             this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(103, 20);
+            this.textBox16.Size = new System.Drawing.Size(63, 20);
             this.textBox16.TabIndex = 31;
             // 
             // textBox15
             // 
-            this.textBox15.Location = new System.Drawing.Point(691, 105);
+            this.textBox15.Location = new System.Drawing.Point(53, 105);
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(103, 20);
+            this.textBox15.Size = new System.Drawing.Size(63, 20);
             this.textBox15.TabIndex = 30;
             // 
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(541, 53);
+            this.dataGridView3.Location = new System.Drawing.Point(800, 53);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(144, 202);
             this.dataGridView3.TabIndex = 29;
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(691, 79);
+            this.textBox14.Location = new System.Drawing.Point(53, 79);
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(103, 20);
+            this.textBox14.Size = new System.Drawing.Size(63, 20);
             this.textBox14.TabIndex = 28;
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(691, 53);
+            this.textBox13.Location = new System.Drawing.Point(53, 53);
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(103, 20);
+            this.textBox13.Size = new System.Drawing.Size(63, 20);
             this.textBox13.TabIndex = 15;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(553, 34);
+            this.label26.Location = new System.Drawing.Point(854, 34);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(74, 13);
             this.label26.TabIndex = 27;
@@ -473,7 +473,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(36, 29);
+            this.label25.Location = new System.Drawing.Point(238, 34);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(55, 13);
             this.label25.TabIndex = 26;
@@ -599,7 +599,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(709, 34);
+            this.label13.Location = new System.Drawing.Point(57, 34);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(49, 13);
             this.label13.TabIndex = 18;
@@ -608,9 +608,9 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(39, 53);
+            this.dataGridView2.Location = new System.Drawing.Point(53, 53);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(499, 202);
+            this.dataGridView2.Size = new System.Drawing.Size(926, 202);
             this.dataGridView2.TabIndex = 17;
             // 
             // comboBox2
@@ -2039,7 +2039,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1050, 612);
+            this.ClientSize = new System.Drawing.Size(1050, 749);
             this.Controls.Add(this.TabServicicos);
             this.Name = "FrmInicio";
             this.Text = "FrmInicio";

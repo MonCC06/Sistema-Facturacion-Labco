@@ -358,7 +358,5 @@ namespace GUI
             }
 
         }
-        #endregion
->>>>>>> ed0928e80b52815efe1f83d4ed0edcd2fd83d458
     }
 }
