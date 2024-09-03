@@ -9,7 +9,7 @@ using ET;
 
 namespace BL
 {
-    internal class BLVehiculo
+    public class BLVehiculo
     {
         public static DataTable ListadoVE(string cTexto)
         {

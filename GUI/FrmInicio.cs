@@ -26,7 +26,59 @@ namespace GUI
         int IDCliente = 0;
         int IDTrabajador = 0;
         int IDFactura = 0;
+        int IDVehiculo = 0;
         #endregion
+
+        #region Metodo vehiculo
+        private void FormatoVe()
+        {
+            dataGridViewVehiculo.Columns[0].Width = 100;
+            dataGridViewVehiculo.Columns[0].HeaderText = "ID Vehiculo";
+            dataGridViewVehiculo.Columns[1].Width = 100;
+            dataGridViewVehiculo.Columns[1].HeaderText = "Vehiculo";
+
+        }
+
+
+
+        private void ListadoVe(string cTexto)
+        {
+
+            try
+            {
+                dataGridViewVehiculo.DataSource = BLVehiculo.ListadoVE(cTexto);
+                this.FormatoVe();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+
+        }
+
+
+        private void SeleccionaItem()
+        {
+            //Validasmos que el DATAGEIP tenga datos para que no nos de error
+
+            if (string.IsNullOrEmpty(Convert.ToString(dataGridViewVehiculo.CurrentRow.Cells["IDVehiculo"].Value)))
+            {
+                MessageBox.Show("No hay datos que mostrar", "Aviso del sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.IDVehiculo = Convert.ToInt32(dataGridViewVehiculo.CurrentRow.Cells["IDVehiculo"].Value);
+                TxTPlacaVehiculo.Text = Convert.ToString(dataGridViewVehiculo.CurrentRow.Cells["Placa"].Value);
+
+            }
+
+        }
+
+
+        #endregion
+
 
         #region Metodos Factura
         private void FormatoFA()
