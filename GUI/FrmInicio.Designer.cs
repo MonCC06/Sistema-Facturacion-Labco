@@ -48,13 +48,12 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.TxtDistanciaVehiculoFactura = new System.Windows.Forms.TextBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.TxtAnnoVehiculoFactura = new System.Windows.Forms.TextBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TxtMarcaVehiculoFactura = new System.Windows.Forms.TextBox();
+            this.TxtPlacaVehiculoFactura = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -66,8 +65,6 @@
             this.TxtEstadoFactura = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.AgregarCL = new System.Windows.Forms.Button();
             this.TxtEmailCliente = new System.Windows.Forms.TextBox();
             this.TxtTelefonoCliente = new System.Windows.Forms.TextBox();
             this.TxtNombreCliente = new System.Windows.Forms.TextBox();
@@ -190,9 +187,14 @@
             this.label42 = new System.Windows.Forms.Label();
             this.TBPrecioProducto = new System.Windows.Forms.TextBox();
             this.TBDescripcionProducto = new System.Windows.Forms.TextBox();
+<<<<<<< HEAD
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+=======
+            this.label11 = new System.Windows.Forms.Label();
+            this.TxtCedulaCliente = new System.Windows.Forms.TextBox();
+>>>>>>> dc63a61eee01a38efb1ce6c836dce046a8de39ec
             this.TabServicicos.SuspendLayout();
             this.tabFactura.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -431,13 +433,12 @@
             // groupBox12
             // 
             this.groupBox12.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox12.Controls.Add(this.textBox9);
+            this.groupBox12.Controls.Add(this.TxtDistanciaVehiculoFactura);
             this.groupBox12.Controls.Add(this.checkBox2);
-            this.groupBox12.Controls.Add(this.textBox8);
+            this.groupBox12.Controls.Add(this.TxtAnnoVehiculoFactura);
             this.groupBox12.Controls.Add(this.checkBox3);
-            this.groupBox12.Controls.Add(this.textBox7);
-            this.groupBox12.Controls.Add(this.button3);
-            this.groupBox12.Controls.Add(this.textBox6);
+            this.groupBox12.Controls.Add(this.TxtMarcaVehiculoFactura);
+            this.groupBox12.Controls.Add(this.TxtPlacaVehiculoFactura);
             this.groupBox12.Controls.Add(this.label17);
             this.groupBox12.Controls.Add(this.label27);
             this.groupBox12.Controls.Add(this.label28);
@@ -448,62 +449,53 @@
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Vehiculo";
             // 
-            // textBox9
+            // TxtDistanciaVehiculoFactura
             // 
-            this.textBox9.Location = new System.Drawing.Point(857, 24);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(110, 20);
-            this.textBox9.TabIndex = 14;
+            this.TxtDistanciaVehiculoFactura.Location = new System.Drawing.Point(791, 27);
+            this.TxtDistanciaVehiculoFactura.Name = "TxtDistanciaVehiculoFactura";
+            this.TxtDistanciaVehiculoFactura.Size = new System.Drawing.Size(176, 20);
+            this.TxtDistanciaVehiculoFactura.TabIndex = 14;
             // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(777, 19);
+            this.checkBox2.Location = new System.Drawing.Point(707, 31);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(74, 17);
             this.checkBox2.TabIndex = 12;
             this.checkBox2.Text = "Kilometros";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // textBox8
+            // TxtAnnoVehiculoFactura
             // 
-            this.textBox8.Location = new System.Drawing.Point(488, 28);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(138, 20);
-            this.textBox8.TabIndex = 13;
+            this.TxtAnnoVehiculoFactura.Location = new System.Drawing.Point(488, 28);
+            this.TxtAnnoVehiculoFactura.Name = "TxtAnnoVehiculoFactura";
+            this.TxtAnnoVehiculoFactura.Size = new System.Drawing.Size(138, 20);
+            this.TxtAnnoVehiculoFactura.TabIndex = 13;
             // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(777, 42);
+            this.checkBox3.Location = new System.Drawing.Point(649, 30);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(52, 17);
             this.checkBox3.TabIndex = 13;
             this.checkBox3.Text = "Millas";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // TxtMarcaVehiculoFactura
             // 
-            this.textBox7.Location = new System.Drawing.Point(282, 27);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(138, 20);
-            this.textBox7.TabIndex = 12;
+            this.TxtMarcaVehiculoFactura.Location = new System.Drawing.Point(282, 27);
+            this.TxtMarcaVehiculoFactura.Name = "TxtMarcaVehiculoFactura";
+            this.TxtMarcaVehiculoFactura.Size = new System.Drawing.Size(138, 20);
+            this.TxtMarcaVehiculoFactura.TabIndex = 12;
             // 
-            // button3
+            // TxtPlacaVehiculoFactura
             // 
-            this.button3.Location = new System.Drawing.Point(649, 25);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Agregar";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(76, 27);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(138, 20);
-            this.textBox6.TabIndex = 9;
+            this.TxtPlacaVehiculoFactura.Location = new System.Drawing.Point(76, 27);
+            this.TxtPlacaVehiculoFactura.Name = "TxtPlacaVehiculoFactura";
+            this.TxtPlacaVehiculoFactura.Size = new System.Drawing.Size(138, 20);
+            this.TxtPlacaVehiculoFactura.TabIndex = 9;
             // 
             // label17
             // 
@@ -552,14 +544,14 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(115, 90);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 20);
+            this.textBox2.Size = new System.Drawing.Size(264, 20);
             this.textBox2.TabIndex = 10;
             // 
             // TxtFechaFactura
             // 
             this.TxtFechaFactura.Location = new System.Drawing.Point(115, 56);
             this.TxtFechaFactura.Name = "TxtFechaFactura";
-            this.TxtFechaFactura.Size = new System.Drawing.Size(180, 20);
+            this.TxtFechaFactura.Size = new System.Drawing.Size(264, 20);
             this.TxtFechaFactura.TabIndex = 8;
             // 
             // label31
@@ -584,7 +576,7 @@
             // 
             this.TxtEstadoFactura.Location = new System.Drawing.Point(115, 27);
             this.TxtEstadoFactura.Name = "TxtEstadoFactura";
-            this.TxtEstadoFactura.Size = new System.Drawing.Size(180, 20);
+            this.TxtEstadoFactura.Size = new System.Drawing.Size(264, 20);
             this.TxtEstadoFactura.TabIndex = 0;
             // 
             // label30
@@ -599,8 +591,8 @@
             // groupBox14
             // 
             this.groupBox14.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox14.Controls.Add(this.listBox1);
-            this.groupBox14.Controls.Add(this.AgregarCL);
+            this.groupBox14.Controls.Add(this.TxtCedulaCliente);
+            this.groupBox14.Controls.Add(this.label11);
             this.groupBox14.Controls.Add(this.TxtEmailCliente);
             this.groupBox14.Controls.Add(this.TxtTelefonoCliente);
             this.groupBox14.Controls.Add(this.TxtNombreCliente);
@@ -614,6 +606,7 @@
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Datos del Cliente";
             // 
+<<<<<<< HEAD
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
@@ -631,23 +624,25 @@
             this.AgregarCL.Text = "Agregar";
             this.AgregarCL.UseVisualStyleBackColor = true;
             // 
+=======
+>>>>>>> dc63a61eee01a38efb1ce6c836dce046a8de39ec
             // TxtEmailCliente
             // 
-            this.TxtEmailCliente.Location = new System.Drawing.Point(358, 30);
+            this.TxtEmailCliente.Location = new System.Drawing.Point(357, 36);
             this.TxtEmailCliente.Name = "TxtEmailCliente";
             this.TxtEmailCliente.Size = new System.Drawing.Size(180, 20);
             this.TxtEmailCliente.TabIndex = 7;
             // 
             // TxtTelefonoCliente
             // 
-            this.TxtTelefonoCliente.Location = new System.Drawing.Point(113, 64);
+            this.TxtTelefonoCliente.Location = new System.Drawing.Point(112, 70);
             this.TxtTelefonoCliente.Name = "TxtTelefonoCliente";
             this.TxtTelefonoCliente.Size = new System.Drawing.Size(180, 20);
             this.TxtTelefonoCliente.TabIndex = 6;
             // 
             // TxtNombreCliente
             // 
-            this.TxtNombreCliente.Location = new System.Drawing.Point(113, 30);
+            this.TxtNombreCliente.Location = new System.Drawing.Point(112, 36);
             this.TxtNombreCliente.Name = "TxtNombreCliente";
             this.TxtNombreCliente.Size = new System.Drawing.Size(180, 20);
             this.TxtNombreCliente.TabIndex = 2;
@@ -655,7 +650,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(317, 34);
+            this.label32.Location = new System.Drawing.Point(316, 40);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(35, 13);
             this.label32.TabIndex = 5;
@@ -664,7 +659,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(36, 64);
+            this.label33.Location = new System.Drawing.Point(35, 70);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(49, 13);
             this.label33.TabIndex = 4;
@@ -673,7 +668,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(36, 34);
+            this.label34.Location = new System.Drawing.Point(35, 40);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(44, 13);
             this.label34.TabIndex = 2;
@@ -1836,6 +1831,7 @@
             this.TBDescripcionProducto.Size = new System.Drawing.Size(188, 20);
             this.TBDescripcionProducto.TabIndex = 9;
             // 
+<<<<<<< HEAD
             // Column1
             // 
             this.Column1.HeaderText = "Cantidad";
@@ -1851,6 +1847,23 @@
             // 
             this.Column3.HeaderText = "Precio unitario";
             this.Column3.Name = "Column3";
+=======
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(316, 77);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 13);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Cedula";
+            // 
+            // TxtCedulaCliente
+            // 
+            this.TxtCedulaCliente.Location = new System.Drawing.Point(357, 74);
+            this.TxtCedulaCliente.Name = "TxtCedulaCliente";
+            this.TxtCedulaCliente.Size = new System.Drawing.Size(180, 20);
+            this.TxtCedulaCliente.TabIndex = 9;
+>>>>>>> dc63a61eee01a38efb1ce6c836dce046a8de39ec
             // 
             // FrmInicio
             // 
@@ -2009,13 +2022,12 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox TxtDistanciaVehiculoFactura;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox TxtAnnoVehiculoFactura;
         private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox TxtMarcaVehiculoFactura;
+        private System.Windows.Forms.TextBox TxtPlacaVehiculoFactura;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
@@ -2026,7 +2038,6 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox TxtEstadoFactura;
         private System.Windows.Forms.GroupBox groupBox14;
-        private System.Windows.Forms.Button AgregarCL;
         private System.Windows.Forms.TextBox TxtEmailCliente;
         private System.Windows.Forms.TextBox TxtTelefonoCliente;
         private System.Windows.Forms.TextBox TxtNombreCliente;
@@ -2079,10 +2090,17 @@
         private System.Windows.Forms.Button btnBuscarTrabajador;
         private System.Windows.Forms.CheckBox ckbCedulaTrabajador;
         private System.Windows.Forms.CheckBox ckbNombreTrabajador;
+<<<<<<< HEAD
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+=======
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtCedulaCliente;
+        private System.Windows.Forms.Label label11;
+>>>>>>> dc63a61eee01a38efb1ce6c836dce046a8de39ec
     }
 }
