@@ -32,6 +32,16 @@
             this.tabFactura = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+<<<<<<< HEAD
+=======
+            this.PnlListaCL = new System.Windows.Forms.Panel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.BtnRetornar2 = new System.Windows.Forms.Button();
+            this.BtnBuscar2 = new System.Windows.Forms.Button();
+            this.DgvListaCL = new System.Windows.Forms.DataGridView();
+            this.label14 = new System.Windows.Forms.Label();
+            this.TxtListaCL = new System.Windows.Forms.TextBox();
+>>>>>>> 1610070b9fc085cd15aa033ec1b5044870a71e48
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.label25 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
@@ -207,6 +217,8 @@
             this.tabFactura.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.PnlListaCL.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvListaCL)).BeginInit();
             this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
@@ -296,6 +308,78 @@
             this.tabPage3.Text = "Agregar";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+<<<<<<< HEAD
+=======
+            // PnlListaCL
+            // 
+            this.PnlListaCL.Controls.Add(this.label26);
+            this.PnlListaCL.Controls.Add(this.BtnRetornar2);
+            this.PnlListaCL.Controls.Add(this.BtnBuscar2);
+            this.PnlListaCL.Controls.Add(this.DgvListaCL);
+            this.PnlListaCL.Controls.Add(this.label14);
+            this.PnlListaCL.Controls.Add(this.TxtListaCL);
+            this.PnlListaCL.Location = new System.Drawing.Point(223, 29);
+            this.PnlListaCL.Name = "PnlListaCL";
+            this.PnlListaCL.Size = new System.Drawing.Size(371, 226);
+            this.PnlListaCL.TabIndex = 10;
+            this.PnlListaCL.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(125, 9);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(100, 13);
+            this.label26.TabIndex = 5;
+            this.label26.Text = "Lista de los Clientes";
+            // 
+            // BtnRetornar2
+            // 
+            this.BtnRetornar2.Location = new System.Drawing.Point(269, 27);
+            this.BtnRetornar2.Name = "BtnRetornar2";
+            this.BtnRetornar2.Size = new System.Drawing.Size(41, 24);
+            this.BtnRetornar2.TabIndex = 4;
+            this.BtnRetornar2.Text = ": : :";
+            this.BtnRetornar2.UseVisualStyleBackColor = true;
+            this.BtnRetornar2.Click += new System.EventHandler(this.BtnRetornar2_Click);
+            // 
+            // BtnBuscar2
+            // 
+            this.BtnBuscar2.Location = new System.Drawing.Point(226, 27);
+            this.BtnBuscar2.Name = "BtnBuscar2";
+            this.BtnBuscar2.Size = new System.Drawing.Size(36, 24);
+            this.BtnBuscar2.TabIndex = 3;
+            this.BtnBuscar2.Text = ": : :";
+            this.BtnBuscar2.UseVisualStyleBackColor = true;
+            this.BtnBuscar2.Click += new System.EventHandler(this.BtnBuscar2_Click_1);
+            // 
+            // DgvListaCL
+            // 
+            this.DgvListaCL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvListaCL.Location = new System.Drawing.Point(3, 66);
+            this.DgvListaCL.Name = "DgvListaCL";
+            this.DgvListaCL.Size = new System.Drawing.Size(365, 160);
+            this.DgvListaCL.TabIndex = 0;
+            this.DgvListaCL.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaCL_CellContentClick);
+            this.DgvListaCL.DoubleClick += new System.EventHandler(this.DgvListaCL_DoubleClick);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(3, 31);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(43, 13);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Buscar:";
+            // 
+            // TxtListaCL
+            // 
+            this.TxtListaCL.Location = new System.Drawing.Point(49, 28);
+            this.TxtListaCL.Name = "TxtListaCL";
+            this.TxtListaCL.Size = new System.Drawing.Size(171, 20);
+            this.TxtListaCL.TabIndex = 1;
+            // 
+>>>>>>> 1610070b9fc085cd15aa033ec1b5044870a71e48
             // groupBox9
             // 
             this.groupBox9.BackColor = System.Drawing.Color.Gainsboro;
@@ -2025,6 +2109,12 @@
             this.tabFactura.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+<<<<<<< HEAD
+=======
+            this.PnlListaCL.ResumeLayout(false);
+            this.PnlListaCL.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvListaCL)).EndInit();
+>>>>>>> 1610070b9fc085cd15aa033ec1b5044870a71e48
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBox10.ResumeLayout(false);
