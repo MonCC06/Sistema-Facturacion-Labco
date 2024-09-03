@@ -631,7 +631,6 @@
             this.TxtNombreCliente.Name = "TxtNombreCliente";
             this.TxtNombreCliente.Size = new System.Drawing.Size(180, 20);
             this.TxtNombreCliente.TabIndex = 2;
-            this.TxtNombreCliente.TextChanged += new System.EventHandler(this.TxtNombreCliente_TextChanged);
             // 
             // label32
             // 

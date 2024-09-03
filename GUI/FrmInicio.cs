@@ -196,7 +196,86 @@ namespace GUI
 
         }
         #endregion
+        #region Metodos producto
+        int iDProducto = 0;
+        string descripcion = "";
+        float precio = 0;
+        int stockActual = 0;
 
+
+
+
+        private void FormatoPR()
+        {
+            DGVProducto.Columns[0].Width = 90;
+            DGVProducto.Columns[0].HeaderText = "ID Producto";
+            DGVProducto.Columns[1].Width = 240;
+            DGVProducto.Columns[1].HeaderText = "Producto";
+            DGVProducto.Columns[2].Width = 150;
+            DGVProducto.Columns[2].HeaderText = "Precio";
+            DGVProducto.Columns[3].Width = 80;
+            DGVProducto.Columns[3].HeaderText = "Stock";
+
+        }
+        private void ListadoPR(string cTexto)
+        {
+            try
+            {
+                DGVProducto.DataSource = BLProducto.ListadoPR(cTexto);
+                this.FormatoPR();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+            finally
+            {
+
+            }
+        }
+        private void EstadoBotonesPrincipales(bool LEstado)
+        {
+            this.BTGuardarProducto.Enabled = LEstado;
+            this.BTEliminararProducto.Enabled = LEstado;
+            this.BTModificarProducto.Enabled = LEstado;
+            this.BTBusarProducto.Enabled = LEstado;
+            this.BTCancelarProducto.Enabled = LEstado;
+
+
+        }
+
+        private void EstadoBotonesProcesos(bool LEstado)
+        {
+            this.BTCancelarProducto.Enabled = LEstado;
+            this.BTGuardarProducto.Enabled = LEstado;
+
+
+
+        }
+        private void SeleccionaItemProducto()
+        {
+            // Validamos que el DataGridView tenga datos para que no nos dé error
+            if (string.IsNullOrEmpty(Convert.ToString(DGVProducto.CurrentRow.Cells["IdProducto"].Value)))
+            {
+                MessageBox.Show("No hay datos que mostrar", "Aviso del sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else
+            {
+                // Asignamos los valores del DataGridView a las variables correspondientes
+                this.iDProducto = Convert.ToInt32(DGVProducto.CurrentRow.Cells["IdProducto"].Value);
+                this.precio = Convert.ToInt32(DGVProducto.CurrentRow.Cells["precio"].Value);
+                this.stockActual = Convert.ToInt32(DGVProducto.CurrentRow.Cells["StockActual"].Value);
+
+
+                // Asignamos los valores del DataGridView a los TextBoxes correspondientes
+                TBDescripcionProducto.Text = Convert.ToString(DGVProducto.CurrentRow.Cells["DescripcionPr"].Value);
+                TBPrecioProducto.Text = Convert.ToString(DGVProducto.CurrentRow.Cells["precio"].Value);
+                TBStockProducto.Text = Convert.ToString(DGVProducto.CurrentRow.Cells["StockProducto"].Value);
+            }
+        }
+        #endregion
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
@@ -606,7 +685,123 @@ namespace GUI
         #endregion
 
         #region Eventos Factura
-        
+
+        #endregion
+
+        #region Eventos Producto
+        private void BTGuardarProducto_Click(object sender, EventArgs e)
+        {
+            if (TBDescripcionProducto.Text == String.Empty ||
+                TBPrecioProducto.Text == String.Empty ||
+                TBStockProducto.Text == String.Empty)
+
+            {
+                MessageBox.Show("Falta ingresar datos requeridos(*)", "Aviso del sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else//Sino Se procede a registrar los datos
+            {
+                ETProducto eTProducto = new ETProducto();
+                string Rpta = "";
+                eTProducto.IDProducto = this.iDProducto;
+                eTProducto.Descripcion = TBDescripcionProducto.Text.Trim();
+                eTProducto.StockActual = Convert.ToInt32(TBStockProducto.Text);
+                eTProducto.Precio = float.Parse(TBPrecioProducto.Text);
+                Rpta = BLProducto.GuardarPR(EstadoGuarda, eTProducto);
+
+
+                if (Rpta == "OK")
+                {
+                    this.ListadoPR("%");//LLAMAMOS EL METODO PARA ACTUALIZAR LA LISTA
+                    MessageBox.Show("Los datos se han registrado", "Aviso del sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Information);
+
+                    EstadoGuarda = 0;//sIN NINGUNA ACCION
+                    this.EstadoBotonesPrincipales(true);
+                    this.EstadoBotonesProcesos(false);
+                    TBDescripcionProducto.Text = "";
+                    TBStockProducto.Text = "0";
+                    TBPrecioProducto.Text = "0";
+                    TBDescripcionProducto.ReadOnly = true;
+                    TBStockProducto.ReadOnly = true;
+                    TBPrecioProducto.ReadOnly = true;
+
+
+
+                }
+                else
+                {
+                    MessageBox.Show(Rpta, "Aviso del sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+
+                }
+            }
+
+        }
+
+        private void BTCancelarProducto_Click(object sender, EventArgs e)
+        {
+            EstadoGuarda = 0;//Sin ninguna accion
+
+            this.iDProducto = 0;
+            TBDescripcionProducto.Text = "";
+            TBStockProducto.Text = "0";
+            TBPrecioProducto.Text = "0";
+            TBStockProducto.ReadOnly = true;
+            TBPrecioProducto.ReadOnly = true;
+            TBDescripcionProducto.ReadOnly = true;
+            this.EstadoBotonesPrincipales(true);
+            this.EstadoBotonesProcesos(false);
+
+        }
+
+        private void BTModificarProducto_Click(object sender, EventArgs e)
+        {
+            EstadoGuarda = 2;//Sera una actualizacion  
+            this.EstadoBotonesPrincipales(false);
+            this.EstadoBotonesProcesos(true);
+            this.SeleccionaItemProducto();
+            TBDescripcionProducto.ReadOnly = false;
+            TBStockProducto.ReadOnly = false;
+            TBPrecioProducto.ReadOnly = false;
+            TBDescripcionProducto.Focus();
+        }
+
+        private void BTEliminararProducto_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(DGVProducto.CurrentRow.Cells["IdProducto"].Value)))
+            {
+                MessageBox.Show("No hay datos que mostrar", "Aviso del sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult opcion;
+                opcion = MessageBox.Show("Esta seguro de eliminar el registro seleccionado ?", "Aviso del sistema", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (opcion == DialogResult.Yes)
+                {
+                    string Rpta = "";
+                    this.iDProducto = Convert.ToInt32(DGVProducto.CurrentRow.Cells["Idproducto"].Value);
+                    Rpta = BLProducto.EliminaPR(this.iDProducto);
+
+                    if (Rpta.Equals("OK"))
+                    {
+                        this.ListadoPR("%");//LLAMAMOS EL METODO PARA ACTUALIZAR LA LISTA
+                        this.iDProducto = 0;
+                        MessageBox.Show("Registro eliminado", "Aviso del sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Exclamation);
+                    }
+
+                }
+            }
+        }
+
+        private void BTBusarProducto_Click(object sender, EventArgs e)
+        {
+            this.ListadoPR(TBBuscarProducto.Text.Trim());
+        }
         #endregion
 
         private void label25_Click(object sender, EventArgs e)

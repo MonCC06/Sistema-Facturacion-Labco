@@ -57,11 +57,10 @@ namespace DAL
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.Add("@nOpcion", SqlDbType.Int).Value = nOpcion;
                 comando.Parameters.Add("@IDProducto", SqlDbType.Int).Value = pr.IDProducto;
-                comando.Parameters.Add("@cDescripcion_pr", SqlDbType.VarChar).Value = pr.Descripcion    ;
-                comando.Parameters.Add("@nPrecio", SqlDbType.Decimal).Value = pr.Precio;
-                comando.Parameters.Add("@nStockMin", SqlDbType.Decimal).Value = pr.StockMin;
-                comando.Parameters.Add("@nStockMax", SqlDbType.Decimal).Value = pr.StockMax;
-                comando.Parameters.Add("@nEstado", SqlDbType.Bit).Value = pr.Estado;
+                comando.Parameters.Add("@cDescripcion_pro", SqlDbType.VarChar).Value = pr.Descripcion    ;
+                comando.Parameters.Add("@nPrecio_pro", SqlDbType.Decimal).Value = pr.Precio;
+                comando.Parameters.Add("@Stock_Actual_pro", SqlDbType.Decimal).Value = pr.StockActual;
+                comando.Parameters.Add("@Estado_pr", SqlDbType.Bit).Value = pr.Estado;
 
 
                 SqlCon.Open();
