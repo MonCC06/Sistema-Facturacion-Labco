@@ -180,7 +180,7 @@ namespace GUI
         private void Calcular_Totales()
         {
 
-
+            decimal nCantidad = 0;
             decimal nSubtotal = 0;
             decimal nIva = 0;
             decimal nPrecio = 0;
@@ -198,23 +198,24 @@ namespace GUI
                 foreach (DataRow FilaTemp in DgvFacturaProducto.Rows)
                 {
 
-                    nPrecio = nPrecio + Convert.ToDecimal(FilaTemp["total"]); // total con IVA
+                    nPrecio = nPrecio + Convert.ToDecimal(FilaTemp["Precio"]); // Suma de precios
+                    nCantidad = nCantidad + Convert.ToDecimal(FilaTemp["Cantidad"]);
+
+                    nSubtotal = nPrecio * nCantidad;
+                    nIva = nIva / (1 + Convert.ToDecimal("0.13")); // Subtotal sin el IVA
+                    nIva = nSubtotal * nIva;
+                    nTotal = (nSubtotal + nIva);
+
+                    TxtSubtotal.Text = decimal.Round(nSubtotal, 2).ToString("#0.00");
+                    TxtIVA.Text = ("#13.00%");
+                    TxtTotal.Text = decimal.Round(nTotal, 2).ToString("#0.00");
                 }
-
-
-                //nTotal = decimal.Round(nTotal, 2);
-                nSubtotal = nTotal / (1 + Convert.ToDecimal("0.13")); // Subtotal sin el IVA
-                nIva = (nTotal - nSubtotal);
-
-                Txt_subtotal.Text = decimal.Round(nSubtotal, 2).ToString("#0.00");
-                Txt_iva.Text = decimal.Round(nIva, 2).ToString("#0.00");
-                Txt_total_importe.Text = decimal.Round(nTotal, 2).ToString("#0.00");
             }
         }
-#endregion
+        #endregion
 
-#region Metodos Trabajador
-private void FormatoTR()
+        #region Metodos Trabajador
+        private void FormatoTR()
         {
             DgvTrabajador.Columns[0].Width = 100;
             DgvTrabajador.Columns[0].HeaderText = "ID_Trabajador";

@@ -38,9 +38,9 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.TxtTotal = new System.Windows.Forms.TextBox();
+            this.TxtIVA = new System.Windows.Forms.TextBox();
+            this.TxtSubtotal = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -328,9 +328,9 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.textBox12);
-            this.groupBox10.Controls.Add(this.textBox11);
-            this.groupBox10.Controls.Add(this.textBox10);
+            this.groupBox10.Controls.Add(this.TxtTotal);
+            this.groupBox10.Controls.Add(this.TxtIVA);
+            this.groupBox10.Controls.Add(this.TxtSubtotal);
             this.groupBox10.Controls.Add(this.label24);
             this.groupBox10.Controls.Add(this.label23);
             this.groupBox10.Controls.Add(this.label22);
@@ -341,26 +341,26 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Total";
             // 
-            // textBox12
+            // TxtTotal
             // 
-            this.textBox12.Location = new System.Drawing.Point(96, 87);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(205, 20);
-            this.textBox12.TabIndex = 30;
+            this.TxtTotal.Location = new System.Drawing.Point(96, 87);
+            this.TxtTotal.Name = "TxtTotal";
+            this.TxtTotal.Size = new System.Drawing.Size(205, 20);
+            this.TxtTotal.TabIndex = 30;
             // 
-            // textBox11
+            // TxtIVA
             // 
-            this.textBox11.Location = new System.Drawing.Point(96, 56);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(205, 20);
-            this.textBox11.TabIndex = 29;
+            this.TxtIVA.Location = new System.Drawing.Point(96, 56);
+            this.TxtIVA.Name = "TxtIVA";
+            this.TxtIVA.Size = new System.Drawing.Size(205, 20);
+            this.TxtIVA.TabIndex = 29;
             // 
-            // textBox10
+            // TxtSubtotal
             // 
-            this.textBox10.Location = new System.Drawing.Point(96, 22);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(205, 20);
-            this.textBox10.TabIndex = 15;
+            this.TxtSubtotal.Location = new System.Drawing.Point(96, 22);
+            this.TxtSubtotal.Name = "TxtSubtotal";
+            this.TxtSubtotal.Size = new System.Drawing.Size(205, 20);
+            this.TxtSubtotal.TabIndex = 15;
             // 
             // label24
             // 
@@ -1935,9 +1935,9 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox TxtTotal;
+        private System.Windows.Forms.TextBox TxtIVA;
+        private System.Windows.Forms.TextBox TxtSubtotal;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
