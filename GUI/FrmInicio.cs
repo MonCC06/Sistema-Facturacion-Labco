@@ -1378,6 +1378,7 @@ namespace GUI
 
 
         }
+        #endregion
 
         private void TxtCliente_TextChanged(object sender, EventArgs e)
         {
