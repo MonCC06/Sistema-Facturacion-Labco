@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -315,7 +316,7 @@ namespace GUI
             }
 
         }
-
+        //Regla de negocio, numero 2
         private void Calcular_Totales()
         {
 
@@ -333,7 +334,7 @@ namespace GUI
             }
             else
             {
-
+        //impuestos
                 foreach (DataRow FilaTemp in DgvFacturaProducto.Rows)
                 {
 
@@ -351,6 +352,61 @@ namespace GUI
                 }
             }
         }
+
+
+        private void GuardarFa()
+        {
+            if (TxtCedulaCliente.Text == String.Empty ||
+        TxtTelefonoCliente.Text == String.Empty ||
+        TxtTelefonoCliente.Text == String.Empty ||
+        TxtNombreCliente.Text == String.Empty ||
+        TxtEmailCliente.Text == String.Empty ||
+        TxtEstadoFactura.Text == String.Empty ||
+        TxtTrabajador.Text == String.Empty ||
+        TxtPlacaVehiculoFactura.Text == String.Empty ||
+        TxtMarcaVehiculoFactura.Text == String.Empty ||
+        TxtAnnoVehiculoFactura.Text == String.Empty ||
+        TxtDistanciaVehiculoFactura.Text ==String.Empty ||
+        TBStockProducto.Text == String.Empty)
+
+            {
+                MessageBox.Show("Falta ingresar datos requeridos(*)", "Aviso del sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else//Sino Se procede a registrar los datos
+            {
+               
+
+
+                if (Rpta == "OK")
+                {
+                    this.ListadoPR("%");//LLAMAMOS EL METODO PARA ACTUALIZAR LA LISTA
+                    MessageBox.Show("Los datos se han registrado", "Aviso del sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Information);
+
+                    EstadoGuarda = 0;//sIN NINGUNA ACCION
+                    this.EstadoBotonesPrincipales(true);
+                    this.EstadoBotonesProcesos(false);
+                    TBDescripcionProducto.Text = "";
+                    TBStockProducto.Text = "0";
+                    TBPrecioProducto.Text = "0";
+                    TBDescripcionProducto.ReadOnly = true;
+                    TBStockProducto.ReadOnly = true;
+                    TBPrecioProducto.ReadOnly = true;
+
+
+
+                }
+                else
+                {
+                    MessageBox.Show(Rpta, "Aviso del sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+
+                }
+            }
+        }
+
+
         #endregion
 
         #region Metodos Trabajador
@@ -812,76 +868,7 @@ this.btnEliminarTrabajador.Enabled = LEstado;
         }
 
         #region Eventos Clientes
-        private void btnGuardarNuevoCliente_Click(object sender, EventArgs e)
-        {
-            if (txtNuevoNombreCliente.Text == String.Empty)
-            {
-                MessageBox.Show("Nombre del Cliente requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-            }
-            if (txtNuevoCedulaCliente.Text == String.Empty)
-            {
-                MessageBox.Show("Cedula del Cliente requerida(*)", "Aviso del Sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-            }
-            if (txtNuevoCorreoCliente.Text == String.Empty)
-            {
-                MessageBox.Show("Correo del Cliente requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-            }
-            if (txtNuevoTelefonoCliente.Text == String.Empty)
-            {
-                MessageBox.Show("Telefono del  requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-            }
-            else
-            {
-                ETCliente eTCliente = new ETCliente();
-                //Respuesta de la bl y la que recibe de dal cuando se hace el insert (cuando guardamos)
-                //para saber si el proceso fue exitoso o no
-                String Rpta = "";
-                eTCliente.IDCliente = this.IDCliente;
-                //lo que el usuario digite en ese campo se va a capturar y se va a enviar a la bd como propiedad
-                eTCliente.Nombre = txtNuevoNombreCliente.Text.Trim();
-                eTCliente.Cedula = txtNuevoCedulaCliente.Text.Trim();
-                eTCliente.Correo = txtNuevoCorreoCliente.Text.Trim();
-                eTCliente.Telefono = txtNuevoTelefonoCliente.Text.Trim();
-                //respuesta igual a los que nos retorne, enviar parametros para saber si es nuevo o no
-                Rpta = BLCliente.GuardarCL(EstadoGuarda, eTCliente);
-
-
-                //
-                if (Rpta == "OK")
-                {
-                    //volver a actualizar para que apareza el cambio
-                    this.ListadoTR("%");
-                    MessageBox.Show("Los dato se han registrado", "Aviso del Sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-
-                    EstadoGuarda = 0;
-                    //activar botones
-                    this.BotonesTrabajador(true);
-                    //volver todo a su estado original
-                    txtNuevoNombreCliente.Text = "";
-                    txtNuevoCedulaCliente.Text = "";
-                    txtNuevoCorreoCliente.Text = "";
-                    txtNuevoTelefonoCliente.Text = "";
-                    this.IDCliente = 0;
-
-                }
-                else
-                {
-                    MessageBox.Show("No se logro registrar el dato", "Aviso del Sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-                }
-            }
-
-        }
+        
         private void btnModficarCliente_Click(object sender, EventArgs e)
         {
             EstadoGuarda = 2;
@@ -1244,8 +1231,6 @@ this.btnEliminarTrabajador.Enabled = LEstado;
 
 
 
-
-
         }
 
         private void buttonModificarVehiculo_Click(object sender, EventArgs e)
@@ -1515,13 +1500,14 @@ this.btnEliminarTrabajador.Enabled = LEstado;
 
         private void DgvListaCL_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            this.SeleccionaListaCL();
+            PnlListaCL.Visible = true;
         }
 
         private void DgvListaCL_DoubleClick(object sender, EventArgs e)
         {
             this.SeleccionaListaCL();
-            PnlListaCL.Visible = false;
+            PnlListaCL.Visible = true;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -1543,6 +1529,183 @@ this.btnEliminarTrabajador.Enabled = LEstado;
         private void BtnRetornar2_Click(object sender, EventArgs e)
         {
             PnlListaCL.Visible = false;
+        }
+
+        private void btnGuardarNuevoCliente_Click_1(object sender, EventArgs e)
+        {
+            EstadoGuarda = 1;
+            if (EstadoGuarda == 2)
+            {
+                // Actualización del cliente
+                ActualizarCliente();
+            }
+            else if (EstadoGuarda == 1)
+            {
+                // Inserción de nuevo cliente
+                GuardarCliente();
+            }
+            else
+            {
+                MessageBox.Show("El estado de guardado no está definido.", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void ActualizarCliente()
+        {
+            // Aquí puedes utilizar el método GuardarCliente o crear un método específico para actualización.
+            // Asumiendo que `GuardarCliente` se usa para ambos casos:
+            GuardarCliente();
+        }
+
+        private void btnModficarCliente_Click_1(object sender, EventArgs e)
+        {
+            ModificarCliente();
+        }
+
+        private void ModificarCliente()
+        {
+            EstadoGuarda = 2; // Indica que se trata de una actualización
+
+            // Verificar si hay una fila seleccionada en el DataGridView
+            if (DgvCliente.CurrentRow != null)
+            {
+                // Obtener el IDCliente de la fila seleccionada
+                this.IDCliente = Convert.ToInt32(DgvCliente.CurrentRow.Cells["IDCliente"].Value);
+
+                // Poblar los campos con los datos actuales del cliente
+                txtNuevoNombreCliente.Text = Convert.ToString(DgvCliente.CurrentRow.Cells["Nombre"].Value);
+                txtNuevoCedulaCliente.Text = Convert.ToString(DgvCliente.CurrentRow.Cells["Cedula"].Value);
+                txtNuevoCorreoCliente.Text = Convert.ToString(DgvCliente.CurrentRow.Cells["Correo"].Value);
+                txtNuevoTelefonoCliente.Text = Convert.ToString(DgvCliente.CurrentRow.Cells["Telefono"].Value);
+
+
+                // Establecer el enfoque en el primer campo editable
+                txtNuevoNombreCliente.Focus();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un cliente para modificar.", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void GuardarCliente()
+        {
+            if (txtNuevoNombreCliente.Text == String.Empty)
+            {
+                MessageBox.Show("Nombre del Cliente requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
+            if (txtNuevoCedulaCliente.Text == String.Empty)
+            {
+                MessageBox.Show("Cedula del Cliente requerida(*)", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
+            if (txtNuevoCorreoCliente.Text == String.Empty)
+            {
+                MessageBox.Show("Correo del Cliente requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
+            if (txtNuevoTelefonoCliente.Text == String.Empty)
+            {
+                MessageBox.Show("Telefono del  requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                ETCliente eTCliente = new ETCliente();
+                //Respuesta de la bl y la que recibe de dal cuando se hace el insert (cuando guardamos)
+                //para saber si el proceso fue exitoso o no
+                String Rpta = "";
+                eTCliente.IDCliente = this.IDCliente;
+                //lo que el usuario digite en ese campo se va a capturar y se va a enviar a la bd como propiedad
+                eTCliente.Nombre = txtNuevoNombreCliente.Text.Trim();
+                eTCliente.Cedula = txtNuevoCedulaCliente.Text.Trim();
+                eTCliente.Correo = txtNuevoCorreoCliente.Text.Trim();
+                eTCliente.Telefono = txtNuevoTelefonoCliente.Text.Trim();
+                //respuesta igual a los que nos retorne, enviar parametros para saber si es nuevo o no
+                try
+                {
+                    Rpta = BLCliente.GuardarCL(EstadoGuarda, eTCliente);
+
+                    if (Rpta == "OK")
+                    {
+                        this.ListadoTR("%");
+                        MessageBox.Show("Los datos se han registrado", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        EstadoGuarda = 0;
+                        this.BotonesTrabajador(true);
+                        txtNuevoNombreCliente.Text = "";
+                        txtNuevoCedulaCliente.Text = "";
+                        txtNuevoCorreoCliente.Text = "";
+                        txtNuevoTelefonoCliente.Text = "";
+                        this.IDCliente = 0;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se logró registrar el dato: " + Rpta, "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+
+        }
+
+        private void btnEliminarCliente_Click_1(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(Convert.ToString(DgvCliente.CurrentRow.Cells["IDCliente"].Value)))
+            {
+                MessageBox.Show("No hay datos que mostar", "Aviso del Sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult opcion;
+                //preguntar si se quiere realizar procedimiento y a opcion se le asignael valor de la respuesta
+                opcion = MessageBox.Show("¿Está seguro de eliminar el registro seleccionado?", "Aviso del Sistema", MessageBoxButtons.YesNoCancel,
+                   MessageBoxIcon.Question);
+                if (opcion == DialogResult.Yes)
+                {
+                    String Rpta = "";
+                    //convertir a int
+                    this.IDCliente = Convert.ToInt32(DgvCliente.CurrentRow.Cells["IDCliente"].Value);
+                    Rpta = BLCliente.EliminaCL(this.IDCliente);
+
+                    if (Rpta.Equals("OK"))
+                    {
+                        this.ListadoTR("%");
+                        this.IDCliente = 0;
+                        MessageBox.Show("Registro Eliminado", "Aviso del Sistema", MessageBoxButtons.YesNoCancel,
+                         MessageBoxIcon.Exclamation);
+
+                    }
+                }
+
+            }
+        }
+
+        private void btnBuscarCliente_Click_1(object sender, EventArgs e)
+        {
+            this.ListadoCL(TxtBuscarCliente.Text.Trim());
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
+
+
+        }
+
+        private void TxtDistanciaVehiculoFactura_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

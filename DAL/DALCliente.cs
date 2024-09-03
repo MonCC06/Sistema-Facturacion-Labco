@@ -24,7 +24,7 @@ namespace DAL
             try
             {
                 SqlCon = Conexion.GetInstancia().CrearConexion(); // Obtiene la instancia de conexión a la base de datos
-                SqlCommand Comando = new SqlCommand("USP_Listado_Cliente", SqlCon);
+                SqlCommand Comando = new SqlCommand("USP_Listado_cli", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto; // Agrega el parámetro de búsqueda
                 SqlCon.Open(); // Abre la conexión a la base de datos
@@ -54,15 +54,15 @@ namespace DAL
             try
             {
                 SqlCon = Conexion.GetInstancia().CrearConexion(); // Obtiene la instancia de conexión a la base de datos
-                SqlCommand comando = new SqlCommand("USP_Guardar_Cliente", SqlCon);
+                SqlCommand comando = new SqlCommand("USP_Guardar_Cli", SqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.Add("@nOpcion", SqlDbType.Int).Value = nOpcion; // Parámetro para especificar la operación (insertar o actualizar)
                 comando.Parameters.Add("@IDCliente", SqlDbType.Int).Value = cl.IDCliente;
-                comando.Parameters.Add("@cNombre_cl", SqlDbType.VarChar).Value = cl.Nombre;
-                comando.Parameters.Add("@cCedula_cl", SqlDbType.VarChar).Value = cl.Cedula;
-                comando.Parameters.Add("@cCorreo_cl", SqlDbType.VarChar).Value = cl.Correo;
-                comando.Parameters.Add("@cTelefono_cl", SqlDbType.VarChar).Value = cl.Telefono;
-                comando.Parameters.Add("@Estado", SqlDbType.Bit).Value = cl.Estado;
+                comando.Parameters.Add("@Nombre_cli", SqlDbType.VarChar).Value = cl.Nombre;
+                comando.Parameters.Add("@Cedula_cli", SqlDbType.VarChar).Value = cl.Cedula;
+                comando.Parameters.Add("@Correo_cli", SqlDbType.VarChar).Value = cl.Correo;
+                comando.Parameters.Add("@Telefono_cli", SqlDbType.VarChar).Value = cl.Telefono;
+               
 
                 SqlCon.Open(); // Abre la conexión a la base de datos
                 Rpta = comando.ExecuteNonQuery() >= 1 ? "OK" : "No se logró registrar el dato"; // Ejecuta el procedimiento y verifica el resultado
@@ -120,7 +120,7 @@ namespace DAL
             try
             {
                 SqlCon = Conexion.GetInstancia().CrearConexion(); // Obtiene la instancia de conexión a la base de datos
-                SqlCommand Comando = new SqlCommand("USP_Listado_Cliente", SqlCon);
+                SqlCommand Comando = new SqlCommand("USP_Listado_cli", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto; // Parámetro con el texto de búsqueda
                 SqlCon.Open(); // Abre la conexión a la base de datos
