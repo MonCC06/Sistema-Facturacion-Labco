@@ -46,10 +46,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.DgvFacturaProducto = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.TxtDistanciaVehiculoFactura = new System.Windows.Forms.TextBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -186,6 +182,7 @@
             this.label42 = new System.Windows.Forms.Label();
             this.TBPrecioProducto = new System.Windows.Forms.TextBox();
             this.TBDescripcionProducto = new System.Windows.Forms.TextBox();
+            this.DgvFacturaProducto = new System.Windows.Forms.DataGridView();
             this.TabServicicos.SuspendLayout();
             this.tabFactura.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -193,7 +190,6 @@
             this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvFacturaProducto)).BeginInit();
             this.groupBox12.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -221,6 +217,7 @@
             this.groupBox17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducto)).BeginInit();
             this.groupBox18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvFacturaProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // TabServicicos
@@ -407,35 +404,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(550, 88);
             this.richTextBox1.TabIndex = 21;
             this.richTextBox1.Text = "";
-            // 
-            // DgvFacturaProducto
-            // 
-            this.DgvFacturaProducto.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.DgvFacturaProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvFacturaProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
-            this.DgvFacturaProducto.Location = new System.Drawing.Point(76, 53);
-            this.DgvFacturaProducto.Name = "DgvFacturaProducto";
-            this.DgvFacturaProducto.Size = new System.Drawing.Size(891, 202);
-            this.DgvFacturaProducto.TabIndex = 17;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Cantidad";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Producto";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 650;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Precio unitario";
-            this.Column3.Name = "Column3";
             // 
             // groupBox12
             // 
@@ -1131,7 +1099,6 @@
             this.buttonEliminarVehiculo.TabIndex = 7;
             this.buttonEliminarVehiculo.Text = "Eliminar";
             this.buttonEliminarVehiculo.UseVisualStyleBackColor = true;
-            this.buttonEliminarVehiculo.Click += new System.EventHandler(this.buttonEliminarVehiculo_Click);
             // 
             // buttonModificarVehiculo
             // 
@@ -1141,7 +1108,6 @@
             this.buttonModificarVehiculo.TabIndex = 6;
             this.buttonModificarVehiculo.Text = "Modificar";
             this.buttonModificarVehiculo.UseVisualStyleBackColor = true;
-            this.buttonModificarVehiculo.Click += new System.EventHandler(this.buttonModificarVehiculo_Click);
             // 
             // TxTBuscarVehiculo
             // 
@@ -1167,7 +1133,6 @@
             this.buttonBuscarVehiculo.TabIndex = 3;
             this.buttonBuscarVehiculo.Text = "Buscar";
             this.buttonBuscarVehiculo.UseVisualStyleBackColor = true;
-            this.buttonBuscarVehiculo.Click += new System.EventHandler(this.buttonBuscarVehiculo_Click);
             // 
             // chkplacavehiculo
             // 
@@ -1300,7 +1265,6 @@
             this.buttonCancelarVehiculo.TabIndex = 18;
             this.buttonCancelarVehiculo.Text = "Cancelar";
             this.buttonCancelarVehiculo.UseVisualStyleBackColor = true;
-            this.buttonCancelarVehiculo.Click += new System.EventHandler(this.buttonCancelarVehiculo_Click);
             // 
             // buttonGuardarVehiculo
             // 
@@ -1310,7 +1274,6 @@
             this.buttonGuardarVehiculo.TabIndex = 17;
             this.buttonGuardarVehiculo.Text = "Guardar";
             this.buttonGuardarVehiculo.UseVisualStyleBackColor = true;
-            this.buttonGuardarVehiculo.Click += new System.EventHandler(this.buttonGuardarVehiculo_Click);
             // 
             // label12
             // 
@@ -1706,6 +1669,7 @@
             this.groupBox18.TabIndex = 26;
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "Nuevo";
+            this.groupBox18.Enter += new System.EventHandler(this.groupBox18_Enter);
             // 
             // label43
             // 
@@ -1779,6 +1743,15 @@
             this.TBDescripcionProducto.Size = new System.Drawing.Size(188, 20);
             this.TBDescripcionProducto.TabIndex = 9;
             // 
+            // DgvFacturaProducto
+            // 
+            this.DgvFacturaProducto.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.DgvFacturaProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvFacturaProducto.Location = new System.Drawing.Point(76, 53);
+            this.DgvFacturaProducto.Name = "DgvFacturaProducto";
+            this.DgvFacturaProducto.Size = new System.Drawing.Size(891, 202);
+            this.DgvFacturaProducto.TabIndex = 17;
+            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1797,7 +1770,6 @@
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.groupBox11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvFacturaProducto)).EndInit();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.groupBox13.ResumeLayout(false);
@@ -1840,6 +1812,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducto)).EndInit();
             this.groupBox18.ResumeLayout(false);
             this.groupBox18.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvFacturaProducto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1934,7 +1907,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.DataGridView DgvFacturaProducto;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.TextBox TxtDistanciaVehiculoFactura;
         private System.Windows.Forms.CheckBox checkBox2;
@@ -2003,9 +1975,7 @@
 <<<<<<< HEAD
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridView DgvFacturaProducto;
 =======
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;

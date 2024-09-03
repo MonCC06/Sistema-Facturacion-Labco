@@ -28,13 +28,7 @@ namespace GUI
         int IDFactura = 0;
         int IDVehiculo = 0;
         int IDProducto = 0;
-
-       
-
-
         #endregion
-
-
 
         #region Metodo vehiculo
         private void FormatoVe()
@@ -65,7 +59,7 @@ namespace GUI
         }
 
 
-        private void SeleccionaItemVehiculo()
+        private void SeleccionaItem()
         {
             //Validasmos que el DATAGEIP tenga datos para que no nos de error
 
@@ -107,8 +101,7 @@ namespace GUI
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-        }        
-        private void SeleccionaFactura()
+        }        private void SeleccionaFactura()
         {
             //Validasmos que el DATAGEIP tenga datos para que no nos de error
 
@@ -799,155 +792,16 @@ namespace GUI
         }
         #endregion
 
-        
         private void label25_Click(object sender, EventArgs e)
         {
 
         }
 
-        #region Eventos de Vehiculo
-        private void buttonGuardarVehiculo_Click(object sender, EventArgs e)
+        private void groupBox18_Enter(object sender, EventArgs e)
         {
-            if (TxTModeloVehiculo.Text == String.Empty ||
-                   TxTPlacaVehiculo.Text == String.Empty ||
-                   TxTVINVehiculo.Text == String.Empty ||
-                   DistanciaTxTVehiculo.Text == String.Empty)
-
-
-            {
-                MessageBox.Show("Falta ingresar datos requeridos(*)", "Aviso del sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-            else
-            {
-
-                ETVehiculo etvehiculo = new ETVehiculo();
-                string Rpta = "";
-                etvehiculo.IDVehiculo = this.IDVehiculo;
-                etvehiculo.Modelo = TxTModeloVehiculo.Text.Trim();
-                etvehiculo.Placa = TxTPlacaVehiculo.Text.Trim();
-                etvehiculo.VIN = TxTVINVehiculo.Text.Trim();
-                etvehiculo.DistanciaRecorrida = DistanciaTxTVehiculo.Text.Trim();
-                Rpta = BLVehiculo.GuardarVE(EstadoGuarda, etvehiculo);
-
-
-                if (Rpta == "OK")
-                {
-                    this.ListadoVe("%");
-                    MessageBox.Show("Los datos se han registrado", "Aviso del sistema", MessageBoxButtons.OK,
-                   MessageBoxIcon.Information);
-
-                    EstadoGuarda = 0; // si no guardo nada
-
-                    TxTPlacaVehiculo.Text = "";
-                    TxTVINVehiculo.Text = "";
-                    TxTModeloVehiculo.Text = "";
-                    DistanciaTxTVehiculo.Text = "";
-                    TxTVINVehiculo.ReadOnly = true;
-                    TxTPlacaVehiculo.ReadOnly = true;
-                    TxTModeloVehiculo.ReadOnly = true;
-                    DistanciaTxTVehiculo.ReadOnly = true;
-                    this.IDVehiculo = 0;
-
-                }
-                else
-                {
-                    MessageBox.Show(Rpta, "Aviso del sistema", MessageBoxButtons.OK,
-                   MessageBoxIcon.Error);
-
-                }
-
-            }
 
         }
 
-        private void buttonCancelarVehiculo_Click(object sender, EventArgs e)
-        {
-            EstadoGuarda = 0;//Sin ninguna accion
-            this.IDVehiculo = 0;
-            TxTPlacaVehiculo.Text = "";
-            TxTVINVehiculo.Text = "";
-            TxTModeloVehiculo.Text = "";
-            DistanciaTxTVehiculo.Text = "0";
-            TxTPlacaVehiculo.ReadOnly = true;
-            TxTVINVehiculo.ReadOnly = true;
-            TxTModeloVehiculo.ReadOnly = true;
-            DistanciaTxTVehiculo.ReadOnly = true;
-
-        }
-
-        private void buttonBuscarVehiculo_Click(object sender, EventArgs e)
-        {
-            if (chkceduvehi.Checked == true)
-            {
-                this.ListadoVe(TxTBuscarVehiculo.Text.Trim());
-            }
-            if (chkplacavehiculo.Checked == true)
-            {
-                this.ListadoVe(TxTBuscarVehiculo.Text.Trim());
-            }
-
-        }
-
-        private void buttonModificarVehiculo_Click(object sender, EventArgs e)
-        {
-            EstadoGuarda = 2;//Sera una actualizacion 
-           
-            this.SeleccionaItemVehiculo();
-            TxTPlacaVehiculo.ReadOnly = false;
-            TxTVINVehiculo.ReadOnly = false;
-            TxTModeloVehiculo.ReadOnly = false;
-            DistanciaTxTVehiculo.ReadOnly = false;
-            TxTPlacaVehiculo.Focus();
-
-
-        }
-
-       
-
-        private void buttonEliminarVehiculo_Click(object sender, EventArgs e)
-        {
-           
-            
-                if (string.IsNullOrEmpty(Convert.ToString(dataGridViewVehiculo.CurrentRow.Cells["IdVehiculo"].Value)))
-                {
-                    MessageBox.Show("No hay datos que mostrar", "Aviso del sistema", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                }
-                else
-                {
-                    DialogResult opcion;
-                    opcion = MessageBox.Show("Esta seguro de eliminar el registro seleccionado ?", "Aviso del sistema", MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question);
-
-                    if (opcion == DialogResult.Yes)
-                    {
-                        string Rpta = "";
-                        this.IDVehiculo = Convert.ToInt32(dataGridViewVehiculo.CurrentRow.Cells["IDVehiculo"].Value);
-                        Rpta = BLVehiculo.EliminaVE(this.IDVehiculo);
-
-                        if (Rpta.Equals("OK"))
-                        {
-                            this.ListadoVe("%");
-                            this.IDVehiculo = 0;
-                            MessageBox.Show("Registro eliminado", "Aviso del sistema", MessageBoxButtons.OK,
-                       MessageBoxIcon.Exclamation);
-                        }
-
-                    }
-
-
-
-
-
-                }
-
-            #endregion
-        }
+        //hola
     }
-        
-    }
-
-    //hola
-}
 }
