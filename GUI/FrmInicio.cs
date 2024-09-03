@@ -1122,6 +1122,16 @@ private void FormatoTR()
 
         }
 
+        private void TxtNombreCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label34_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 

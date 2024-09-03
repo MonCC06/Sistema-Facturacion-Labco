@@ -59,7 +59,6 @@
             this.label28 = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.TxtFechaFactura = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.TxtEstadoFactura = new System.Windows.Forms.TextBox();
@@ -183,8 +182,9 @@
             this.label42 = new System.Windows.Forms.Label();
             this.TBPrecioProducto = new System.Windows.Forms.TextBox();
             this.TBDescripcionProducto = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtCedulaCliente = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.TabServicicos.SuspendLayout();
             this.tabFactura.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -445,7 +445,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(707, 31);
+            this.checkBox2.Location = new System.Drawing.Point(707, 29);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(74, 17);
             this.checkBox2.TabIndex = 12;
@@ -513,8 +513,8 @@
             // groupBox13
             // 
             this.groupBox13.BackColor = System.Drawing.Color.Gainsboro;
+            this.groupBox13.Controls.Add(this.dateTimePicker1);
             this.groupBox13.Controls.Add(this.textBox2);
-            this.groupBox13.Controls.Add(this.TxtFechaFactura);
             this.groupBox13.Controls.Add(this.label31);
             this.groupBox13.Controls.Add(this.label29);
             this.groupBox13.Controls.Add(this.TxtEstadoFactura);
@@ -533,13 +533,6 @@
             this.textBox2.Size = new System.Drawing.Size(264, 20);
             this.textBox2.TabIndex = 10;
             // 
-            // TxtFechaFactura
-            // 
-            this.TxtFechaFactura.Location = new System.Drawing.Point(115, 56);
-            this.TxtFechaFactura.Name = "TxtFechaFactura";
-            this.TxtFechaFactura.Size = new System.Drawing.Size(264, 20);
-            this.TxtFechaFactura.TabIndex = 8;
-            // 
             // label31
             // 
             this.label31.AutoSize = true;
@@ -552,11 +545,11 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(36, 90);
+            this.label29.Location = new System.Drawing.Point(36, 93);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(71, 13);
+            this.label29.Size = new System.Drawing.Size(59, 13);
             this.label29.TabIndex = 9;
-            this.label29.Text = "Nombre Fact.";
+            this.label29.Text = "Encargado";
             // 
             // TxtEstadoFactura
             // 
@@ -568,7 +561,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(36, 60);
+            this.label30.Location = new System.Drawing.Point(36, 63);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(37, 13);
             this.label30.TabIndex = 8;
@@ -578,7 +571,7 @@
             // 
             this.groupBox14.BackColor = System.Drawing.Color.Gainsboro;
             this.groupBox14.Controls.Add(this.label11);
-            this.groupBox14.Controls.Add(this.textBox1);
+            this.groupBox14.Controls.Add(this.TxtCedulaCliente);
             this.groupBox14.Controls.Add(this.TxtEmailCliente);
             this.groupBox14.Controls.Add(this.TxtTelefonoCliente);
             this.groupBox14.Controls.Add(this.TxtNombreCliente);
@@ -594,29 +587,30 @@
             // 
             // TxtEmailCliente
             // 
-            this.TxtEmailCliente.Location = new System.Drawing.Point(357, 36);
+            this.TxtEmailCliente.Location = new System.Drawing.Point(374, 70);
             this.TxtEmailCliente.Name = "TxtEmailCliente";
             this.TxtEmailCliente.Size = new System.Drawing.Size(180, 20);
             this.TxtEmailCliente.TabIndex = 7;
             // 
             // TxtTelefonoCliente
             // 
-            this.TxtTelefonoCliente.Location = new System.Drawing.Point(112, 70);
+            this.TxtTelefonoCliente.Location = new System.Drawing.Point(374, 36);
             this.TxtTelefonoCliente.Name = "TxtTelefonoCliente";
             this.TxtTelefonoCliente.Size = new System.Drawing.Size(180, 20);
             this.TxtTelefonoCliente.TabIndex = 6;
             // 
             // TxtNombreCliente
             // 
-            this.TxtNombreCliente.Location = new System.Drawing.Point(112, 36);
+            this.TxtNombreCliente.Location = new System.Drawing.Point(96, 67);
             this.TxtNombreCliente.Name = "TxtNombreCliente";
             this.TxtNombreCliente.Size = new System.Drawing.Size(180, 20);
             this.TxtNombreCliente.TabIndex = 2;
+            this.TxtNombreCliente.TextChanged += new System.EventHandler(this.TxtNombreCliente_TextChanged);
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(316, 39);
+            this.label32.Location = new System.Drawing.Point(331, 74);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(35, 13);
             this.label32.TabIndex = 5;
@@ -625,7 +619,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(35, 70);
+            this.label33.Location = new System.Drawing.Point(317, 38);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(49, 13);
             this.label33.TabIndex = 4;
@@ -634,11 +628,12 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(35, 40);
+            this.label34.Location = new System.Drawing.Point(41, 70);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(44, 13);
             this.label34.TabIndex = 2;
             this.label34.Text = "Nombre";
+            this.label34.Click += new System.EventHandler(this.label34_Click);
             // 
             // tabPage4
             // 
@@ -1760,22 +1755,29 @@
             this.TBDescripcionProducto.Size = new System.Drawing.Size(188, 20);
             this.TBDescripcionProducto.TabIndex = 9;
             // 
-            // textBox1
+            // TxtCedulaCliente
             // 
-            this.textBox1.Location = new System.Drawing.Point(362, 74);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 20);
-            this.textBox1.TabIndex = 8;
+            this.TxtCedulaCliente.Location = new System.Drawing.Point(96, 31);
+            this.TxtCedulaCliente.Name = "TxtCedulaCliente";
+            this.TxtCedulaCliente.Size = new System.Drawing.Size(180, 20);
+            this.TxtCedulaCliente.TabIndex = 8;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(316, 77);
+            this.label11.Location = new System.Drawing.Point(45, 34);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(40, 13);
             this.label11.TabIndex = 9;
             this.label11.Text = "Cédula";
             this.label11.Click += new System.EventHandler(this.label11_Click_1);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(115, 57);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 11;
             // 
             // FrmInicio
             // 
@@ -1943,7 +1945,6 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.TextBox TxtFechaFactura;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
@@ -2002,7 +2003,8 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridView DgvFacturaProducto;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtCedulaCliente;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
 =======
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
