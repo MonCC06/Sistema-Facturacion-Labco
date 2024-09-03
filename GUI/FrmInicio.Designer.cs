@@ -591,6 +591,7 @@
             this.TxtEmailCliente.Name = "TxtEmailCliente";
             this.TxtEmailCliente.Size = new System.Drawing.Size(180, 20);
             this.TxtEmailCliente.TabIndex = 7;
+            this.TxtEmailCliente.TextChanged += new System.EventHandler(this.TxtEmailCliente_TextChanged);
             // 
             // TxtTelefonoCliente
             // 
@@ -598,6 +599,7 @@
             this.TxtTelefonoCliente.Name = "TxtTelefonoCliente";
             this.TxtTelefonoCliente.Size = new System.Drawing.Size(180, 20);
             this.TxtTelefonoCliente.TabIndex = 6;
+            this.TxtTelefonoCliente.TextChanged += new System.EventHandler(this.TxtTelefonoCliente_TextChanged);
             // 
             // TxtNombreCliente
             // 
@@ -1761,6 +1763,7 @@
             this.TxtCedulaCliente.Name = "TxtCedulaCliente";
             this.TxtCedulaCliente.Size = new System.Drawing.Size(180, 20);
             this.TxtCedulaCliente.TabIndex = 8;
+            this.TxtCedulaCliente.TextChanged += new System.EventHandler(this.TxtCedulaCliente_TextChanged);
             // 
             // label11
             // 

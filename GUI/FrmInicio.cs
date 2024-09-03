@@ -1132,6 +1132,21 @@ private void FormatoTR()
 
         }
 
+        private void TxtCedulaCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtTelefonoCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtEmailCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 
