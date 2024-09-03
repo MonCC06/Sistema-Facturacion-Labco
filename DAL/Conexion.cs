@@ -21,7 +21,7 @@ namespace DAL
             // Nombre de la BD
             this._Base = "LABCO BD";  // Nombre de la base de datos
             // Nombre Servidor
-            this._Server = "DESKTOP-7L76K06"; // Nombre del servidor
+            this._Server = "DESKTOP-IM67122\\SQLEXPRESS"; // Nombre del servidor
             this._Seguridad = true;  // Cambiar a true si usas seguridad integrada
         }
 

@@ -63,7 +63,7 @@ namespace DAL
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.Add("@nOpcion", SqlDbType.Int).Value = nOpcion;
                 comando.Parameters.Add("@IDMarca", SqlDbType.Int).Value = ma.IDMarca;
-                comando.Parameters.Add("@@Nombre_ma", SqlDbType.VarChar).Value = ma.Nombre;
+                comando.Parameters.Add("@Nombre_ma", SqlDbType.VarChar).Value = ma.Nombre;
                 SqlCon.Open();
                 Rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "No se logro registrar el dato";
 
