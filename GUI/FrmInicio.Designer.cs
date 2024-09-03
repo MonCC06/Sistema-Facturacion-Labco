@@ -183,6 +183,8 @@
             this.label42 = new System.Windows.Forms.Label();
             this.TBPrecioProducto = new System.Windows.Forms.TextBox();
             this.TBDescripcionProducto = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.TabServicicos.SuspendLayout();
             this.tabFactura.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -575,6 +577,8 @@
             // groupBox14
             // 
             this.groupBox14.BackColor = System.Drawing.Color.Gainsboro;
+            this.groupBox14.Controls.Add(this.label11);
+            this.groupBox14.Controls.Add(this.textBox1);
             this.groupBox14.Controls.Add(this.TxtEmailCliente);
             this.groupBox14.Controls.Add(this.TxtTelefonoCliente);
             this.groupBox14.Controls.Add(this.TxtNombreCliente);
@@ -612,7 +616,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(316, 40);
+            this.label32.Location = new System.Drawing.Point(316, 39);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(35, 13);
             this.label32.TabIndex = 5;
@@ -1756,6 +1760,23 @@
             this.TBDescripcionProducto.Size = new System.Drawing.Size(188, 20);
             this.TBDescripcionProducto.TabIndex = 9;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(362, 74);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(180, 20);
+            this.textBox1.TabIndex = 8;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(316, 77);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 13);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Cédula";
+            this.label11.Click += new System.EventHandler(this.label11_Click_1);
+            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1980,6 +2001,8 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridView DgvFacturaProducto;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox1;
 =======
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
