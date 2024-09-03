@@ -28,6 +28,14 @@ namespace GUI
         int IDFactura = 0;
         int IDVehiculo = 0;
         int IDProducto = 0;
+<<<<<<< HEAD
+=======
+        int IDServicio = 0;
+
+
+
+
+>>>>>>> 21c046c528e57e589b419cbe56b3bd1350fa3819
         #endregion
 
         #region Metodo vehiculo
@@ -261,6 +269,63 @@ namespace GUI
                 TBDescripcionProducto.Text = Convert.ToString(DGVProducto.CurrentRow.Cells["DescripcionPr"].Value);
                 TBPrecioProducto.Text = Convert.ToString(DGVProducto.CurrentRow.Cells["precio"].Value);
                 TBStockProducto.Text = Convert.ToString(DGVProducto.CurrentRow.Cells["StockProducto"].Value);
+            }
+        }
+        #endregion
+
+        #region Metodos Servicio
+        private void FormatoSE()
+        {
+            DGVServicio.Columns[0].Width = 100;
+            DGVServicio.Columns[0].HeaderText = "ID_Servicio";
+            DGVServicio.Columns[1].Width = 100;
+            DGVServicio.Columns[1].HeaderText = "Descripcion_servicio";
+            DGVServicio.Columns[2].Width = 100;
+            DGVServicio.Columns[2].HeaderText = "Precio";
+        }
+
+        private void ListadoSE(string tTexto)
+        {
+            try
+            {
+                DGVServicio.DataSource = BLServicio.ListadoSE(tTexto);
+                this.FormatoSE();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+            //datasource nos dice de donde vamos a consumir los datos
+        }
+
+        private void BotonesServicio(bool LEstado)
+        {
+            this.BTGuardarServicio.Enabled = LEstado;
+            this.BTGuardarServicio.Enabled = LEstado;
+            this.BTModificarServicio.Enabled = LEstado;
+            this.BTCancelarServicio.Enabled = LEstado;
+            this.BTEliminarServicio.Enabled = LEstado;
+        }
+
+        private void SeleccionaServicio()
+        {
+            //convertir dato de string a un valor 
+            if (string.IsNullOrEmpty(Convert.ToString(DGVServicio.CurrentRow.Cells["Descripcion"].Value)))
+            {
+                MessageBox.Show("No hay datos que mostar", "Aviso del Sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+            }
+            else
+            {
+
+
+                TBDescripcionServicio.Text = Convert.ToString(DGVServicio.CurrentRow.Cells["Descripcion"].Value);
+
+                //convertir el precio del servicio de la celda seleccionada de string a entero
+
+                TBPrecioServicio.Text = Convert.ToString(DGVServicio.CurrentRow.Cells["Precio"].Value);
+
+
             }
         }
         #endregion
@@ -792,6 +857,84 @@ namespace GUI
         }
         #endregion
 
+<<<<<<< HEAD
+=======
+        #region Eventos Servicio
+        private void BTGuardarServicio_Click(object sender, EventArgs e)
+        {
+
+            if (TBDescripcionServicio.Text == String.Empty)
+            {
+                MessageBox.Show("Se requiere descripción del servicio(*)", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
+            if (TBPrecioServicio.Text == String.Empty)
+            {
+                MessageBox.Show("Precio del servicio requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
+
+            else
+            {
+                ETServicio eTServicio = new ETServicio();
+                //Respuesta de la bl y la que recibe de dal cuando se hace el insert (cuando guardamos)
+                //para saber si el proceso fue exitoso o no
+                String Rpta = "";
+                eTServicio.Descripcion = this.Descripcion;
+                //lo que el usuario digite en ese campo se va a capturar y se va a enviar a la bd como propiedad
+                eTServicio.Descripcion = TBDescripcionServicio.Text.Trim();
+                eTServicio.Monto = TBPrecioServicio.Text.Trim();
+
+                //respuesta igual a los que nos retorne, enviar parametros para saber si es nuevo o no
+                Rpta = BLServicio.GuardarSE(EstadoGuarda, eTServicio);
+
+
+                //
+                if (Rpta == "OK")
+                {
+                    //volver a actualizar para que apareza el cambio
+                    this.ListadoSE("%");
+                    MessageBox.Show("Los dato se han registrado", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                    EstadoGuarda = 0;
+                    //activar botones
+                    this.BotonesServicio(true);
+                    //volver todo a su estado original
+                    TBPrecioServicio.Text = "";
+                    TBDescripcionServicio.Text = "";
+
+
+                }
+                else
+                {
+                    MessageBox.Show("No se logro registrar el dato", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                }
+            }
+
+
+
+        }
+
+        private void BTModificarServicio_Click(object sender, EventArgs e)
+        {
+
+
+            EstadoGuarda = 2;
+            this.Descripcion = "";
+            this.BotonesServicio(true);
+            this.SeleccionaServicio();
+            //Poner el cursor en donde se empiezan a cambiar datos
+            TBDescripcionServicio.Focus();
+        }
+
+        #endregion
+
+>>>>>>> 21c046c528e57e589b419cbe56b3bd1350fa3819
         private void label25_Click(object sender, EventArgs e)
         {
 
