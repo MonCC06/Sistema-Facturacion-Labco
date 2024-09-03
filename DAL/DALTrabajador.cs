@@ -23,7 +23,7 @@ namespace DAL
             try
             {
                 SQLCon = Conexion.GetInstancia().CrearConexion();
-                SqlCommand Comando = new SqlCommand("USP_Listado_Trabajador", SQLCon);
+                SqlCommand Comando = new SqlCommand("USP_Listado_tra", SQLCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
                 SQLCon.Open();
@@ -45,36 +45,30 @@ namespace DAL
 
         public string GuardarTR(int nOpcion, ETTrabajador tr)
         {
-
             string Rpta = "";
-            SqlConnection SqlCon = new SqlConnection();
-
-
-            try 
+            using (SqlConnection SqlCon = Conexion.GetInstancia().CrearConexion())
             {
-                SqlCon = Conexion.GetInstancia().CrearConexion();
-                SqlCommand comando = new SqlCommand("USP_Guardar_Trabajador", SqlCon);
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.Add("@nOpcion", SqlDbType.Int).Value = nOpcion;
-                comando.Parameters.Add("@cNombre_tr", SqlDbType.VarChar).Value = tr.Nombre;
-                comando.Parameters.Add("@cCedula_tr", SqlDbType.VarChar).Value = tr.Cedula;
-                comando.Parameters.Add("@cCorreo_tr", SqlDbType.VarChar).Value = tr.Correo;
-                comando.Parameters.Add("@cTelefono_tr", SqlDbType.VarChar).Value = tr.Telefono;
+                try
+                {
+                    SqlCommand comando = new SqlCommand("USP_Guardar_Tra", SqlCon)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    comando.Parameters.Add("@nOpcion", SqlDbType.Int).Value = nOpcion;
+                    comando.Parameters.Add("@IDTrabajador", SqlDbType.Int).Value = tr.IDTrabajador;
+                    comando.Parameters.Add("@Nombre_tra", SqlDbType.VarChar, 50).Value = tr.Nombre;
+                    comando.Parameters.Add("@Cedula_tra", SqlDbType.VarChar, 50).Value = tr.Cedula;
+                    comando.Parameters.Add("@Correo_tra", SqlDbType.VarChar, 50).Value = tr.Correo;
+                    comando.Parameters.Add("@Telefono_tra", SqlDbType.VarChar, 50).Value = tr.Telefono;
 
-
-                SqlCon.Open();
-                Rpta = comando.ExecuteNonQuery() >= 1 ? "OK" : "No se logro registrar el dato";
-
-
-            }
-
-            catch (Exception ex)
-            {
-                Rpta = ex.Message;
-            }
-            finally
-            {
-                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+                    SqlCon.Open();
+                    int result = comando.ExecuteNonQuery();
+                    Rpta = result >= 1 ? "OK" : "No se logró registrar el dato";
+                }
+                catch (Exception ex)
+                {
+                    Rpta = "Error: " + ex.Message;
+                }
             }
             return Rpta;
         }
@@ -91,7 +85,7 @@ namespace DAL
                 SqlCon = Conexion.GetInstancia().CrearConexion();
                 SqlCommand comando = new SqlCommand("USP_Eliminar_Trabajador", SqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.Add("@IdTrabajador", SqlDbType.Int).Value = IDTrabajador;
+                comando.Parameters.Add("@IDTrabajador", SqlDbType.Int).Value = IDTrabajador;
 
                 SqlCon.Open();
                 Rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "No se logro eliminar el dato";
@@ -118,7 +112,7 @@ namespace DAL
             try
             {
                 SqlCon = Conexion.GetInstancia().CrearConexion();
-                SqlCommand Comando = new SqlCommand("USP_Listado_Trabajador", SqlCon);
+                SqlCommand Comando = new SqlCommand("USP_Listado_tra", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
                 SqlCon.Open();
