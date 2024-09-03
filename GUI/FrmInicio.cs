@@ -243,12 +243,53 @@ namespace GUI
         #endregion
 
         #region Metodos Factura
+        private void FormatoListaCL()
+        {
+            DgvListaCL.Columns[0].Width = 100;
+            DgvListaCL.Columns[0].HeaderText = "Nombre";
+        }
+
+        private void ListadoLCL(string cTexto)
+        {
+            try
+            {
+                DgvCliente.DataSource = BLCliente.ListadoCL(cTexto);
+                this.FormatoCL();
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+            finally
+            {
+
+            }
+        }
+
+        private void SeleccionaListaCL()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(DgvListaCL.CurrentRow.Cells["Nombre"].Value)))
+            {
+                MessageBox.Show("No hay datos que mostrar", "Aviso del sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else
+            {
+                TxtListaCL.Text = Convert.ToString(DgvListaCL.CurrentRow.Cells["Nombre"].Value);
+            }
+        }
+        
+
+
+
         private void FormatoFA()
         {
             DgvFacturaProducto.Columns[0].Width = 100;
-            DgvFacturaProducto.Columns[0].HeaderText = "ID_Producto";
-            DgvTrabajador.Columns[1].Width = 100;
-            DgvTrabajador.Columns[1].HeaderText = "Descripcion";
+            DgvFacturaProducto.Columns[0].HeaderText = "Precio";
+            DgvFacturaProducto.Columns[1].Width = 100;
+            DgvFacturaProducto.Columns[1].HeaderText = "Descripcion";
+            DgvFacturaProducto.Columns[1].Width = 100;
+            DgvFacturaProducto.Columns[1].HeaderText = "Cantidad";
         }
 
         private void ListadoFA(string cTexto)
@@ -1382,77 +1423,7 @@ namespace GUI
 
         private void BtnGuardarFA_Click(object sender, EventArgs e)
         {
-            if (TxtCedulaCliente.Text == String.Empty ||
-                TxtNombreCliente.Text == String.Empty ||
-                TxtTelefonoCliente.Text == String.Empty ||
-                TxtEmailCliente.Text == String.Empty ||
-                TxtEstadoFactura.Text == String.Empty ||
-                TxtTrabajador.Text == String.Empty ||
-                TxtPlacaVehiculoFactura.Text == String.Empty ||
-                TxtMarcaVehiculoFactura.Text == String.Empty ||
-                TxtAnnoVehiculoFactura.Text == String.Empty ||
-                CkbMillas.Text == String.Empty ||
-                CkbKilometros.Text == String.Empty ||
-                TxtDistanciaVehiculoFactura.Text == String.Empty)
 
-            {
-                MessageBox.Show("Falta ingresar datos requeridos(*)", "Aviso del sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-            else
-            {
-                string Rpta = "";
-                ETCliente etCliente = new ETCliente();
-                ETVehiculo etVehiculo = new ETVehiculo();
-                ETTrabajador etTrabajador = new ETTrabajador();
-                ETMarca etMarca = new ETMarca();
-
-                etCliente.Nombre = this.TxtNombreCliente.Text.Trim();
-                etCliente.Cedula = this.TxtCedulaCliente.Text.Trim();
-                etCliente.Telefono = this.TxtTelefonoCliente.Text.Trim();
-                etCliente.Correo = this.TxtEmailCliente.Text.Trim();
-                etCliente.Correo = this.TxtEmailCliente.Text.Trim();
-                etVehiculo.Placa = this.TxtPlacaVehiculoFactura.Text.Trim();
-                etMarca.Nombre = this.TxtMarcaVehiculoFactura.Text.Trim();
-                etVehiculo.Anno = this.TxtAnnoVehiculoFactura.Text.Trim();
-                etVehiculo.DistanciaRecorrida = this.TxtDistanciaVehiculoFactura.Text.Trim();
-
-                if (Rpta == "OK")
-                {
-                    this.ListadoFA("%");
-                    MessageBox.Show("Los datos se han registrado", "Aviso del sistema", MessageBoxButtons.OK,
-                   MessageBoxIcon.Information);
-
-                    EstadoGuarda = 0; // si no guardo nada
-
-                    TxtCedulaCliente.Text = " ";
-                    TxtNombreCliente.Text = " ";
-                    TxtTelefonoCliente.Text = " ";
-                    TxtEmailCliente.Text = " ";
-                    TxtEstadoFactura.Text = " ";
-                    TxtTrabajador.Text = " ";
-                    TxtPlacaVehiculoFactura.Text = " ";
-                    TxtMarcaVehiculoFactura.Text = " ";
-                    TxtAnnoVehiculoFactura.Text = " ";
-                    TxtDistanciaVehiculoFactura.Text = " ";
-
-                    if (CkbMillas.Checked == true)
-                    {
-                        TxtDistanciaVehiculoFactura.Text = "";
-                    }
-                    if (CkbKilometros.Checked == true)
-                    {
-                        TxtDistanciaVehiculoFactura.Text = "";
-                    }
-                }
-                else
-                {
-                    MessageBox.Show(Rpta, "Aviso del sistema", MessageBoxButtons.OK,
-                   MessageBoxIcon.Error);
-
-                }
-
-            }
         }
 
         private void BtnImprimirFA_Click(object sender, EventArgs e)
@@ -1471,5 +1442,47 @@ namespace GUI
 
         }
         #endregion
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void DgvListaCL_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DgvListaCL_DoubleClick(object sender, EventArgs e)
+        {
+            this.SeleccionaListaCL();
+            PnlListaCL.Visible = false;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnLupa1_Click(object sender, EventArgs e)
+        {
+            this.PnlListaCL.Location = TxtEmailCliente.Location;
+            this.PnlListaCL.Visible = true;
+        }
+
+        private void BtnBuscar2_Click_1(object sender, EventArgs e)
+        {
+            this.ListadoLCL(TxtListaCL.Text);
+        }
+
+        private void BtnRetornar2_Click(object sender, EventArgs e)
+        {
+            PnlListaCL.Visible = false;
+        }
     }
 }
