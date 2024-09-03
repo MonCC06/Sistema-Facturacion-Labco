@@ -29,14 +29,12 @@ namespace GUI
         int IDVehiculo = 0;
         int IDProducto = 0;
         int IDMarca = 0;
-<<<<<<< HEAD
-=======
+
         int IDServicio = 0;
 
 
 
 
->>>>>>> 21c046c528e57e589b419cbe56b3bd1350fa3819
         #endregion
 
         #region Metodo vehiculo
@@ -227,10 +225,6 @@ namespace GUI
             {
                 MessageBox.Show("No hay datos que mostrar", "Aviso del sistema", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-            }
-            else
-            {
-                TxtNombreCliente;
             }
 
         }
@@ -813,8 +807,7 @@ namespace GUI
             this.IDCliente = 0;
             this.BotonesTrabajador(true);
             //txtNuevoNombreTrabajador.Text = "";
-            DgvCliente.SelectedIndex = 1;
-            this.SeleccionaItems();
+            this.Select();
             //Poner el cursor en donde se empiezan a cambiar datos
             txtNuevoNombreCliente.Focus();
 
@@ -862,19 +855,19 @@ namespace GUI
             txtNuevoCorreoCliente.Text = "";
             txtNuevoTelefonoCliente.Text = "";
             this.BotonesTrabajador(true);
-            this.SeleccionaItems();
+            this.Select();
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-            if (ckb.Checked == true)
+            if (ckbNombreCliente.Checked == true)
             {
-                this.ListadoCL(Textbox29.Text.Trim());
+                this.ListadoCL(TxtBuscarCliente.Text.Trim());
             }
 
-            if (ckb.Checked == true)
+            if (ckbCedulaCliente.Checked == true)
             {
-                this.ListadoCL(Textbox29.Text.Trim());
+                this.ListadoCL(TxtBuscarCliente.Text.Trim());
             }
 
         }
@@ -1025,10 +1018,10 @@ namespace GUI
                 //Respuesta de la bl y la que recibe de dal cuando se hace el insert (cuando guardamos)
                 //para saber si el proceso fue exitoso o no
                 String Rpta = "";
-                eTServicio.Descripcion = this.Descripcion;
+                eTServicio.Descripcion = this.descripcion;
                 //lo que el usuario digite en ese campo se va a capturar y se va a enviar a la bd como propiedad
                 eTServicio.Descripcion = TBDescripcionServicio.Text.Trim();
-                eTServicio.Monto = TBPrecioServicio.Text.Trim();
+                eTServicio.Monto = float.Parse(TBPrecioProducto.Text);
 
                 //respuesta igual a los que nos retorne, enviar parametros para saber si es nuevo o no
                 Rpta = BLServicio.GuardarSE(EstadoGuarda, eTServicio);
@@ -1068,7 +1061,7 @@ namespace GUI
 
 
             EstadoGuarda = 2;
-            this.Descripcion = "";
+            this.descripcion = "";
             this.BotonesServicio(true);
             this.SeleccionaServicio();
             //Poner el cursor en donde se empiezan a cambiar datos
@@ -1100,7 +1093,7 @@ namespace GUI
 
                 ETMarca etmarca = new ETMarca();
                 string Rpta = "";
-                etmarca.IDMarca = this.id;
+                etmarca.IDMarca = this.IDMarca;
                 etmarca.Nombre = TxTNombreMarca.Text.Trim();
                 Rpta = BLMarca.GuardarMA(EstadoGuarda, etmarca);
 
@@ -1386,18 +1379,10 @@ namespace GUI
 
         }
 
+        private void TxtCliente_TextChanged(object sender, EventArgs e)
+        {
 
-
-
-
-
-
-
-
-
-
-
-
+        }
 
         //hola
     }

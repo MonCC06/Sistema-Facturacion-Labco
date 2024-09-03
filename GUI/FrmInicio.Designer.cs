@@ -76,25 +76,25 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabClientes = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnEliminar1 = new System.Windows.Forms.Button();
-            this.btnModificar1 = new System.Windows.Forms.Button();
-            this.txtBuscar1 = new System.Windows.Forms.TextBox();
+            this.DgvCliente = new System.Windows.Forms.DataGridView();
+            this.btnEliminarCliente = new System.Windows.Forms.Button();
+            this.btnModficarCliente = new System.Windows.Forms.Button();
+            this.TxtBuscarCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnLupa1 = new System.Windows.Forms.Button();
-            this.chkCedula1 = new System.Windows.Forms.CheckBox();
-            this.chkNombre1 = new System.Windows.Forms.CheckBox();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
+            this.ckbCedulaCliente = new System.Windows.Forms.CheckBox();
+            this.ckbNombreCliente = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnCancelar1 = new System.Windows.Forms.Button();
-            this.btnGuardar1 = new System.Windows.Forms.Button();
+            this.btnCancelarNuevoCliente = new System.Windows.Forms.Button();
+            this.btnGuardarNuevoCliente = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtTelefono1 = new System.Windows.Forms.TextBox();
-            this.txtCorreo1 = new System.Windows.Forms.TextBox();
-            this.txtCedula1 = new System.Windows.Forms.TextBox();
-            this.txtNombre1 = new System.Windows.Forms.TextBox();
+            this.txtNuevoTelefonoCliente = new System.Windows.Forms.TextBox();
+            this.txtNuevoCorreoCliente = new System.Windows.Forms.TextBox();
+            this.txtNuevoCedulaCliente = new System.Windows.Forms.TextBox();
+            this.txtNuevoNombreCliente = new System.Windows.Forms.TextBox();
             this.tabTrabajador = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.DgvTrabajador = new System.Windows.Forms.DataGridView();
@@ -198,7 +198,7 @@
             this.groupBox14.SuspendLayout();
             this.tabClientes.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCliente)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabTrabajador.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -687,14 +687,14 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Controls.Add(this.btnEliminar1);
-            this.groupBox2.Controls.Add(this.btnModificar1);
-            this.groupBox2.Controls.Add(this.txtBuscar1);
+            this.groupBox2.Controls.Add(this.DgvCliente);
+            this.groupBox2.Controls.Add(this.btnEliminarCliente);
+            this.groupBox2.Controls.Add(this.btnModficarCliente);
+            this.groupBox2.Controls.Add(this.TxtBuscarCliente);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.btnLupa1);
-            this.groupBox2.Controls.Add(this.chkCedula1);
-            this.groupBox2.Controls.Add(this.chkNombre1);
+            this.groupBox2.Controls.Add(this.btnBuscarCliente);
+            this.groupBox2.Controls.Add(this.ckbCedulaCliente);
+            this.groupBox2.Controls.Add(this.ckbNombreCliente);
             this.groupBox2.Location = new System.Drawing.Point(25, 150);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(968, 294);
@@ -703,40 +703,40 @@
             this.groupBox2.Text = "Buscar";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // dataGridView1
+            // DgvCliente
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.LightGray;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 89);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(919, 193);
-            this.dataGridView1.TabIndex = 8;
+            this.DgvCliente.BackgroundColor = System.Drawing.Color.White;
+            this.DgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvCliente.GridColor = System.Drawing.Color.LightGray;
+            this.DgvCliente.Location = new System.Drawing.Point(22, 89);
+            this.DgvCliente.Name = "DgvCliente";
+            this.DgvCliente.Size = new System.Drawing.Size(919, 193);
+            this.DgvCliente.TabIndex = 8;
             // 
-            // btnEliminar1
+            // btnEliminarCliente
             // 
-            this.btnEliminar1.Location = new System.Drawing.Point(301, 53);
-            this.btnEliminar1.Name = "btnEliminar1";
-            this.btnEliminar1.Size = new System.Drawing.Size(67, 23);
-            this.btnEliminar1.TabIndex = 7;
-            this.btnEliminar1.Text = "Eliminar";
-            this.btnEliminar1.UseVisualStyleBackColor = true;
+            this.btnEliminarCliente.Location = new System.Drawing.Point(301, 53);
+            this.btnEliminarCliente.Name = "btnEliminarCliente";
+            this.btnEliminarCliente.Size = new System.Drawing.Size(67, 23);
+            this.btnEliminarCliente.TabIndex = 7;
+            this.btnEliminarCliente.Text = "Eliminar";
+            this.btnEliminarCliente.UseVisualStyleBackColor = true;
             // 
-            // btnModificar1
+            // btnModficarCliente
             // 
-            this.btnModificar1.Location = new System.Drawing.Point(216, 53);
-            this.btnModificar1.Name = "btnModificar1";
-            this.btnModificar1.Size = new System.Drawing.Size(67, 23);
-            this.btnModificar1.TabIndex = 6;
-            this.btnModificar1.Text = "Modificar";
-            this.btnModificar1.UseVisualStyleBackColor = true;
+            this.btnModficarCliente.Location = new System.Drawing.Point(216, 53);
+            this.btnModficarCliente.Name = "btnModficarCliente";
+            this.btnModficarCliente.Size = new System.Drawing.Size(67, 23);
+            this.btnModficarCliente.TabIndex = 6;
+            this.btnModficarCliente.Text = "Modificar";
+            this.btnModficarCliente.UseVisualStyleBackColor = true;
             // 
-            // txtBuscar1
+            // TxtBuscarCliente
             // 
-            this.txtBuscar1.Location = new System.Drawing.Point(268, 19);
-            this.txtBuscar1.Name = "txtBuscar1";
-            this.txtBuscar1.Size = new System.Drawing.Size(188, 20);
-            this.txtBuscar1.TabIndex = 5;
+            this.TxtBuscarCliente.Location = new System.Drawing.Point(268, 19);
+            this.TxtBuscarCliente.Name = "TxtBuscarCliente";
+            this.TxtBuscarCliente.Size = new System.Drawing.Size(188, 20);
+            this.TxtBuscarCliente.TabIndex = 5;
             // 
             // label1
             // 
@@ -747,48 +747,48 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Buscar";
             // 
-            // btnLupa1
+            // btnBuscarCliente
             // 
-            this.btnLupa1.Location = new System.Drawing.Point(472, 19);
-            this.btnLupa1.Name = "btnLupa1";
-            this.btnLupa1.Size = new System.Drawing.Size(67, 23);
-            this.btnLupa1.TabIndex = 3;
-            this.btnLupa1.Text = "Buscar";
-            this.btnLupa1.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(472, 19);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(67, 23);
+            this.btnBuscarCliente.TabIndex = 3;
+            this.btnBuscarCliente.Text = "Buscar";
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
             // 
-            // chkCedula1
+            // ckbCedulaCliente
             // 
-            this.chkCedula1.AutoSize = true;
-            this.chkCedula1.Location = new System.Drawing.Point(75, 53);
-            this.chkCedula1.Name = "chkCedula1";
-            this.chkCedula1.Size = new System.Drawing.Size(59, 17);
-            this.chkCedula1.TabIndex = 2;
-            this.chkCedula1.Text = "Cedula";
-            this.chkCedula1.UseVisualStyleBackColor = true;
+            this.ckbCedulaCliente.AutoSize = true;
+            this.ckbCedulaCliente.Location = new System.Drawing.Point(75, 53);
+            this.ckbCedulaCliente.Name = "ckbCedulaCliente";
+            this.ckbCedulaCliente.Size = new System.Drawing.Size(59, 17);
+            this.ckbCedulaCliente.TabIndex = 2;
+            this.ckbCedulaCliente.Text = "Cedula";
+            this.ckbCedulaCliente.UseVisualStyleBackColor = true;
             // 
-            // chkNombre1
+            // ckbNombreCliente
             // 
-            this.chkNombre1.AutoSize = true;
-            this.chkNombre1.Location = new System.Drawing.Point(75, 23);
-            this.chkNombre1.Name = "chkNombre1";
-            this.chkNombre1.Size = new System.Drawing.Size(63, 17);
-            this.chkNombre1.TabIndex = 1;
-            this.chkNombre1.Text = "Nombre";
-            this.chkNombre1.UseVisualStyleBackColor = true;
+            this.ckbNombreCliente.AutoSize = true;
+            this.ckbNombreCliente.Location = new System.Drawing.Point(75, 23);
+            this.ckbNombreCliente.Name = "ckbNombreCliente";
+            this.ckbNombreCliente.Size = new System.Drawing.Size(63, 17);
+            this.ckbNombreCliente.TabIndex = 1;
+            this.ckbNombreCliente.Text = "Nombre";
+            this.ckbNombreCliente.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.btnCancelar1);
-            this.groupBox1.Controls.Add(this.btnGuardar1);
+            this.groupBox1.Controls.Add(this.btnCancelarNuevoCliente);
+            this.groupBox1.Controls.Add(this.btnGuardarNuevoCliente);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtTelefono1);
-            this.groupBox1.Controls.Add(this.txtCorreo1);
-            this.groupBox1.Controls.Add(this.txtCedula1);
-            this.groupBox1.Controls.Add(this.txtNombre1);
+            this.groupBox1.Controls.Add(this.txtNuevoTelefonoCliente);
+            this.groupBox1.Controls.Add(this.txtNuevoCorreoCliente);
+            this.groupBox1.Controls.Add(this.txtNuevoCedulaCliente);
+            this.groupBox1.Controls.Add(this.txtNuevoNombreCliente);
             this.groupBox1.Location = new System.Drawing.Point(25, 21);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(968, 106);
@@ -805,23 +805,23 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "Nombre";
             // 
-            // btnCancelar1
+            // btnCancelarNuevoCliente
             // 
-            this.btnCancelar1.Location = new System.Drawing.Point(713, 18);
-            this.btnCancelar1.Name = "btnCancelar1";
-            this.btnCancelar1.Size = new System.Drawing.Size(67, 23);
-            this.btnCancelar1.TabIndex = 18;
-            this.btnCancelar1.Text = "Cancelar";
-            this.btnCancelar1.UseVisualStyleBackColor = true;
+            this.btnCancelarNuevoCliente.Location = new System.Drawing.Point(713, 18);
+            this.btnCancelarNuevoCliente.Name = "btnCancelarNuevoCliente";
+            this.btnCancelarNuevoCliente.Size = new System.Drawing.Size(67, 23);
+            this.btnCancelarNuevoCliente.TabIndex = 18;
+            this.btnCancelarNuevoCliente.Text = "Cancelar";
+            this.btnCancelarNuevoCliente.UseVisualStyleBackColor = true;
             // 
-            // btnGuardar1
+            // btnGuardarNuevoCliente
             // 
-            this.btnGuardar1.Location = new System.Drawing.Point(713, 57);
-            this.btnGuardar1.Name = "btnGuardar1";
-            this.btnGuardar1.Size = new System.Drawing.Size(67, 23);
-            this.btnGuardar1.TabIndex = 17;
-            this.btnGuardar1.Text = "Guardar";
-            this.btnGuardar1.UseVisualStyleBackColor = true;
+            this.btnGuardarNuevoCliente.Location = new System.Drawing.Point(713, 57);
+            this.btnGuardarNuevoCliente.Name = "btnGuardarNuevoCliente";
+            this.btnGuardarNuevoCliente.Size = new System.Drawing.Size(67, 23);
+            this.btnGuardarNuevoCliente.TabIndex = 17;
+            this.btnGuardarNuevoCliente.Text = "Guardar";
+            this.btnGuardarNuevoCliente.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -852,33 +852,34 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Correo";
             // 
-            // txtTelefono1
+            // txtNuevoTelefonoCliente
             // 
-            this.txtTelefono1.Location = new System.Drawing.Point(487, 59);
-            this.txtTelefono1.Name = "txtTelefono1";
-            this.txtTelefono1.Size = new System.Drawing.Size(200, 20);
-            this.txtTelefono1.TabIndex = 12;
+            this.txtNuevoTelefonoCliente.Location = new System.Drawing.Point(487, 59);
+            this.txtNuevoTelefonoCliente.Name = "txtNuevoTelefonoCliente";
+            this.txtNuevoTelefonoCliente.Size = new System.Drawing.Size(200, 20);
+            this.txtNuevoTelefonoCliente.TabIndex = 12;
             // 
-            // txtCorreo1
+            // txtNuevoCorreoCliente
             // 
-            this.txtCorreo1.Location = new System.Drawing.Point(487, 20);
-            this.txtCorreo1.Name = "txtCorreo1";
-            this.txtCorreo1.Size = new System.Drawing.Size(200, 20);
-            this.txtCorreo1.TabIndex = 11;
+            this.txtNuevoCorreoCliente.Location = new System.Drawing.Point(487, 20);
+            this.txtNuevoCorreoCliente.Name = "txtNuevoCorreoCliente";
+            this.txtNuevoCorreoCliente.Size = new System.Drawing.Size(200, 20);
+            this.txtNuevoCorreoCliente.TabIndex = 11;
             // 
-            // txtCedula1
+            // txtNuevoCedulaCliente
             // 
-            this.txtCedula1.Location = new System.Drawing.Point(144, 60);
-            this.txtCedula1.Name = "txtCedula1";
-            this.txtCedula1.Size = new System.Drawing.Size(201, 20);
-            this.txtCedula1.TabIndex = 10;
+            this.txtNuevoCedulaCliente.Location = new System.Drawing.Point(144, 60);
+            this.txtNuevoCedulaCliente.Name = "txtNuevoCedulaCliente";
+            this.txtNuevoCedulaCliente.Size = new System.Drawing.Size(201, 20);
+            this.txtNuevoCedulaCliente.TabIndex = 10;
             // 
-            // txtNombre1
+            // txtNuevoNombreCliente
             // 
-            this.txtNombre1.Location = new System.Drawing.Point(144, 24);
-            this.txtNombre1.Name = "txtNombre1";
-            this.txtNombre1.Size = new System.Drawing.Size(200, 20);
-            this.txtNombre1.TabIndex = 9;
+            this.txtNuevoNombreCliente.Location = new System.Drawing.Point(144, 24);
+            this.txtNuevoNombreCliente.Name = "txtNuevoNombreCliente";
+            this.txtNuevoNombreCliente.Size = new System.Drawing.Size(200, 20);
+            this.txtNuevoNombreCliente.TabIndex = 9;
+            this.txtNuevoNombreCliente.TextChanged += new System.EventHandler(this.TxtCliente_TextChanged);
             // 
             // tabTrabajador
             // 
@@ -1816,7 +1817,7 @@
             this.tabClientes.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCliente)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabTrabajador.ResumeLayout(false);
@@ -1860,25 +1861,25 @@
         private System.Windows.Forms.TabPage tabClientes;
         private System.Windows.Forms.TabPage tabTrabajador;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnEliminar1;
-        private System.Windows.Forms.Button btnModificar1;
-        private System.Windows.Forms.TextBox txtBuscar1;
+        private System.Windows.Forms.DataGridView DgvCliente;
+        private System.Windows.Forms.Button btnEliminarCliente;
+        private System.Windows.Forms.Button btnModficarCliente;
+        private System.Windows.Forms.TextBox TxtBuscarCliente;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnLupa1;
-        private System.Windows.Forms.CheckBox chkCedula1;
-        private System.Windows.Forms.CheckBox chkNombre1;
+        private System.Windows.Forms.Button btnBuscarCliente;
+        private System.Windows.Forms.CheckBox ckbCedulaCliente;
+        private System.Windows.Forms.CheckBox ckbNombreCliente;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnCancelar1;
-        private System.Windows.Forms.Button btnGuardar1;
+        private System.Windows.Forms.Button btnCancelarNuevoCliente;
+        private System.Windows.Forms.Button btnGuardarNuevoCliente;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtTelefono1;
-        private System.Windows.Forms.TextBox txtCorreo1;
-        private System.Windows.Forms.TextBox txtCedula1;
-        private System.Windows.Forms.TextBox txtNombre1;
+        private System.Windows.Forms.TextBox txtNuevoTelefonoCliente;
+        private System.Windows.Forms.TextBox txtNuevoCorreoCliente;
+        private System.Windows.Forms.TextBox txtNuevoCedulaCliente;
+        private System.Windows.Forms.TextBox txtNuevoNombreCliente;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -2007,18 +2008,16 @@
         private System.Windows.Forms.Button btnBuscarTrabajador;
         private System.Windows.Forms.CheckBox ckbCedulaTrabajador;
         private System.Windows.Forms.CheckBox ckbNombreTrabajador;
-<<<<<<< HEAD
+
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridView DgvFacturaProducto;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox TxtCedulaCliente;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-=======
+
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox TxtCedulaCliente;
-        private System.Windows.Forms.Label label11;
->>>>>>> dc63a61eee01a38efb1ce6c836dce046a8de39ec
+     
+
     }
 }
