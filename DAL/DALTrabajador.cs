@@ -43,12 +43,7 @@ namespace DAL
             }
         }
 
-<<<<<<< HEAD
-        public string GuardarTR(int nOpcion, ETTrabajador tr
-            )
-=======
-        public string GuardarTrabajador(int nOpcion, ETTrabajador tr)
->>>>>>> ed0928e80b52815efe1f83d4ed0edcd2fd83d458
+        public string GuardarTR(int nOpcion, ETTrabajador tr)
         {
 
             string Rpta = "";
@@ -139,14 +134,14 @@ namespace DAL
                     }
                     else
                     {
-                        string RptaEliminar = EliminaTrabajador(IDTrabajador);
+                        string RptaEliminar = EliminaTR(IDTrabajador);
                         if (RptaEliminar != "OK")
                         {
                             Rpta = RptaEliminar;
                         }
                         else
                         {
-                            string RptaAgregar = GuardarTrabajador(nOpcion, tr);
+                            string RptaAgregar = GuardarTR(nOpcion, tr);
                         }
                     }
                 }

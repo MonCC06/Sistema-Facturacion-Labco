@@ -212,6 +212,7 @@
             this.label42 = new System.Windows.Forms.Label();
             this.TBPrecioProducto = new System.Windows.Forms.TextBox();
             this.TBDescripcionProducto = new System.Windows.Forms.TextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.TabServicicos.SuspendLayout();
             this.tabFactura.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -807,6 +808,7 @@
             // 
             // groupBox14
             // 
+            this.groupBox14.Controls.Add(this.listBox1);
             this.groupBox14.Controls.Add(this.AgregarCL);
             this.groupBox14.Controls.Add(this.TxtEmailCliente);
             this.groupBox14.Controls.Add(this.TxtTelefonoCliente);
@@ -2035,6 +2037,14 @@
             this.TBDescripcionProducto.Size = new System.Drawing.Size(188, 20);
             this.TBDescripcionProducto.TabIndex = 9;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(401, 60);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(149, 95);
+            this.listBox1.TabIndex = 9;
+            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2288,5 +2298,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
