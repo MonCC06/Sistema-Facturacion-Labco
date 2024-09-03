@@ -33,6 +33,7 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
@@ -70,11 +71,12 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.TxtFechaFactura = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
             this.TxtEstadoFactura = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.AgregarCL = new System.Windows.Forms.Button();
@@ -200,8 +202,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.TBPrecioProducto = new System.Windows.Forms.TextBox();
             this.TBDescripcionProducto = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.TabServicicos.SuspendLayout();
             this.tabFactura.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -319,6 +319,13 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Contenido";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(282, 27);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 20);
+            this.textBox1.TabIndex = 15;
+            // 
             // textBox20
             // 
             this.textBox20.Location = new System.Drawing.Point(53, 235);
@@ -378,7 +385,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(650, 29);
+            this.label26.Location = new System.Drawing.Point(841, 27);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(74, 13);
             this.label26.TabIndex = 27;
@@ -648,30 +655,19 @@
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Otra Informacion";
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(115, 90);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(180, 20);
+            this.textBox2.TabIndex = 10;
+            // 
             // TxtFechaFactura
             // 
             this.TxtFechaFactura.Location = new System.Drawing.Point(115, 56);
             this.TxtFechaFactura.Name = "TxtFechaFactura";
             this.TxtFechaFactura.Size = new System.Drawing.Size(180, 20);
             this.TxtFechaFactura.TabIndex = 8;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(36, 90);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(71, 13);
-            this.label29.TabIndex = 9;
-            this.label29.Text = "Nombre Fact.";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(36, 60);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(37, 13);
-            this.label30.TabIndex = 8;
-            this.label30.Text = "Fecha";
             // 
             // label31
             // 
@@ -682,12 +678,30 @@
             this.label31.TabIndex = 1;
             this.label31.Text = "Estado";
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(36, 90);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(71, 13);
+            this.label29.TabIndex = 9;
+            this.label29.Text = "Nombre Fact.";
+            // 
             // TxtEstadoFactura
             // 
             this.TxtEstadoFactura.Location = new System.Drawing.Point(115, 27);
             this.TxtEstadoFactura.Name = "TxtEstadoFactura";
             this.TxtEstadoFactura.Size = new System.Drawing.Size(180, 20);
             this.TxtEstadoFactura.TabIndex = 0;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(36, 60);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(37, 13);
+            this.label30.TabIndex = 8;
+            this.label30.Text = "Fecha";
             // 
             // groupBox14
             // 
@@ -1928,20 +1942,6 @@
             this.TBDescripcionProducto.Name = "TBDescripcionProducto";
             this.TBDescripcionProducto.Size = new System.Drawing.Size(188, 20);
             this.TBDescripcionProducto.TabIndex = 9;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(282, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 15;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(115, 90);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 20);
-            this.textBox2.TabIndex = 10;
             // 
             // FrmInicio
             // 
