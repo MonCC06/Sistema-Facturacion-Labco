@@ -10,55 +10,49 @@ namespace DAL
     public class Conexion
     {
 
-        //Atributos
         private string _Base;
         private string _Server;
         private bool _Seguridad;
         private static Conexion Con = null;
 
-        //Constructor de la BD
+        // Constructor de la BD
         private Conexion()
         {
-            //Nombre de la BD
-            this._Base = "LABCOP BD";  ///el nombre de la base de datos
-            //Nombre Servidor
-            this._Server = "MONSE\\SQLEXPRESSS"; //Insertar base de datos//
-            this._Seguridad = true;
-
+            // Nombre de la BD
+            this._Base = "LABCO BD";  // Nombre de la base de datos
+            // Nombre Servidor
+            this._Server = "DESKTOP-7L76K06"; // Nombre del servidor
+            this._Seguridad = true;  // Cambiar a true si usas seguridad integrada
         }
 
         public SqlConnection CrearConexion()
         {
-
             SqlConnection cadena = new SqlConnection();
 
             try
             {
-                cadena.ConnectionString = "Server=" + this._Server + ";Database=" + this._Base + ";";
+                // Base de la cadena de conexión
+                cadena.ConnectionString = $"Server={this._Server};Database={this._Base};";
 
                 if (_Seguridad)
                 {
-                    cadena.ConnectionString = cadena.ConnectionString + "Integrate Security=SSPI";
+                    // Seguridad integrada
+                    cadena.ConnectionString += "Integrated Security=True;";
                 }
                 else
                 {
-                    
-                    //Aca se completaria en caso de ser con usuario y contrasena de SQL
+                    // Ejemplo con usuario y contraseña
+                    cadena.ConnectionString += "User Id=tuUsuario;Password=tuContraseña;";
                 }
-
             }
             catch (Exception ex)
             {
-
                 cadena = null;
-                throw ex;
-
+                throw new Exception("Error al crear la conexión: " + ex.Message);
             }
 
             return cadena;
-
         }
-
 
         public static Conexion GetInstancia()
         {
@@ -68,23 +62,5 @@ namespace DAL
             }
             return Con;
         }
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-

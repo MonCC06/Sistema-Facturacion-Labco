@@ -1668,6 +1668,7 @@
             this.BTEliminararProducto.TabIndex = 7;
             this.BTEliminararProducto.Text = "Eliminar";
             this.BTEliminararProducto.UseVisualStyleBackColor = true;
+            this.BTEliminararProducto.Click += new System.EventHandler(this.BTEliminararProducto_Click);
             // 
             // BTModificarProducto
             // 
@@ -1677,6 +1678,7 @@
             this.BTModificarProducto.TabIndex = 6;
             this.BTModificarProducto.Text = "Modificar";
             this.BTModificarProducto.UseVisualStyleBackColor = true;
+            this.BTModificarProducto.Click += new System.EventHandler(this.BTModificarProducto_Click);
             // 
             // TBBuscarProducto
             // 
@@ -1702,6 +1704,7 @@
             this.BTBusarProducto.TabIndex = 3;
             this.BTBusarProducto.Text = "Buscar";
             this.BTBusarProducto.UseVisualStyleBackColor = true;
+            this.BTBusarProducto.Click += new System.EventHandler(this.BTBusarProducto_Click);
             // 
             // groupBox18
             // 
@@ -1759,6 +1762,7 @@
             this.BTCancelarProducto.TabIndex = 18;
             this.BTCancelarProducto.Text = "Cancelar";
             this.BTCancelarProducto.UseVisualStyleBackColor = true;
+            this.BTCancelarProducto.Click += new System.EventHandler(this.BTCancelarProducto_Click);
             // 
             // BTGuardarProducto
             // 
@@ -1768,6 +1772,7 @@
             this.BTGuardarProducto.TabIndex = 17;
             this.BTGuardarProducto.Text = "Guardar";
             this.BTGuardarProducto.UseVisualStyleBackColor = true;
+            this.BTGuardarProducto.Click += new System.EventHandler(this.BTGuardarProducto_Click);
             // 
             // label42
             // 

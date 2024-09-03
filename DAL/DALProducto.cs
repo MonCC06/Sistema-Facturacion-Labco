@@ -20,7 +20,7 @@ namespace DAL
             try
             {
                 SQLCon = Conexion.GetInstancia().CrearConexion();
-                SqlCommand Comando = new SqlCommand("USP_Listado_Producto", SQLCon);
+                SqlCommand Comando = new SqlCommand("USP_Listado_Pr", SQLCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
                 SQLCon.Open();
@@ -57,10 +57,10 @@ namespace DAL
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.Add("@nOpcion", SqlDbType.Int).Value = nOpcion;
                 comando.Parameters.Add("@IDProducto", SqlDbType.Int).Value = pr.IDProducto;
-                comando.Parameters.Add("@cDescripcion_pro", SqlDbType.VarChar).Value = pr.Descripcion    ;
-                comando.Parameters.Add("@nPrecio_pro", SqlDbType.Decimal).Value = pr.Precio;
-                comando.Parameters.Add("@Stock_Actual_pro", SqlDbType.Decimal).Value = pr.StockActual;
-                comando.Parameters.Add("@Estado_pr", SqlDbType.Bit).Value = pr.Estado;
+                comando.Parameters.Add("@Descripcion_pro", SqlDbType.VarChar).Value = pr.Descripcion;
+                comando.Parameters.Add("@Precio_pro", SqlDbType.Decimal).Value = pr.Precio;
+                comando.Parameters.Add("@Stock_Actual_pro", SqlDbType.Int).Value = pr.StockActual;
+
 
 
                 SqlCon.Open();
@@ -68,7 +68,7 @@ namespace DAL
 
 
             }
-            
+
             catch (Exception ex)
             {
                 Rpta = ex.Message;
@@ -90,7 +90,7 @@ namespace DAL
             try
             {
                 SqlCon = Conexion.GetInstancia().CrearConexion();
-                SqlCommand comando = new SqlCommand("USP_Eliminar_Producto", SqlCon);
+                SqlCommand comando = new SqlCommand("USP_Eliminar_Pr", SqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.Add("@IDProducto", SqlDbType.Int).Value = IDProducto;
 
@@ -119,7 +119,7 @@ namespace DAL
             try
             {
                 SqlCon = Conexion.GetInstancia().CrearConexion();
-                SqlCommand Comando = new SqlCommand("USP_Listado_Producto", SqlCon);
+                SqlCommand Comando = new SqlCommand("USP_Listado_Pr", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
                 SqlCon.Open();
