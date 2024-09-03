@@ -58,12 +58,15 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.TxtEstadoFactura = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.TxtCedulaCliente = new System.Windows.Forms.TextBox();
             this.TxtEmailCliente = new System.Windows.Forms.TextBox();
             this.TxtTelefonoCliente = new System.Windows.Forms.TextBox();
             this.TxtNombreCliente = new System.Windows.Forms.TextBox();
@@ -124,8 +127,8 @@
             this.chkplacavehiculo = new System.Windows.Forms.CheckBox();
             this.chkceduvehi = new System.Windows.Forms.CheckBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.checkBoxDistanciaMillas = new System.Windows.Forms.CheckBox();
-            this.checkBoxDistanciaKilometros = new System.Windows.Forms.CheckBox();
+            this.chkM = new System.Windows.Forms.CheckBox();
+            this.chkK = new System.Windows.Forms.CheckBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.DistanciaTxTVehiculo = new System.Windows.Forms.TextBox();
@@ -182,9 +185,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.TBPrecioProducto = new System.Windows.Forms.TextBox();
             this.TBDescripcionProducto = new System.Windows.Forms.TextBox();
-            this.TxtCedulaCliente = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.TabServicicos.SuspendLayout();
             this.tabFactura.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -526,6 +526,13 @@
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Otra Informacion";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(115, 57);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 11;
+            // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(115, 90);
@@ -584,6 +591,24 @@
             this.groupBox14.TabIndex = 0;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Datos del Cliente";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(45, 34);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 13);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Cédula";
+            this.label11.Click += new System.EventHandler(this.label11_Click_1);
+            // 
+            // TxtCedulaCliente
+            // 
+            this.TxtCedulaCliente.Location = new System.Drawing.Point(96, 31);
+            this.TxtCedulaCliente.Name = "TxtCedulaCliente";
+            this.TxtCedulaCliente.Size = new System.Drawing.Size(180, 20);
+            this.TxtCedulaCliente.TabIndex = 8;
+            this.TxtCedulaCliente.TextChanged += new System.EventHandler(this.TxtCedulaCliente_TextChanged);
             // 
             // TxtEmailCliente
             // 
@@ -1109,6 +1134,7 @@
             this.buttonEliminarVehiculo.TabIndex = 7;
             this.buttonEliminarVehiculo.Text = "Eliminar";
             this.buttonEliminarVehiculo.UseVisualStyleBackColor = true;
+            this.buttonEliminarVehiculo.Click += new System.EventHandler(this.buttonEliminarVehiculo_Click);
             // 
             // buttonModificarVehiculo
             // 
@@ -1118,6 +1144,7 @@
             this.buttonModificarVehiculo.TabIndex = 6;
             this.buttonModificarVehiculo.Text = "Modificar";
             this.buttonModificarVehiculo.UseVisualStyleBackColor = true;
+            this.buttonModificarVehiculo.Click += new System.EventHandler(this.buttonModificarVehiculo_Click);
             // 
             // TxTBuscarVehiculo
             // 
@@ -1143,6 +1170,7 @@
             this.buttonBuscarVehiculo.TabIndex = 3;
             this.buttonBuscarVehiculo.Text = "Buscar";
             this.buttonBuscarVehiculo.UseVisualStyleBackColor = true;
+            this.buttonBuscarVehiculo.Click += new System.EventHandler(this.buttonBuscarVehiculo_Click);
             // 
             // chkplacavehiculo
             // 
@@ -1167,8 +1195,8 @@
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox6.Controls.Add(this.checkBoxDistanciaMillas);
-            this.groupBox6.Controls.Add(this.checkBoxDistanciaKilometros);
+            this.groupBox6.Controls.Add(this.chkM);
+            this.groupBox6.Controls.Add(this.chkK);
             this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Controls.Add(this.label20);
             this.groupBox6.Controls.Add(this.DistanciaTxTVehiculo);
@@ -1187,25 +1215,25 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Nuevo";
             // 
-            // checkBoxDistanciaMillas
+            // chkM
             // 
-            this.checkBoxDistanciaMillas.AutoSize = true;
-            this.checkBoxDistanciaMillas.Location = new System.Drawing.Point(159, 91);
-            this.checkBoxDistanciaMillas.Name = "checkBoxDistanciaMillas";
-            this.checkBoxDistanciaMillas.Size = new System.Drawing.Size(52, 17);
-            this.checkBoxDistanciaMillas.TabIndex = 10;
-            this.checkBoxDistanciaMillas.Text = "Millas";
-            this.checkBoxDistanciaMillas.UseVisualStyleBackColor = true;
+            this.chkM.AutoSize = true;
+            this.chkM.Location = new System.Drawing.Point(159, 91);
+            this.chkM.Name = "chkM";
+            this.chkM.Size = new System.Drawing.Size(52, 17);
+            this.chkM.TabIndex = 10;
+            this.chkM.Text = "Millas";
+            this.chkM.UseVisualStyleBackColor = true;
             // 
-            // checkBoxDistanciaKilometros
+            // chkK
             // 
-            this.checkBoxDistanciaKilometros.AutoSize = true;
-            this.checkBoxDistanciaKilometros.Location = new System.Drawing.Point(217, 91);
-            this.checkBoxDistanciaKilometros.Name = "checkBoxDistanciaKilometros";
-            this.checkBoxDistanciaKilometros.Size = new System.Drawing.Size(74, 17);
-            this.checkBoxDistanciaKilometros.TabIndex = 9;
-            this.checkBoxDistanciaKilometros.Text = "Kilometros";
-            this.checkBoxDistanciaKilometros.UseVisualStyleBackColor = true;
+            this.chkK.AutoSize = true;
+            this.chkK.Location = new System.Drawing.Point(217, 91);
+            this.chkK.Name = "chkK";
+            this.chkK.Size = new System.Drawing.Size(74, 17);
+            this.chkK.TabIndex = 9;
+            this.chkK.Text = "Kilometros";
+            this.chkK.UseVisualStyleBackColor = true;
             // 
             // label21
             // 
@@ -1275,6 +1303,7 @@
             this.buttonCancelarVehiculo.TabIndex = 18;
             this.buttonCancelarVehiculo.Text = "Cancelar";
             this.buttonCancelarVehiculo.UseVisualStyleBackColor = true;
+            this.buttonCancelarVehiculo.Click += new System.EventHandler(this.buttonCancelarVehiculo_Click);
             // 
             // buttonGuardarVehiculo
             // 
@@ -1284,6 +1313,7 @@
             this.buttonGuardarVehiculo.TabIndex = 17;
             this.buttonGuardarVehiculo.Text = "Guardar";
             this.buttonGuardarVehiculo.UseVisualStyleBackColor = true;
+            this.buttonGuardarVehiculo.Click += new System.EventHandler(this.buttonGuardarVehiculo_Click);
             // 
             // label12
             // 
@@ -1356,6 +1386,7 @@
             this.buttonModificarMarca.TabIndex = 6;
             this.buttonModificarMarca.Text = "Modificar";
             this.buttonModificarMarca.UseVisualStyleBackColor = true;
+            this.buttonModificarMarca.Click += new System.EventHandler(this.buttonModificarMarca_Click);
             // 
             // TxTBuscarMarca
             // 
@@ -1757,31 +1788,6 @@
             this.TBDescripcionProducto.Size = new System.Drawing.Size(188, 20);
             this.TBDescripcionProducto.TabIndex = 9;
             // 
-            // TxtCedulaCliente
-            // 
-            this.TxtCedulaCliente.Location = new System.Drawing.Point(96, 31);
-            this.TxtCedulaCliente.Name = "TxtCedulaCliente";
-            this.TxtCedulaCliente.Size = new System.Drawing.Size(180, 20);
-            this.TxtCedulaCliente.TabIndex = 8;
-            this.TxtCedulaCliente.TextChanged += new System.EventHandler(this.TxtCedulaCliente_TextChanged);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(45, 34);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(40, 13);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "Cédula";
-            this.label11.Click += new System.EventHandler(this.label11_Click_1);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(115, 57);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 11;
-            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1896,8 +1902,8 @@
         private System.Windows.Forms.CheckBox chkplacavehiculo;
         private System.Windows.Forms.CheckBox chkceduvehi;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.CheckBox checkBoxDistanciaMillas;
-        private System.Windows.Forms.CheckBox checkBoxDistanciaKilometros;
+        private System.Windows.Forms.CheckBox chkM;
+        private System.Windows.Forms.CheckBox chkK;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox DistanciaTxTVehiculo;

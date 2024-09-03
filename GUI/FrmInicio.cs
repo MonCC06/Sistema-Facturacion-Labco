@@ -942,8 +942,7 @@ private void FormatoTR()
         }
         #endregion
 
-<<<<<<< HEAD
-=======
+
         #region Eventos Servicio
         private void BTGuardarServicio_Click(object sender, EventArgs e)
         {
@@ -1019,7 +1018,7 @@ private void FormatoTR()
 
         #endregion
 
->>>>>>> 21c046c528e57e589b419cbe56b3bd1350fa3819
+
         private void label25_Click(object sender, EventArgs e)
         {
 
@@ -1057,7 +1056,7 @@ private void FormatoTR()
 
                     TxTNombreMarca.Text = "";
                     TxTNombreMarca.ReadOnly = true;
-                    this.IdMarca = 0;
+                    this.IDMarca = 0;
 
                 }
                 else
@@ -1080,6 +1079,10 @@ private void FormatoTR()
 
         private void buttonCancelarMarca_Click(object sender, EventArgs e)
         {
+            EstadoGuarda = 0;//Sin ninguna accion
+            this.IDMarca = 0;
+            TxTNombreMarca.Text = "";
+            TxTNombreMarca.ReadOnly = true;
 
         }
 
@@ -1117,6 +1120,111 @@ private void FormatoTR()
 
         }
 
+        private void buttonModificarMarca_Click(object sender, EventArgs e)
+        {
+            EstadoGuarda = 0;//Sin ninguna accion
+            this.IDMarca = 0;
+            TxTBuscarMarca.Text = "";
+            TxTBuscarMarca.ReadOnly = true;
+        }
+
+        #endregion
+
+
+        #region Vehiculo
+
+
+
+        private void buttonGuardarVehiculo_Click(object sender, EventArgs e)
+        {
+
+            if (TxTModeloVehiculo.Text == String.Empty ||
+                   TxTPlacaVehiculo.Text == String.Empty ||
+                   TxTVINVehiculo.Text == String.Empty ||
+                   DistanciaTxTVehiculo.Text == String.Empty)
+
+
+            {
+                MessageBox.Show("Falta ingresar datos requeridos(*)", "Aviso del sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else
+            {
+
+                ETVehiculo etvehiculo = new ETVehiculo();
+                string Rpta = "";
+                etvehiculo.IDVehiculo = this.IDVehiculo;
+                etvehiculo.Modelo = TxTModeloVehiculo.Text.Trim();
+                etvehiculo.Placa = TxTPlacaVehiculo.Text.Trim();
+                etvehiculo.VIN = TxTVINVehiculo.Text.Trim();
+                etvehiculo.DistanciaRecorrida = DistanciaTxTVehiculo.Text.Trim();
+                Rpta = BLVehiculo.GuardarVE(EstadoGuarda, etvehiculo);
+
+
+                if (Rpta == "OK")
+                {
+                    this.ListadoVe("%");
+                    MessageBox.Show("Los datos se han registrado", "Aviso del sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Information);
+
+                    EstadoGuarda = 0; // si no guardo nada
+
+                    TxTPlacaVehiculo.Text = "";
+                    TxTVINVehiculo.Text = "";
+                    TxTModeloVehiculo.Text = "";
+
+                    if (chkM.Checked == true)
+                    {
+                        DistanciaTxTVehiculo.Text = "";
+                    }
+                    if (chkK.Checked == true)
+                    {
+                        DistanciaTxTVehiculo.Text = "";
+                    }
+
+
+                    TxTVINVehiculo.ReadOnly = true;
+                    TxTPlacaVehiculo.ReadOnly = true;
+                    TxTModeloVehiculo.ReadOnly = true;
+                    DistanciaTxTVehiculo.ReadOnly = true;
+                    this.IDVehiculo = 0;
+
+                }
+                else
+                {
+                    MessageBox.Show(Rpta, "Aviso del sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+
+                }
+            }
+
+        }
+        private void buttonCancelarVehiculo_Click(object sender, EventArgs e)
+        {
+
+            EstadoGuarda = 0;//Sin ninguna accion
+            this.IDVehiculo = 0;
+            TxTPlacaVehiculo.Text = "";
+            TxTVINVehiculo.Text = "";
+            TxTModeloVehiculo.Text = "";
+            DistanciaTxTVehiculo.Text = "0";
+            TxTPlacaVehiculo.ReadOnly = true;
+            TxTVINVehiculo.ReadOnly = true;
+            TxTModeloVehiculo.ReadOnly = true;
+            DistanciaTxTVehiculo.ReadOnly = true;
+
+
+
+
+
+
+        }
+
+
+
+
+
+
         private void label11_Click_1(object sender, EventArgs e)
         {
 
@@ -1147,11 +1255,89 @@ private void FormatoTR()
 
         }
 
+        private void buttonBuscarVehiculo_Click(object sender, EventArgs e)
+        {
+
+            if (chkceduvehi.Checked == true)
+            {
+                this.ListadoVe(TxTBuscarVehiculo.Text.Trim());
+            }
+            if (chkplacavehiculo.Checked == true)
+            {
+                this.ListadoVe(TxTBuscarVehiculo.Text.Trim());
+            }
 
 
 
 
-        #endregion
+
+        }
+
+        private void buttonModificarVehiculo_Click(object sender, EventArgs e)
+        {
+            EstadoGuarda = 0;//Sin ninguna accion
+            this.IDMarca = 0;
+            TxTBuscarMarca.Text = "";
+            TxTBuscarMarca.ReadOnly = true;
+
+
+
+        }
+
+        private void buttonEliminarVehiculo_Click(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(Convert.ToString(dataGridViewVehiculo.CurrentRow.Cells["IdVehiculo"].Value)))
+            {
+                MessageBox.Show("No hay datos que mostrar", "Aviso del sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult opcion;
+                opcion = MessageBox.Show("Esta seguro de eliminar el registro seleccionado ?", "Aviso del sistema", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (opcion == DialogResult.Yes)
+                {
+                    string Rpta = "";
+                    this.IDVehiculo = Convert.ToInt32(dataGridViewVehiculo.CurrentRow.Cells["IDVehiculo"].Value);
+                    Rpta = BLVehiculo.EliminaVE(this.IDVehiculo);
+
+                    if (Rpta.Equals("OK"))
+                    {
+                        this.ListadoVe("%");//LLAMAMOS EL METODO PARA ACTUALIZAR LA LISTA
+                        this.IDVehiculo = 0;
+                        MessageBox.Show("Registro eliminado", "Aviso del sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Exclamation);
+                    }
+
+                }
+
+
+            }
+
+
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         //hola
