@@ -371,7 +371,7 @@ namespace GUI
             txtNuevoCorreoTrabajador.Text = "";
             txtNuevoTelefonoTrabajador.Text = "";
             this.BotonesTrabajador(true);
-            this.SeleccionaTrabajdor();
+            this.SeleccionaTrabajador();
         }
 
         private void btnBuscarTrabajador_Click(object sender, EventArgs e)
