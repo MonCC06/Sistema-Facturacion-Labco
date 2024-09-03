@@ -158,14 +158,14 @@
             this.dataGridViewMarca = new System.Windows.Forms.DataGridView();
             this.buttonEliminarMarca = new System.Windows.Forms.Button();
             this.buttonModificarMarca = new System.Windows.Forms.Button();
-            this.textBoxBuscarMarca = new System.Windows.Forms.TextBox();
+            this.TxTBuscarMarca = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.buttonBuscarMarca = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
             this.buttonCancelarMarca = new System.Windows.Forms.Button();
             this.buttonGuardarMarca = new System.Windows.Forms.Button();
-            this.textBoxNombreMarca = new System.Windows.Forms.TextBox();
+            this.TxTNombreMarca = new System.Windows.Forms.TextBox();
             this.tabServicios = new System.Windows.Forms.TabPage();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.DGVServicio = new System.Windows.Forms.DataGridView();
@@ -1467,7 +1467,7 @@
             this.groupBox7.Controls.Add(this.dataGridViewMarca);
             this.groupBox7.Controls.Add(this.buttonEliminarMarca);
             this.groupBox7.Controls.Add(this.buttonModificarMarca);
-            this.groupBox7.Controls.Add(this.textBoxBuscarMarca);
+            this.groupBox7.Controls.Add(this.TxTBuscarMarca);
             this.groupBox7.Controls.Add(this.label15);
             this.groupBox7.Controls.Add(this.buttonBuscarMarca);
             this.groupBox7.Location = new System.Drawing.Point(22, 140);
@@ -1505,12 +1505,12 @@
             this.buttonModificarMarca.Text = "Modificar";
             this.buttonModificarMarca.UseVisualStyleBackColor = true;
             // 
-            // textBoxBuscarMarca
+            // TxTBuscarMarca
             // 
-            this.textBoxBuscarMarca.Location = new System.Drawing.Point(268, 19);
-            this.textBoxBuscarMarca.Name = "textBoxBuscarMarca";
-            this.textBoxBuscarMarca.Size = new System.Drawing.Size(188, 20);
-            this.textBoxBuscarMarca.TabIndex = 5;
+            this.TxTBuscarMarca.Location = new System.Drawing.Point(268, 23);
+            this.TxTBuscarMarca.Name = "TxTBuscarMarca";
+            this.TxTBuscarMarca.Size = new System.Drawing.Size(188, 20);
+            this.TxTBuscarMarca.TabIndex = 5;
             // 
             // label15
             // 
@@ -1536,7 +1536,7 @@
             this.groupBox8.Controls.Add(this.label16);
             this.groupBox8.Controls.Add(this.buttonCancelarMarca);
             this.groupBox8.Controls.Add(this.buttonGuardarMarca);
-            this.groupBox8.Controls.Add(this.textBoxNombreMarca);
+            this.groupBox8.Controls.Add(this.TxTNombreMarca);
             this.groupBox8.Location = new System.Drawing.Point(22, 13);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(968, 106);
@@ -1571,12 +1571,12 @@
             this.buttonGuardarMarca.Text = "Guardar";
             this.buttonGuardarMarca.UseVisualStyleBackColor = true;
             // 
-            // textBoxNombreMarca
+            // TxTNombreMarca
             // 
-            this.textBoxNombreMarca.Location = new System.Drawing.Point(220, 24);
-            this.textBoxNombreMarca.Name = "textBoxNombreMarca";
-            this.textBoxNombreMarca.Size = new System.Drawing.Size(188, 20);
-            this.textBoxNombreMarca.TabIndex = 9;
+            this.TxTNombreMarca.Location = new System.Drawing.Point(220, 24);
+            this.TxTNombreMarca.Name = "TxTNombreMarca";
+            this.TxTNombreMarca.Size = new System.Drawing.Size(188, 20);
+            this.TxTNombreMarca.TabIndex = 9;
             // 
             // tabServicios
             // 
@@ -2074,14 +2074,14 @@
         private System.Windows.Forms.DataGridView dataGridViewMarca;
         private System.Windows.Forms.Button buttonEliminarMarca;
         private System.Windows.Forms.Button buttonModificarMarca;
-        private System.Windows.Forms.TextBox textBoxBuscarMarca;
+        private System.Windows.Forms.TextBox TxTBuscarMarca;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button buttonBuscarMarca;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button buttonCancelarMarca;
         private System.Windows.Forms.Button buttonGuardarMarca;
-        private System.Windows.Forms.TextBox textBoxNombreMarca;
+        private System.Windows.Forms.TextBox TxTNombreMarca;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox9;
