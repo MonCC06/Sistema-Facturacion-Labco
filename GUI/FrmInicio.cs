@@ -28,6 +28,39 @@ namespace GUI
         int IDFactura = 0;
         #endregion
 
+        #region Metodos Factura
+        private void FormatoFA()
+        {
+            DgvFacturaProducto.Columns[0].Width = 100;
+            DgvFacturaProducto.Columns[0].HeaderText = "ID_Producto";
+            DgvFacturaProducto.Columns[1].Width = 100;
+            DgvFacturaProducto.Columns[1].HeaderText = "Descripcion";
+        }
+
+        private void ListadoFA(string cTexto)
+        {
+            try
+            {
+                DgvFacturaProducto.DataSource = BLProducto.ListadoPR(cTexto);
+                this.FormatoFA();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void BotonesFactura(bool LEstado)
+        {
+            this.BtnAgregarCL.Enabled = LEstado;
+            this.BtnAgregarTR.Enabled = LEstado;
+            this.BtnAgregarVE.Enabled = LEstado;
+            this.BtnAnularFA.Enabled = LEstado;
+            this.BtnGuardarFA.Enabled = LEstado;
+            this.BtnImprimirFA.Enabled = LEstado;
+        }
+        #endregion
+
         #region Metodos Trabajador
         private void FormatoTR()
         {
