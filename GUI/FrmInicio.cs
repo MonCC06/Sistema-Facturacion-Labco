@@ -584,152 +584,6 @@ namespace GUI
             this.ListadoFA("%");
         }
 
-        #region Eventos Trabajador
-        private void btnGuardarNuevoTrabajador_Click(object sender, EventArgs e)
-        {
-            if (txtNuevoNombreTrabajador.Text == String.Empty)
-            {
-                MessageBox.Show("Nombre del trabajador requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-            }
-            if (txtNuevoCedulaTrabajador.Text == String.Empty)
-            {
-                MessageBox.Show("Cedula del trabajador requerida(*)", "Aviso del Sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-            }
-            if (txtNuevoCorreoTrabajador.Text == String.Empty)
-            {
-                MessageBox.Show("Correo del trabajador requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-            }
-            if (txtNuevoTelefonoTrabajador.Text == String.Empty)
-            {
-                MessageBox.Show("Telefono del trabajador requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-            }
-            else
-            {
-                ETTrabajador eTTrabajador = new ETTrabajador();
-                //Respuesta de la bl y la que recibe de dal cuando se hace el insert (cuando guardamos)
-                //para saber si el proceso fue exitoso o no
-                String Rpta = "";
-                eTTrabajador.IDTrabajador = this.IDTrabajador;
-                //lo que el usuario digite en ese campo se va a capturar y se va a enviar a la bd como propiedad
-                eTTrabajador.Nombre = txtNuevoNombreTrabajador.Text.Trim();
-                eTTrabajador.Cedula = txtNuevoCedulaTrabajador.Text.Trim();
-                eTTrabajador.Correo = txtNuevoCorreoTrabajador.Text.Trim();
-                eTTrabajador.Telefono = txtNuevoTelefonoTrabajador.Text.Trim();
-                //respuesta igual a los que nos retorne, enviar parametros para saber si es nuevo o no
-                Rpta = BLTrabajador.GuardarTR(EstadoGuarda, eTTrabajador);
-
-
-                //
-                if (Rpta == "OK")
-                {
-                    //volver a actualizar para que apareza el cambio
-                    this.ListadoTR("%");
-                    MessageBox.Show("Los dato se han registrado", "Aviso del Sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-
-                    EstadoGuarda = 0;
-                    //activar botones
-                    this.BotonesTrabajador(true);
-                    //volver todo a su estado original
-                    txtNuevoNombreTrabajador.Text = "";
-                    txtNuevoCedulaTrabajador.Text = "";
-                    txtNuevoCorreoTrabajador.Text = "";
-                    txtNuevoTelefonoTrabajador.Text = "";
-                    this.IDTrabajador = 0;
-
-                }
-                else
-                {
-                    MessageBox.Show("No se logro registrar el dato", "Aviso del Sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-                }
-            }
-
-        }
-
-        private void btnModficarTrabajador_Click(object sender, EventArgs e)
-        {
-            EstadoGuarda = 2;
-            this.IDTrabajador = 0;
-            this.BotonesTrabajador(true);
-            //txtNuevoNombreTrabajador.Text = "";
-            this.SeleccionaTrabajador();
-            //Poner el cursor en donde se empiezan a cambiar datos
-            txtNuevoNombreTrabajador.Focus();
-
-
-
-        }
-
-        private void btnEliminarTrabajador_Click(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(Convert.ToString(DgvTrabajador.CurrentRow.Cells["IDTrabajador"].Value)))
-            {
-                MessageBox.Show("No hay datos que mostar", "Aviso del Sistema", MessageBoxButtons.OK,
-                   MessageBoxIcon.Error);
-            }
-            else
-            {
-                DialogResult opcion;
-                //preguntar si se quiere realizar procedimiento y a opcion se le asignael valor de la respuesta
-                opcion = MessageBox.Show("¿Está seguro de eliminar el registro seleccionado?", "Aviso del Sistema", MessageBoxButtons.YesNoCancel,
-                   MessageBoxIcon.Question);
-                if (opcion == DialogResult.Yes)
-                {
-                    String Rpta = "";
-                    //convertir a int
-                    this.IDTrabajador = Convert.ToInt32(DgvTrabajador.CurrentRow.Cells["IDTrabajador"].Value);
-                    Rpta = BLTrabajador.EliminaTR(this.IDTrabajador);
-
-                    if (Rpta.Equals("OK"))
-                    {
-                        this.ListadoTR("%");
-                        this.IDTrabajador = 0;
-                        MessageBox.Show("Registro Eliminado", "Aviso del Sistema", MessageBoxButtons.YesNoCancel,
-                         MessageBoxIcon.Exclamation);
-
-                    }
-                }
-
-            }
-        }
-
-        private void btnCancelarNuevoTrabajador_Click(object sender, EventArgs e)
-        {
-            EstadoGuarda = 0;
-            this.IDTrabajador = 0;
-            txtNuevoNombreTrabajador.Text = "";
-            txtNuevoCedulaTrabajador.Text = "";
-            txtNuevoCorreoTrabajador.Text = "";
-            txtNuevoTelefonoTrabajador.Text = "";
-            this.BotonesTrabajador(true);
-            this.SeleccionaTrabajador();
-        }
-
-        private void btnBuscarTrabajador_Click(object sender, EventArgs e)
-        {
-            if (ckbNombreTrabajador.Checked == true)
-            {
-                this.ListadoTR(txtBuscarTrabajador.Text.Trim());
-            }
-
-            if (ckbCedulaTrabajador.Checked == true)
-            {
-                this.ListadoTR(txtBuscarTrabajador.Text.Trim());
-            }
-
-        }
-        #endregion
-
         #region Eventos Clientes
         private void btnGuardarNuevoCliente_Click(object sender, EventArgs e)
         {
@@ -810,8 +664,6 @@ namespace GUI
             this.Select();
             //Poner el cursor en donde se empiezan a cambiar datos
             txtNuevoNombreCliente.Focus();
-
-
 
         }
         private void btnEliminarCliente_Click(object sender, EventArgs e)
@@ -993,7 +845,6 @@ namespace GUI
             this.ListadoPR(TBBuscarProducto.Text.Trim());
         }
         #endregion
-
 
         #region Eventos Servicio
         private void BTGuardarServicio_Click(object sender, EventArgs e)
@@ -1384,6 +1235,147 @@ namespace GUI
         {
 
         }
+        #region Eventos Trabajador
+        private void btnGuardarNuevoTrabajador_Click(object sender, EventArgs e)
+        {
+            if (txtNuevoNombreTrabajador.Text == String.Empty)
+            {
+                MessageBox.Show("Nombre del trabajador requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
 
+            }
+            if (txtNuevoCedulaTrabajador.Text == String.Empty)
+            {
+                MessageBox.Show("Cedula del trabajador requerida(*)", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
+            if (txtNuevoCorreoTrabajador.Text == String.Empty)
+            {
+                MessageBox.Show("Correo del trabajador requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
+            if (txtNuevoTelefonoTrabajador.Text == String.Empty)
+            {
+                MessageBox.Show("Telefono del trabajador requerido(*)", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                ETTrabajador eTTrabajador = new ETTrabajador();
+                //Respuesta de la bl y la que recibe de dal cuando se hace el insert (cuando guardamos)
+                //para saber si el proceso fue exitoso o no
+                String Rpta = "";
+                eTTrabajador.IDTrabajador = this.IDTrabajador;
+                //lo que el usuario digite en ese campo se va a capturar y se va a enviar a la bd como propiedad
+                eTTrabajador.Nombre = txtNuevoNombreTrabajador.Text.Trim();
+                eTTrabajador.Cedula = txtNuevoCedulaTrabajador.Text.Trim();
+                eTTrabajador.Correo = txtNuevoCorreoTrabajador.Text.Trim();
+                eTTrabajador.Telefono = txtNuevoTelefonoTrabajador.Text.Trim();
+                //respuesta igual a los que nos retorne, enviar parametros para saber si es nuevo o no
+                Rpta = BLTrabajador.GuardarTR(EstadoGuarda, eTTrabajador);
+
+
+                //
+                if (Rpta == "OK")
+                {
+                    //volver a actualizar para que apareza el cambio
+                    this.ListadoTR("%");
+                    MessageBox.Show("Los dato se han registrado", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                    EstadoGuarda = 0;
+                    //activar botones
+                    this.BotonesTrabajador(true);
+                    //volver todo a su estado original
+                    txtNuevoNombreTrabajador.Text = "";
+                    txtNuevoCedulaTrabajador.Text = "";
+                    txtNuevoCorreoTrabajador.Text = "";
+                    txtNuevoTelefonoTrabajador.Text = "";
+                    this.IDTrabajador = 0;
+
+                }
+                else
+                {
+                    MessageBox.Show("No se logro registrar el dato", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                }
+            }
+
+        }
+
+        private void btnModficarTrabajador_Click(object sender, EventArgs e)
+        {
+            EstadoGuarda = 2;
+            this.IDTrabajador = 0;
+            this.BotonesTrabajador(true);
+            //txtNuevoNombreTrabajador.Text = "";
+            this.SeleccionaTrabajador();
+            //Poner el cursor en donde se empiezan a cambiar datos
+            txtNuevoNombreTrabajador.Focus();
+
+        }
+
+        private void btnEliminarTrabajador_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(Convert.ToString(DgvTrabajador.CurrentRow.Cells["IDTrabajador"].Value)))
+            {
+                MessageBox.Show("No hay datos que mostar", "Aviso del Sistema", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult opcion;
+                //preguntar si se quiere realizar procedimiento y a opcion se le asignael valor de la respuesta
+                opcion = MessageBox.Show("¿Está seguro de eliminar el registro seleccionado?", "Aviso del Sistema", MessageBoxButtons.YesNoCancel,
+                   MessageBoxIcon.Question);
+                if (opcion == DialogResult.Yes)
+                {
+                    String Rpta = "";
+                    //convertir a int
+                    this.IDTrabajador = Convert.ToInt32(DgvTrabajador.CurrentRow.Cells["IDTrabajador"].Value);
+                    Rpta = BLTrabajador.EliminaTR(this.IDTrabajador);
+
+                    if (Rpta.Equals("OK"))
+                    {
+                        this.ListadoTR("%");
+                        this.IDTrabajador = 0;
+                        MessageBox.Show("Registro Eliminado", "Aviso del Sistema", MessageBoxButtons.YesNoCancel,
+                         MessageBoxIcon.Exclamation);
+
+                    }
+                }
+
+            }
+        }
+
+        private void btnCancelarNuevoTrabajador_Click(object sender, EventArgs e)
+        {
+            EstadoGuarda = 0;
+            this.IDTrabajador = 0;
+            txtNuevoNombreTrabajador.Text = "";
+            txtNuevoCedulaTrabajador.Text = "";
+            txtNuevoCorreoTrabajador.Text = "";
+            txtNuevoTelefonoTrabajador.Text = "";
+            this.BotonesTrabajador(true);
+            this.SeleccionaTrabajador();
+        }
+
+        private void btnBuscarTrabajador_Click(object sender, EventArgs e)
+        {
+            if (ckbNombreTrabajador.Checked == true)
+            {
+                this.ListadoTR(txtBuscarTrabajador.Text.Trim());
+            }
+
+            if (ckbCedulaTrabajador.Checked == true)
+            {
+                this.ListadoTR(txtBuscarTrabajador.Text.Trim());
+            }
+        }
+        #endregion
     }
 }

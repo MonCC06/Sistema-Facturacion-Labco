@@ -929,6 +929,7 @@
             this.btnEliminarTrabajador.TabIndex = 7;
             this.btnEliminarTrabajador.Text = "Eliminar";
             this.btnEliminarTrabajador.UseVisualStyleBackColor = true;
+            this.btnEliminarTrabajador.Click += new System.EventHandler(this.btnEliminarTrabajador_Click);
             // 
             // btnModficarTrabajador
             // 
@@ -938,6 +939,7 @@
             this.btnModficarTrabajador.TabIndex = 6;
             this.btnModficarTrabajador.Text = "Modificar";
             this.btnModficarTrabajador.UseVisualStyleBackColor = true;
+            this.btnModficarTrabajador.Click += new System.EventHandler(this.btnModficarTrabajador_Click);
             // 
             // txtBuscarTrabajador
             // 
@@ -963,6 +965,7 @@
             this.btnBuscarTrabajador.TabIndex = 3;
             this.btnBuscarTrabajador.Text = "Buscar";
             this.btnBuscarTrabajador.UseVisualStyleBackColor = true;
+            this.btnBuscarTrabajador.Click += new System.EventHandler(this.btnBuscarTrabajador_Click);
             // 
             // ckbCedulaTrabajador
             // 
@@ -1013,6 +1016,7 @@
             this.btnGuardarNuevoTrabajador.TabIndex = 9;
             this.btnGuardarNuevoTrabajador.Text = "Guardar";
             this.btnGuardarNuevoTrabajador.UseVisualStyleBackColor = true;
+            this.btnGuardarNuevoTrabajador.Click += new System.EventHandler(this.btnGuardarNuevoTrabajador_Click);
             // 
             // btnCancelarNuevoTrabajador
             // 
@@ -1022,6 +1026,7 @@
             this.btnCancelarNuevoTrabajador.TabIndex = 8;
             this.btnCancelarNuevoTrabajador.Text = "Cancelar";
             this.btnCancelarNuevoTrabajador.UseVisualStyleBackColor = true;
+            this.btnCancelarNuevoTrabajador.Click += new System.EventHandler(this.btnCancelarNuevoTrabajador_Click);
             // 
             // txtNuevoTelefonoTrabajador
             // 
