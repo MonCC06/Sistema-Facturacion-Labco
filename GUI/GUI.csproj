@@ -116,7 +116,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="GUI_TemporaryKey.pfx" />
     <None Include="Properties\DataSources\GUI.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\GUI.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
