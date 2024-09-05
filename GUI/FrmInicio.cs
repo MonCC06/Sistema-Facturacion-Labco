@@ -1473,8 +1473,72 @@ this.btnEliminarTrabajador.Enabled = LEstado;
             this.Close();
         }
 
-        private void BtnGuardarFA_Click(object sender, EventArgs e)
+        private void BtnGuardarFA(object sender, EventArgs e)
         {
+            if (TxtNombreCliente.Text == String.Empty ||
+        TxtCedulaCliente.Text == String.Empty ||
+        TxtEmailCliente.Text == String.Empty ||
+        TxtTelefonoCliente.Text == String.Empty ||
+        TxtPlacaVehiculoFactura.Text == String.Empty ||
+        TxtAnnoVehiculoFactura.Text == String.Empty ||
+        TxtDistanciaVehiculoFactura.Text == String.Empty ||
+        TxtMarcaVehiculoFactura.Text == String.Empty ||
+        TxtTrabajador.Text == String.Empty ||
+        TxtEstadoFactura.Text == String.Empty)
+            {
+                MessageBox.Show("Datos sin rellenar, porfavor complete los datos", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (CkbMillas.Checked || CkbKilometros.Checked)
+                {
+                    EstadoGuarda = 1;
+                    string Rpta = "";
+                    ETFactura eTFactura = new ETFactura();
+                    ETCliente etCliente = new ETCliente();
+                    ETVehiculo etVehiculo = new ETVehiculo();
+                    ETTrabajador etTrabajador = new ETTrabajador();
+                    ETMarca etMarca = new ETMarca();
+
+                    eTFactura.IDFactura = this.IDFactura;
+                    eTFactura.IDCliente = this.IDCliente;
+                    eTFactura.IDDetalle = this.IDDetalle;
+                    etCliente.Nombre = TxtNombreCliente.Text.Trim();
+                    etCliente.Cedula = TxtNombreCliente.Text.Trim();
+                    etCliente.Telefono = TxtNombreCliente.Text.Trim();
+                    etCliente.Correo = TxtNombreCliente.Text.Trim();
+                    etVehiculo.Anno = TxtAnnoVehiculoFactura.Text.Trim();
+                    etVehiculo.DistanciaRecorrida = TxtDistanciaVehiculoFactura.Text.Trim();
+                    etVehiculo.Placa = TxtPlacaVehiculoFactura.Text.Trim();
+                    etMarca.Nombre = TxtMarcaVehiculoFactura.Text.Trim();
+                    etVehiculo.TipodeDistancia = CkbMillas.Checked;
+                    etVehiculo.TipodeDistancia = CkbKilometros.Checked;
+                    eTFactura.Subtotal = float.Parse(TxtSubtotal.Text.Trim());
+                    eTFactura.Iva = float.Parse(TxtIVA.Text.Trim());
+                    eTFactura.Total = float.Parse(TxtTotal.Text.Trim());
+                    eTFactura.Estado = Convert.ToBoolean(TxtEstadoFactura.Text.Trim());
+                    etTrabajador.Nombre = TxtTrabajador.Text.Trim();
+
+                    Rpta = BLFactura.GuardarFA(EstadoGuarda, eTFactura);
+                    Rpta = BLCliente.GuardarCL(EstadoGuarda, etCliente);
+                    Rpta = BLVehiculo.GuardarVE(EstadoGuarda, etVehiculo);
+                    Rpta = BLMarca.GuardarMA(EstadoGuarda, etMarca);
+                    Rpta = BLTrabajador.GuardarTR(EstadoGuarda, etTrabajador);
+
+                    if (Rpta == "OK")
+                    {
+                        this.ListadoFA("%");
+                        MessageBox.Show("Los datos se han registrado", "Aviso del sistema", MessageBoxButtons.OK,
+                       MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("CheckBox sin marcar, porfavor marquelo", "Aviso del Sistema", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
+            }
 
         }
 
@@ -1491,8 +1555,9 @@ this.btnEliminarTrabajador.Enabled = LEstado;
             TxtAnnoVehiculoFactura.ReadOnly = true;
             TxtDistanciaVehiculoFactura.ReadOnly = true;
 
-
+            TxtEstadoFactura.Text = "Cancelada";
         }
+
         #endregion
 
         private void label14_Click(object sender, EventArgs e)
@@ -1714,5 +1779,7 @@ this.btnEliminarTrabajador.Enabled = LEstado;
         {
 
         }
+
+        
     }
 }

@@ -32,8 +32,7 @@
             this.tabFactura = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-<<<<<<< HEAD
-=======
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.PnlListaCL = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
             this.BtnRetornar2 = new System.Windows.Forms.Button();
@@ -41,12 +40,10 @@
             this.DgvListaCL = new System.Windows.Forms.DataGridView();
             this.label14 = new System.Windows.Forms.Label();
             this.TxtListaCL = new System.Windows.Forms.TextBox();
->>>>>>> 1610070b9fc085cd15aa033ec1b5044870a71e48
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.BtnAnularFA = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.BtnImprimirFA = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.TxtTotal = new System.Windows.Forms.TextBox();
             this.TxtIVA = new System.Windows.Forms.TextBox();
@@ -75,13 +72,6 @@
             this.TxtEstadoFactura = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.PnlListaCL = new System.Windows.Forms.Panel();
-            this.label26 = new System.Windows.Forms.Label();
-            this.BtnRetornar2 = new System.Windows.Forms.Button();
-            this.BtnBuscar2 = new System.Windows.Forms.Button();
-            this.DgvListaCL = new System.Windows.Forms.DataGridView();
-            this.label14 = new System.Windows.Forms.Label();
-            this.TxtListaCL = new System.Windows.Forms.TextBox();
             this.BtnLupa1 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.TxtCedulaCliente = new System.Windows.Forms.TextBox();
@@ -217,17 +207,15 @@
             this.tabFactura.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.PnlListaCL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaCL)).BeginInit();
-            this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvFacturaProducto)).BeginInit();
             this.groupBox12.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox14.SuspendLayout();
-            this.PnlListaCL.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvListaCL)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.groupBox19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -308,8 +296,23 @@
             this.tabPage3.Text = "Agregar";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-<<<<<<< HEAD
-=======
+            // groupBox9
+            // 
+            this.groupBox9.BackColor = System.Drawing.Color.Gainsboro;
+            this.groupBox9.Controls.Add(this.PnlListaCL);
+            this.groupBox9.Controls.Add(this.label25);
+            this.groupBox9.Controls.Add(this.BtnAnularFA);
+            this.groupBox9.Controls.Add(this.button5);
+            this.groupBox9.Controls.Add(this.BtnImprimirFA);
+            this.groupBox9.Controls.Add(this.groupBox10);
+            this.groupBox9.Controls.Add(this.groupBox11);
+            this.groupBox9.Controls.Add(this.DgvFacturaProducto);
+            this.groupBox9.Location = new System.Drawing.Point(7, 226);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(985, 437);
+            this.groupBox9.TabIndex = 4;
+            this.groupBox9.TabStop = false;
+            // 
             // PnlListaCL
             // 
             this.PnlListaCL.Controls.Add(this.label26);
@@ -318,9 +321,9 @@
             this.PnlListaCL.Controls.Add(this.DgvListaCL);
             this.PnlListaCL.Controls.Add(this.label14);
             this.PnlListaCL.Controls.Add(this.TxtListaCL);
-            this.PnlListaCL.Location = new System.Drawing.Point(223, 29);
+            this.PnlListaCL.Location = new System.Drawing.Point(340, 19);
             this.PnlListaCL.Name = "PnlListaCL";
-            this.PnlListaCL.Size = new System.Drawing.Size(371, 226);
+            this.PnlListaCL.Size = new System.Drawing.Size(371, 225);
             this.PnlListaCL.TabIndex = 10;
             this.PnlListaCL.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -379,24 +382,6 @@
             this.TxtListaCL.Size = new System.Drawing.Size(171, 20);
             this.TxtListaCL.TabIndex = 1;
             // 
->>>>>>> 1610070b9fc085cd15aa033ec1b5044870a71e48
-            // groupBox9
-            // 
-            this.groupBox9.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox9.Controls.Add(this.PnlListaCL);
-            this.groupBox9.Controls.Add(this.label25);
-            this.groupBox9.Controls.Add(this.button6);
-            this.groupBox9.Controls.Add(this.button5);
-            this.groupBox9.Controls.Add(this.button4);
-            this.groupBox9.Controls.Add(this.groupBox10);
-            this.groupBox9.Controls.Add(this.groupBox11);
-            this.groupBox9.Controls.Add(this.DgvFacturaProducto);
-            this.groupBox9.Location = new System.Drawing.Point(7, 226);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(985, 437);
-            this.groupBox9.TabIndex = 4;
-            this.groupBox9.TabStop = false;
-            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -407,14 +392,15 @@
             this.label25.Text = "Detalle";
             this.label25.Click += new System.EventHandler(this.label25_Click);
             // 
-            // button6
+            // BtnAnularFA
             // 
-            this.button6.Location = new System.Drawing.Point(683, 408);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 25;
-            this.button6.Text = "Anular";
-            this.button6.UseVisualStyleBackColor = true;
+            this.BtnAnularFA.Location = new System.Drawing.Point(683, 408);
+            this.BtnAnularFA.Name = "BtnAnularFA";
+            this.BtnAnularFA.Size = new System.Drawing.Size(75, 23);
+            this.BtnAnularFA.TabIndex = 25;
+            this.BtnAnularFA.Text = "Anular";
+            this.BtnAnularFA.UseVisualStyleBackColor = true;
+            this.BtnAnularFA.Click += new System.EventHandler(this.BtnAnularFA_Click);
             // 
             // button5
             // 
@@ -424,16 +410,17 @@
             this.button5.TabIndex = 24;
             this.button5.Text = "Guardar";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.BtnGuardarFA);
             // 
-            // button4
+            // BtnImprimirFA
             // 
-            this.button4.Location = new System.Drawing.Point(892, 408);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "Imprimir";
-            this.button4.UseVisualStyleBackColor = true;
+            this.BtnImprimirFA.Location = new System.Drawing.Point(892, 408);
+            this.BtnImprimirFA.Name = "BtnImprimirFA";
+            this.BtnImprimirFA.Size = new System.Drawing.Size(75, 23);
+            this.BtnImprimirFA.TabIndex = 15;
+            this.BtnImprimirFA.Text = "Imprimir";
+            this.BtnImprimirFA.UseVisualStyleBackColor = true;
+            this.BtnImprimirFA.Click += new System.EventHandler(this.BtnImprimirFA_Click);
             // 
             // groupBox10
             // 
@@ -702,75 +689,6 @@
             this.groupBox14.TabIndex = 0;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Datos del Cliente";
-            // 
-            // PnlListaCL
-            // 
-            this.PnlListaCL.Controls.Add(this.label26);
-            this.PnlListaCL.Controls.Add(this.BtnRetornar2);
-            this.PnlListaCL.Controls.Add(this.BtnBuscar2);
-            this.PnlListaCL.Controls.Add(this.DgvListaCL);
-            this.PnlListaCL.Controls.Add(this.label14);
-            this.PnlListaCL.Controls.Add(this.TxtListaCL);
-            this.PnlListaCL.Location = new System.Drawing.Point(340, 19);
-            this.PnlListaCL.Name = "PnlListaCL";
-            this.PnlListaCL.Size = new System.Drawing.Size(371, 225);
-            this.PnlListaCL.TabIndex = 10;
-            this.PnlListaCL.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(125, 9);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(100, 13);
-            this.label26.TabIndex = 5;
-            this.label26.Text = "Lista de los Clientes";
-            // 
-            // BtnRetornar2
-            // 
-            this.BtnRetornar2.Location = new System.Drawing.Point(269, 27);
-            this.BtnRetornar2.Name = "BtnRetornar2";
-            this.BtnRetornar2.Size = new System.Drawing.Size(41, 24);
-            this.BtnRetornar2.TabIndex = 4;
-            this.BtnRetornar2.Text = ": : :";
-            this.BtnRetornar2.UseVisualStyleBackColor = true;
-            this.BtnRetornar2.Click += new System.EventHandler(this.BtnRetornar2_Click);
-            // 
-            // BtnBuscar2
-            // 
-            this.BtnBuscar2.Location = new System.Drawing.Point(226, 27);
-            this.BtnBuscar2.Name = "BtnBuscar2";
-            this.BtnBuscar2.Size = new System.Drawing.Size(36, 24);
-            this.BtnBuscar2.TabIndex = 3;
-            this.BtnBuscar2.Text = ": : :";
-            this.BtnBuscar2.UseVisualStyleBackColor = true;
-            this.BtnBuscar2.Click += new System.EventHandler(this.BtnBuscar2_Click_1);
-            // 
-            // DgvListaCL
-            // 
-            this.DgvListaCL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvListaCL.Location = new System.Drawing.Point(3, 66);
-            this.DgvListaCL.Name = "DgvListaCL";
-            this.DgvListaCL.Size = new System.Drawing.Size(365, 160);
-            this.DgvListaCL.TabIndex = 0;
-            this.DgvListaCL.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaCL_CellContentClick);
-            this.DgvListaCL.DoubleClick += new System.EventHandler(this.DgvListaCL_DoubleClick);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(3, 31);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(43, 13);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "Buscar:";
-            // 
-            // TxtListaCL
-            // 
-            this.TxtListaCL.Location = new System.Drawing.Point(49, 28);
-            this.TxtListaCL.Name = "TxtListaCL";
-            this.TxtListaCL.Size = new System.Drawing.Size(171, 20);
-            this.TxtListaCL.TabIndex = 1;
             // 
             // BtnLupa1
             // 
@@ -2109,14 +2027,11 @@
             this.tabFactura.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-<<<<<<< HEAD
-=======
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.PnlListaCL.ResumeLayout(false);
             this.PnlListaCL.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaCL)).EndInit();
->>>>>>> 1610070b9fc085cd15aa033ec1b5044870a71e48
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.groupBox11.ResumeLayout(false);
@@ -2127,9 +2042,6 @@
             this.groupBox13.PerformLayout();
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
-            this.PnlListaCL.ResumeLayout(false);
-            this.PnlListaCL.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvListaCL)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.groupBox19.ResumeLayout(false);
             this.groupBox19.PerformLayout();
@@ -2251,9 +2163,9 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button BtnAnularFA;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button BtnImprimirFA;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.TextBox TxtTotal;
         private System.Windows.Forms.TextBox TxtIVA;
