@@ -1780,6 +1780,9 @@ this.btnEliminarTrabajador.Enabled = LEstado;
 
         }
 
-        
+        private void groupBox7_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
